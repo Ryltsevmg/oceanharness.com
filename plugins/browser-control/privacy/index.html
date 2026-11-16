@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Browser Control privacy — Ocean</title><meta name="description" content="How Ocean Browser Control handles browser data and permissions."><link rel="stylesheet" href="/styles.css"></head><body><main>
+<nav aria-label="Navigation"><a href="/">Ocean</a><a href="/plugins/">Plugins</a><a href="/plugins/browser-control/">Browser Control</a></nav>
+<h1>Browser Control privacy</h1><p>Effective November 16, 2026. This policy covers the Ocean Browser Control Chrome extension.</p>
+<h2>What the extension does</h2><p>The extension connects Chrome to a paired relay so Ocean can operate task tabs and tabs you share using the toolbar button. Ocean provides a separate allowed-sites setting. Chrome permissions are broader than that setting; it is an application-level restriction, not a separate Chrome sandbox.</p>
+<h2>Data processed</h2><p>Requested operations can read page text, page structure, URLs, tab titles, screenshots and form values; click controls; enter text; and manage tabs. Pages may contain personal, authentication, financial, health or other sensitive information. The relay also supports recording shared tabs when requested. Website sign-ins remain in your Chrome profile and are used through the normal browser session.</p>
+<h2>Where data goes</h2><p>By default the extension exchanges commands and results with a relay on your computer. Advanced settings can point to a relay you choose on another computer. Only use a relay and network you trust. Ocean may send page content and screenshots to the model provider selected for your task. That provider's terms and privacy policy apply. The extension does not select the model provider.</p><p>The extension has no advertising or analytics service and does not send browsing data to an Ocean-operated collection server. Browser data is used to perform the requested browser functions, not sold or used for advertising, profiling or unrelated purposes. Our use and transfer of data follows the Chrome Web Store User Data Policy and its Limited Use requirements.</p>
+<h2>Storage and removal</h2><p>The extension stores pairing credentials and preferences in Chrome extension storage. Relay credentials and any task records saved by Ocean are stored separately. Remove the extension to remove its local extension storage. This does not delete Ocean conversation logs, relay files or copies already sent to a model provider; manage those in the corresponding application or service.</p>
+<h2>Permissions</h2><ul>
+<li><strong>debugger:</strong> inspect shared pages, capture screenshots and perform browser actions through Chrome DevTools Protocol.</li>
+<li><strong>tabs and tabGroups:</strong> manage task tabs and group tabs by agent session.</li>
+<li><strong>storage:</strong> retain pairing credentials and preferences locally.</li>
+<li><strong>alarms:</strong> reconnect to the paired relay after the service worker sleeps.</li>
+<li><strong>offscreen and tabCapture:</strong> process requested shared-tab recordings.</li>
+<li><strong>webNavigation:</strong> associate popups and navigation with their task tabs.</li>
+<li><strong>scripting:</strong> run packaged page helpers for browser interaction.</li>
+<li><strong>notifications:</strong> notify you when a task needs manual interaction.</li>
+<li><strong>All-site access:</strong> operate user-selected websites and contact the configured relay. The extension does not request access to your full browsing-history database.</li></ul>
+<h2>Your control</h2><p>Choose allowed websites in Ocean, share existing tabs explicitly, and disable the plugin or extension to stop using it. Review tasks before allowing actions on sensitive pages. Do not enter secrets in a task unless you intend them to reach the selected model provider.</p>
+<h2>Contact</h2><p>For privacy questions or requests, contact <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> or <a href="https://t.me/oceanchatsupportbot">Ocean support</a>. Updates to this policy will be published here with a revised effective date.</p>
+</main></body></html>
