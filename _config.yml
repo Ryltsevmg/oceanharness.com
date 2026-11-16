@@ -1,0 +1,9 @@
+exclude:
+  - scripts
+  - tests
+  - audit-2026-11-16
+  - design-previews
+  - design-review.md
+  - ocean-website.pen
+  - ocean-depth.png
+  - ocean-whale-depth.png

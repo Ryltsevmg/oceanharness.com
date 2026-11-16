@@ -1,0 +1,53 @@
+.download-main { padding-top: 64px; padding-bottom: 96px; }
+.download-heading { max-width: 840px; margin-bottom: 56px; }
+.download-main .eyebrow { margin-bottom: 20px; }
+.download-heading h1 { font-size: clamp(40px, 5.2vw, 72px); line-height: 1.08; letter-spacing: -.045em; margin: 0 0 24px; }
+.download-heading .lead { color: var(--muted); font-size: 20px; line-height: 1.6; max-width: 680px; margin: 0; }
+.download-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.download-card { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(155deg, #152233 0%, #0e1724 60%); min-width: 0; }
+.platform-heading { display: flex; gap: 16px; align-items: center; padding-bottom: 28px; }
+.platform-icon { display: grid; place-items: center; width: 52px; height: 52px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 14px; color: var(--ice); }
+.platform-icon svg { width: 28px; height: 28px; }
+.platform-heading h2 { margin: 0 0 4px; font-family: Manrope, sans-serif; font-size: 26px; font-weight: 600; }
+.platform-heading p { color: var(--muted); margin: 0; font-size: 14px; }
+.architecture { padding-block: 26px; border-top: 1px solid var(--line); }
+.architecture:last-child { padding-bottom: 0; }
+.architecture h3 { font-size: 17px; line-height: 1.5; font-weight: 600; margin: 0 0 12px; }
+.download-meta, .download-date, .download-unavailable { color: var(--muted); font-size: 14px; margin: 0 0 8px; line-height: 1.5; }
+.download-meta span { padding-inline: 6px; }
+.download-button { width: 100%; margin-top: 20px; min-height: 56px; }
+.download-button svg { width: 18px; height: 18px; }
+.release-notes { display: flex; justify-content: center; gap: 8px; align-items: center; min-height: 44px; margin-top: 8px; font-size: 14px; color: var(--ice); text-decoration: none; }
+.release-notes:hover, .downloads-all:hover { text-decoration: underline; }
+.unavailable .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; margin: 0; }
+.download-freshness { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin: 24px 0 80px; font-size: 14px; }
+.download-freshness p { color: var(--muted); margin: 0; line-height: 1.6; }
+.downloads-all { display: inline-flex; gap: 8px; flex-shrink: 0; align-items: center; color: var(--ice); text-decoration: none; min-height: 44px; margin-top: -10px; }
+.refresh-downloads { background: none; border: 0; color: var(--ice); font: inherit; cursor: pointer; padding: 8px 0; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; }
+.refresh-downloads[hidden] { display: none; }
+.download-help { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; padding-block: 48px; border-top: 1px solid var(--line); }
+.download-help h2 { font-family: Manrope, sans-serif; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; line-height: 1.2; margin: 0 0 16px; }
+.download-help > div > p:not(.eyebrow) { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0; }
+.download-faq details { border-bottom: 1px solid var(--line); padding: 0; }
+.download-faq details:first-child { border-top: 1px solid var(--line); }
+.download-faq summary { padding: 20px 32px 20px 0; min-height: 64px; position: relative; cursor: pointer; list-style: none; font-size: 16px; }
+.download-faq summary::-webkit-details-marker { display: none; }
+.download-faq summary::after { content: '+'; position: absolute; right: 2px; top: 18px; color: var(--ice); font-size: 22px; font-weight: 400; }
+.download-faq details[open] summary::after { content: '−'; }
+.download-faq p { color: var(--muted); font-size: 15px; line-height: 1.65; margin: 0 0 22px; }
+.download-support { font-size: 15px; color: var(--muted); margin: 32px 0 0; }
+@media (max-width: 1000px) {
+  .download-card { padding: 24px; }
+  .download-grid { gap: 16px; }
+  .download-help { gap: 40px; }
+}
+@media (max-width: 760px) {
+  .download-main { padding-top: 36px; padding-bottom: 48px; }
+  .download-heading { margin-bottom: 32px; }
+  .download-heading h1 { font-size: clamp(36px, 8vw, 56px); }
+  .download-heading .lead { font-size: 18px; }
+  .download-grid { grid-template-columns: 1fr; gap: 20px; }
+  .download-card { padding: 26px; }
+  .download-freshness { flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .download-help { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
+}

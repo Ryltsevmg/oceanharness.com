@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-16T20:36:03.542Z",
+  "downloads": [
+    {
+      "platform": "mac",
+      "arch": "arm64",
+      "format": "ZIP",
+      "size": 491251988,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v0.2.2-rc.2.20261115.1/Ocean-Chat-0.2.2-rc.2.20261115.1-arm64-notarized.zip",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v0.2.2-rc.2.20261115.1",
+      "publishedAt": "2026-11-15T07:41:10Z"
+    },
+    {
+      "platform": "linux",
+      "arch": "x64",
+      "format": "TAR.GZ",
+      "size": 485030687,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v0.2.2-rc.2.20261115.1/ocean-chat-0.2.2-rc.2.20261115.1-linux-x64-unsigned.tar.gz",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v0.2.2-rc.2.20261115.1",
+      "publishedAt": "2026-11-15T07:41:10Z"
+    }
+  ]
+}
