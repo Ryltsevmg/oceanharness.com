@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Ocean — 平衡与深度</title>
+  <meta name="description" content="专为 AI 智能体打造的桌面应用。在同一个聊天中连接模型、探索网站、操作应用。">
+  <link rel="canonical" href="https://oceanharness.com/zh/">
+  <meta property="og:title" content="Ocean — 平衡与深度">
+  <meta property="og:description" content="模型、网站和应用，尽在同一个聊天中。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oceanharness.com/zh/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preload" as="image" type="image/webp" href="/assets/ocean-whale-1672.webp" imagesrcset="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" imagesizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "zh-CN", "messages": {"Для вашего Mac": "适用于你的 Mac", "Для вашего дистрибутива": "适用于你的发行版", "Для вашего ПК": "适用于你的 PC", "Пока нет загрузки": "暂无下载", "Все релизы": "所有版本", "Что нового": "更新内容", "Скачать": "下载", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "下载适用于 {platform}、{arch} 的 Ocean", "Проверяем…": "正在检查…", "Загрузки обновлены с GitHub.": "下载列表已从 GitHub 更新。", "Загрузки появятся здесь после публикации.": "发布后，下载会显示在这里。", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "无法更新列表。当前显示 {date} 核验的下载。", "Попробовать снова": "重试", "Загрузки проверены {date}.": "下载已于 {date} 核验。", "Открыть меню": "打开菜单", "Закрыть меню": "关闭菜单", "Ocean / Пример сценария": "Ocean / 场景示例"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/">
+<!-- LOCALES_END -->
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到内容</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="/zh/" aria-label="Ocean — 首页"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+      <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="网站语言"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>ZH</span></summary><nav aria-label="网站语言"><a href="/" lang="ru" hreflang="ru">Русский</a><a href="/en/" lang="en" hreflang="en">English</a><a href="/zh/" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a><a href="/ja/" lang="ja" hreflang="ja">日本語</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="打开菜单"><svg aria-hidden="true" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="nav-links" id="site-menu" data-menu>
+        <a href="#features">功能</a><a href="/zh/plugins/">插件</a><a href="/zh/downloads/">下载</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main tabindex="-1" id="main" class="landing">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Ocean / AI 工作空间</p>
+        <h1 id="hero-title">平衡<br>与深度。</h1>
+      <div class="hero-art" aria-hidden="true"><picture><source type="image/webp" srcset="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" sizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px"><img src="/ocean-whale-line.png" alt="" width="1672" height="941" fetchpriority="high"></picture></div>
+        <p class="lead">Ocean 是专为 AI 智能体打造的桌面应用。<br class="desktop-break"> 连接模型、探索网站，<br class="desktop-break"> 在同一个聊天中操作应用。</p>
+        <div class="actions"><a class="button primary" href="/zh/downloads/">下载 Ocean <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a><a class="button secondary" href="#demo">了解 Ocean 如何工作 <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a></div>
+        <p class="hero-note">开放源代码。自选模型。自主决定访问权限。</p>
+      </div>
+    </section>
+    <section id="demo" class="demo wrap" aria-labelledby="demo-title">
+      <div class="demo-heading"><h2 id="demo-title" class="eyebrow">从笔记到完整计划</h2><span>Ocean 使用示例</span></div>
+      <div class="app-preview">
+        <div class="app-titlebar" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>Ocean</span></div>
+        <aside class="app-sidebar" aria-hidden="true">
+          <div class="app-brand"><img src="/ocean-logo.svg" alt="" width="36" height="36">Ocean</div>
+          <div class="app-new">+ 新建会话</div>
+          <div class="app-sidebar-links"><span>自动化</span><span>插件</span></div>
+          <div class="app-workspace-label">工作空间</div><div class="app-project">我的项目</div><div class="app-selected">团队会议</div>
+        </aside>
+        <div class="app-chat" data-demo-label="Ocean / 场景示例">
+          <div class="app-breadcrumb">我的项目 <span>/</span> 团队会议</div>
+          <div class="app-message">根据我的笔记，制定一个 30 分钟的会议计划。列出需要做出的决定。</div>
+          <details class="demo-notes"><summary>笔记中的内容</summary><p>需要商定发布日期、分配剩余任务，并决定由谁检查结果。整个团队可以抽出半小时。</p></details>
+          <div class="app-result">
+            <p class="app-tool"><svg class="icon" aria-hidden="true" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>已阅读笔记 · 已制定计划</p>
+            <h3>团队会议计划</h3>
+            <ol class="meeting-plan">
+              <li><span class="meeting-time">5 分钟</span><div><strong>确认准备情况</strong><p>哪些工作已经完成，哪些问题阻碍发布。</p></div></li>
+              <li><span class="meeting-time">15 分钟</span><div><strong>做出决定</strong><p>确定发布日期和负责人。</p></div></li>
+              <li><span class="meeting-time">10 分钟</span><div><strong>明确下一步</strong><p>由谁检查结果，何时再次跟进。</p></div></li>
+            </ol>
+            <div class="demo-outcome"><span class="feature-index">会议成果</span><p>发布日期、负责人和后续行动清单。</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-next"><p>从你的任务开始。在聊天中添加文件或说明背景。</p><a class="text-link" href="/zh/start/">开始使用 Ocean <span aria-hidden="true">→</span></a></div>
+    </section>
+    <section id="features" class="features wrap" aria-labelledby="features-title">
+      <p class="eyebrow">01 / 你的探索之旅</p><h2 id="features-title">从问题出发，获得清晰的结果。</h2><p class="section-lead">背景信息、工具和工作进度，汇聚一处。</p>
+      <ol class="feature-grid">
+        <li><span class="feature-index">01</span><div><h3>确定方向</h3><p>描述期望的结果，并提供项目、文件或链接等背景信息。</p></div></li>
+        <li><span class="feature-index">02</span><div><h3>一起探索</h3><p>智能体会研究资料，并使用已连接的工具开展工作。</p></div></li>
+        <li><span class="feature-index">03</span><div><h3>带着成果继续前进</h3><p>阅读回复、检查操作，随时回到已保存的聊天。</p></div></li>
+      </ol>
+    </section>
+    <section class="equipment wide-panel" aria-labelledby="equipment-title">
+      <div class="equipment-copy"><p class="eyebrow">02 / 探索装备</p><h2 id="equipment-title">为你的任务<br>配备工具。</h2><p class="section-lead">组建智能体团队，为任务连接<br class="desktop-break"> 浏览器和应用。</p><a class="text-link" href="/zh/plugins/">所有插件 <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14"/>
+  <path d="m12 5 7 7-7 7"/>
+</svg>
+</span></a></div>
+      <ul class="equipment-list">
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <circle cx="9" cy="7" r="4"/>
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+</svg>
+</span><div><h3>智能体团队</h3><p>分配任务，掌握<br class="desktop-break"> 整体进度。</p></div></li>
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+  <path d="M2 12h20"/>
+</svg>
+</span><div><h3>浏览器控制</h3><p>使用保留了登录状态的 Chrome。<br class="desktop-break"> 阅读页面、填写表单、管理标签页。</p></div></li>
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/>
+</svg>
+</span><div><h3>应用控制</h3><p>截取窗口画面，操作<br class="desktop-break"> 已授权的应用。</p></div></li>
+      </ul>
+    </section>
+    <section class="control wrap" aria-labelledby="control-title">
+      <div><p class="eyebrow">03 / 由你掌舵</p><h2 id="control-title">更深入的能力。<br>控制权始终在你。</h2></div>
+      <div class="control-copy"><h3>由你决定 Ocean 可以连接什么。</h3><p>账号登录等需要手动完成的步骤，<br class="desktop-break"> 仍由你操作。</p><ul class="permissions"><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+  <path d="M2 12h20"/>
+</svg>
+</span><span>网站</span><small>由你选择</small></li><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="4" width="20" height="16" rx="2"/>
+  <path d="M10 4v4"/>
+  <path d="M2 8h20"/>
+  <path d="M6 4v4"/>
+</svg>
+</span><span>应用</span><small>由你选择</small></li><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/>
+  <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/>
+  <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/>
+  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+</svg>
+</span><span>手动步骤</span><small>由你控制</small></li></ul></div>
+    </section>
+    <section class="faq wrap" aria-labelledby="faq-title">
+      <div><p class="eyebrow">04 / 潜入之前</p><h2 id="faq-title">开始之前的<br>几个问题。</h2></div>
+      <div class="faq-answers"><div><h3>需要订阅模型服务吗？</h3><p>连接自己的账号或 API 密钥。可用模型和费用由所选服务商决定。</p></div><div><h3>安装后如何开始？</h3><p>在“设置 → 模型”中添加服务商，然后创建第一个会话。 <a href="/zh/start/">查看分步设置指南</a>.</p></div></div>
+    </section>
+    <section id="install" class="install wide-panel" aria-labelledby="install-title">
+      <div><p class="eyebrow">开始使用</p><h2 id="install-title">从 Ocean 开始</h2><p class="section-lead">下载适用于你系统的应用，连接模型，提出第一个任务。</p><a class="button primary" href="/zh/downloads/">下载 Ocean <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a></div>
+      <ol class="install-steps"><li><span>01</span>安装应用</li><li><span>02</span>选择模型</li><li><span>03</span>开始对话</li></ol>
+    </section>
+  </main>
+  <footer class="footer" lang="zh-CN"><div class="wrap footer-inner"><a class="brand" href="/zh/">Ocean</a><div class="footer-links"><a href="/zh/start/">首次启动</a><a href="/zh/plugins/">插件</a><a href="https://t.me/oceanchatsupportbot">支持</a><a href="/zh/privacy/">隐私</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

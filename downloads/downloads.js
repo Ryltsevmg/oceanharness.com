@@ -1,3 +1,13 @@
+function localization() {
+  if (typeof document === 'undefined') return { locale: 'ru-RU', messages: {} };
+  return JSON.parse(document.getElementById('site-messages')?.textContent || '{"locale":"ru-RU","messages":{}}');
+}
+
+function text(source, values = {}) {
+  const translated = localization().messages[source] || source;
+  return translated.replace(/\{(\w+)\}/g, (_, key) => values[key] ?? `{${key}}`);
+}
+
 const REPOSITORY = 'https://github.com/Ryltsevmg/Ocean';
 export const RELEASES_URL = `${REPOSITORY}/releases`;
 export const RELEASES_API = 'https://api.github.com/repos/Ryltsevmg/Ocean/releases?per_page=100';
@@ -91,11 +101,11 @@ export async function fetchLatestDownloads(fetcher = fetch, { signal, headers = 
 }
 
 export function formatSize(bytes) {
-  return `${new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(bytes / 1_000_000)} МБ`;
+  return `${new Intl.NumberFormat(localization().locale, { maximumFractionDigits: 0 }).format(bytes / 1_000_000)} ${text('МБ')}`;
 }
 
 export function formatDate(value) {
-  return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value)).replace(/\s*г\.$/u, '');
+  return new Intl.DateTimeFormat(localization().locale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value)).replace(/\s*г\.$/u, '');
 }
 
 /** Validate the locally published fallback before inserting its URLs into the page. */
@@ -125,11 +135,11 @@ const platformIcons = {
 /** Shared by the static-page generator and the browser to keep both download lists identical. */
 export function renderDownloadCards(downloads) {
   return PLATFORMS.map(platform => `<article class="download-card" data-platform="${platform.id}" aria-labelledby="title-${platform.id}">
-    <div class="platform-heading"><span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${platformIcons[platform.id]}</svg></span><div><h2 id="title-${platform.id}">${platform.title}</h2><p>${platform.note}</p></div></div>
+    <div class="platform-heading"><span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${platformIcons[platform.id]}</svg></span><div><h2 id="title-${platform.id}">${platform.title}</h2><p>${escapeHtml(text(platform.note))}</p></div></div>
     <div class="architecture-list">${platform.architectures.map(([arch, label]) => {
       const asset = downloads.find(item => item.platform === platform.id && item.arch === arch);
-      if (!asset) return `<div class="architecture unavailable"><h3>${label}</h3><p class="download-unavailable">Пока нет загрузки</p><a class="text-link" href="${RELEASES_URL}">Все релизы <span aria-hidden="true">↗</span></a></div>`;
-      return `<div class="architecture"><h3>${label}</h3><p class="download-meta">${asset.format} <span aria-hidden="true">·</span> ${formatSize(asset.size)}</p><p class="download-date"><time datetime="${escapeHtml(asset.publishedAt)}">${formatDate(asset.publishedAt)}</time></p><a class="button primary download-button" href="${escapeHtml(asset.url)}" aria-label="Скачать Ocean для ${platform.title}, ${label}">Скачать <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg></a><a class="release-notes" href="${escapeHtml(asset.releaseUrl)}">Что нового <span aria-hidden="true">↗</span></a></div>`;
+      if (!asset) return `<div class="architecture unavailable"><h3>${label}</h3><p class="download-unavailable">${escapeHtml(text('Пока нет загрузки'))}</p><a class="text-link" href="${RELEASES_URL}">${escapeHtml(text('Все релизы'))} <span aria-hidden="true">↗</span></a></div>`;
+      return `<div class="architecture"><h3>${label}</h3><p class="download-meta">${asset.format} <span aria-hidden="true">·</span> ${formatSize(asset.size)}</p><p class="download-date"><time datetime="${escapeHtml(asset.publishedAt)}">${formatDate(asset.publishedAt)}</time></p><a class="button primary download-button" href="${escapeHtml(asset.url)}" aria-label="${escapeHtml(text('Скачать Ocean для {platform}, {arch}', { platform: platform.title, arch: label }))}">${escapeHtml(text('Скачать'))} <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg></a><a class="release-notes" href="${escapeHtml(asset.releaseUrl)}">${escapeHtml(text('Что нового'))} <span aria-hidden="true">↗</span></a></div>`;
     }).join('')}</div>
   </article>`).join('\n');
 }
@@ -165,12 +175,12 @@ export async function refreshDownloads({ cards, status, retry }, fetcher = fetch
   cards.setAttribute('aria-busy', 'true');
   if (retry) {
     retry.setAttribute('aria-disabled', 'true');
-    retry.textContent = 'Проверяем…';
+    retry.textContent = text('Проверяем…');
   }
   try {
     const downloads = await fetchLatestDownloads(fetcher, { signal: AbortSignal.timeout(12_000) });
     updateDownloadCards(cards, downloads);
-    status.textContent = downloads.length ? 'Загрузки обновлены с GitHub.' : 'Загрузки появятся здесь после публикации.';
+    status.textContent = text(downloads.length ? 'Загрузки обновлены с GitHub.' : 'Загрузки появятся здесь после публикации.');
     if (retry) {
       if (cards.ownerDocument.activeElement === retry) {
         status.tabIndex = -1;
@@ -189,13 +199,13 @@ export async function refreshDownloads({ cards, status, retry }, fetcher = fetch
     } catch {
       // The static HTML contains the same checked download list for offline use.
     }
-    status.textContent = `Не удалось обновить список. Показаны загрузки, проверенные ${formatDate(savedDate)}.`;
+    status.textContent = text('Не удалось обновить список. Показаны загрузки, проверенные {date}.', { date: formatDate(savedDate) });
     if (retry) retry.hidden = false;
   } finally {
     cards.removeAttribute('aria-busy');
     if (retry) {
       retry.removeAttribute('aria-disabled');
-      retry.textContent = 'Попробовать снова';
+      retry.textContent = text('Попробовать снова');
     }
   }
 }

@@ -128,8 +128,32 @@
       assert(first('.download-button') === link, 'Удалён локальный список');
       assert(!retry.hasAttribute('aria-disabled'), 'Повтор остался недоступен');
     });
+    await check('Локаль сохраняется при обновлении и сетевой ошибке', async () => {
+      const messages = document.createElement('script');
+      messages.type = 'application/json';
+      messages.id = 'site-messages';
+      messages.textContent = JSON.stringify({ locale: 'en-US', messages: {
+        'Скачать': 'Download', 'МБ': 'MB', 'Что нового': 'Release notes',
+        'Не удалось обновить список. Показаны загрузки, проверенные {date}.': 'Could not refresh. Showing downloads checked on {date}.',
+        'Попробовать снова': 'Try again',
+        'Скачать Ocean для {platform}, {arch}': 'Download Ocean for {platform}, {arch}',
+      } });
+      document.head.append(messages);
+      try {
+        updateDownloadCards(cards, base);
+        assert(first('.download-button').textContent.trim() === 'Download', 'Кнопка не переведена');
+        assert(first('.download-button').getAttribute('aria-label').startsWith('Download Ocean for'), 'Имя кнопки не переведено');
+        assert(first('.download-meta').textContent.includes('MB'), 'Размер не локализован');
+        assert(!/[А-Яа-я]/.test(first('.download-date').textContent), 'Дата осталась на русском');
+        await refreshDownloads(controls, async () => { throw new Error('Offline'); });
+        assert(status.textContent.startsWith('Could not refresh.'), 'Ошибка не переведена');
+        assert(retry.textContent === 'Try again', 'Повтор не переведён');
+      } finally {
+        messages.remove();
+      }
+    });
     const failed = results.querySelectorAll('[data-failed]').length;
-    document.title = failed ? `FAIL: ${failed} — проверка загрузок` : 'PASS: 10 — проверка загрузок';
+    document.title = failed ? `FAIL: ${failed} — проверка загрузок` : 'PASS: 11 — проверка загрузок';
     run.disabled = false;
     run.focus();
   });

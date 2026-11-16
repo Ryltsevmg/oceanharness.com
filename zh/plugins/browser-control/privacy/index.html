@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Browser Control 隐私说明 — Ocean</title>
+  <meta name="description" content="了解 Ocean Browser Control Chrome 扩展程序如何处理页面数据、保存设置和使用浏览器权限。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control 隐私说明 — Ocean">
+  <meta property="og:description" content="页面数据、Chrome 权限与 Ocean 扩展程序的访问控制。">
+  <meta property="og:url" content="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "zh-CN", "messages": {"Для вашего Mac": "适用于你的 Mac", "Для вашего дистрибутива": "适用于你的发行版", "Для вашего ПК": "适用于你的 PC", "Пока нет загрузки": "暂无下载", "Все релизы": "所有版本", "Что нового": "更新内容", "Скачать": "下载", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "下载适用于 {platform}、{arch} 的 Ocean", "Проверяем…": "正在检查…", "Загрузки обновлены с GitHub.": "下载列表已从 GitHub 更新。", "Загрузки появятся здесь после публикации.": "发布后，下载会显示在这里。", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "无法更新列表。当前显示 {date} 核验的下载。", "Попробовать снова": "重试", "Загрузки проверены {date}.": "下载已于 {date} 核验。", "Открыть меню": "打开菜单", "Закрыть меню": "关闭菜单", "Ocean / Пример сценария": "Ocean / 场景示例"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到内容</a>
+<header class="site-header" lang="zh-CN">
+  <nav class="nav wrap" aria-label="主导航">
+    <a class="brand" href="/zh/" aria-label="Ocean — 返回首页"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="网站语言"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>ZH</span></summary><nav aria-label="网站语言"><a href="/plugins/browser-control/privacy/ru/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/browser-control/privacy/" lang="en" hreflang="en">English</a><a href="/zh/plugins/browser-control/privacy/" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a><a href="/ja/plugins/browser-control/privacy/" lang="ja" hreflang="ja">日本語</a><a href="/es/plugins/browser-control/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/browser-control/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/plugins/browser-control/privacy/" lang="de" hreflang="de">Deutsch</a><a href="/pt/plugins/browser-control/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/browser-control/privacy/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/zh/">首页</a><a href="/zh/plugins/" aria-current="location">插件</a><a href="/zh/downloads/">下载</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page wrap">
+  <a class="plugin-back" href="/zh/plugins/browser-control/"><span aria-hidden="true">←</span> Browser Control</a>
+  <h1>Browser Control 隐私说明</h1>
+  <p>自2026年11月16日起生效。本政策适用于 Ocean Browser Control Chrome 扩展程序。关于应用本身的聊天存储和数据处理，请参阅 <a href="/zh/privacy/">“你在 Ocean 中的数据”</a>.</p>
+  <h2>扩展程序的功能</h2>
+  <p>扩展程序将 Chrome 连接到已配对的中继服务，让 Ocean 可以控制任务标签页，以及你通过浏览器工具栏按钮交出的标签页。Ocean 单独提供允许访问的网站设置。Chrome 授予的权限比这一设置更广：限制在应用层执行，而非通过独立的 Chrome 沙箱实现。</p>
+  <h2>处理哪些数据</h2>
+  <p>根据请求，扩展程序可以读取页面文本与结构、网址、标签页标题、截图和字段值，也可以点击元素、输入文字和管理标签页。页面可能包含个人信息、身份验证信息、财务、医疗等敏感信息。中继服务还支持按请求录制已交出的标签页。网站登录状态保留在你的 Chrome 个人资料中，并通过普通浏览器会话使用。</p>
+  <h2>数据发送到哪里</h2>
+  <p>默认情况下，扩展程序与电脑上的中继服务交换命令和结果。在高级设置中，可以指定你选择的另一台电脑上的服务。请仅使用可信任的服务和网络。Ocean 可能将页面内容和截图发送给为任务选择的模型服务商；此时适用该服务商的条款和隐私政策。扩展程序本身不会选择模型服务商。</p>
+  <p>扩展程序不包含广告或分析服务，也不会将浏览器数据发送到 Ocean 的数据收集服务器。浏览器数据仅用于执行所请求的操作，不会出售，也不会用于广告、用户画像或无关目的。数据的使用和传输符合 Chrome Web Store 的用户数据政策及 Limited Use 要求。</p>
+  <h2>存储与删除</h2>
+  <p>扩展程序将配对数据和设置保存在 Chrome 扩展程序存储空间中。中继服务的访问凭据和 Ocean 任务记录单独保存。卸载扩展程序会删除其本地存储，但不会删除 Ocean 聊天日志、中继服务文件或已经发送给模型服务商的副本；这些数据需要在对应的应用或服务中管理。</p>
+  <h2>Chrome 权限</h2>
+  <ul>
+    <li><strong>debugger:</strong> 通过 Chrome DevTools Protocol 查看交出的页面、截取屏幕以及执行浏览器操作。</li>
+    <li><strong>tabs 和 tabGroups：</strong> 管理任务标签页，并按智能体会话分组。</li>
+    <li><strong>storage:</strong> 在本地保存配对数据和设置。</li>
+    <li><strong>alarms:</strong> 在扩展程序的后台进程暂停后，重新连接到中继服务。</li>
+    <li><strong>offscreen 和 tabCapture：</strong> 处理对已交出标签页的录制请求。</li>
+    <li><strong>webNavigation:</strong> 将弹出窗口和导航与任务标签页关联。</li>
+    <li><strong>scripting:</strong> 运行扩展程序内置的页面操作辅助脚本。</li>
+    <li><strong>notifications:</strong> 任务需要你参与时发送通知。</li>
+    <li><strong>访问所有网站：</strong> 操作用户选择的网站，并与已配置的服务通信。扩展程序不会请求访问整个浏览历史数据库。</li>
+  </ul>
+  <h2>你的控制权</h2>
+  <p>在 Ocean 中选择允许访问的网站，明确交出已有标签页；要停止使用，请关闭插件或扩展程序。在包含敏感数据的页面上执行操作前，请检查任务。如果不打算向所选模型服务商传递秘密信息，请勿将其输入任务中。</p>
+  <h2>联系方式</h2>
+  <p>如有隐私问题或数据相关请求，请发送邮件至 <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> 或联系 <a href="https://t.me/oceanchatsupportbot">Ocean 支持</a>。本政策如有更新，将在此页面发布，并注明新的生效日期。</p>
+</main>
+<footer class="footer" lang="zh-CN"><div class="wrap footer-inner"><a class="brand" href="/zh/">Ocean</a><div class="footer-links"><a href="/zh/start/">首次启动</a><a href="/zh/plugins/">插件</a><a href="https://t.me/oceanchatsupportbot">支持</a><a href="/zh/privacy/">隐私</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>내 데이터 — Ocean</title>
+  <meta name="description" content="Ocean의 채팅 저장, 모델에 대한 맥락 전송, 플러그인 접근 권한 및 저장 데이터 관리 방식을 안내합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="내 데이터 — Ocean">
+  <meta property="og:description" content="기기에 저장되는 데이터, 모델에 전달되는 데이터, 데이터 관리 방법.">
+  <meta property="og:url" content="https://oceanharness.com/ko/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/ko/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "ko", "messages": {"Для вашего Mac": "내 Mac용", "Для вашего дистрибутива": "내 배포판용", "Для вашего ПК": "내 PC용", "Пока нет загрузки": "아직 다운로드가 없습니다", "Все релизы": "모든 릴리스", "Что нового": "새로운 기능", "Скачать": "다운로드", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "{platform}, {arch}용 Ocean 다운로드", "Проверяем…": "확인 중…", "Загрузки обновлены с GitHub.": "GitHub에서 다운로드 목록을 업데이트했습니다.", "Загрузки появятся здесь после публикации.": "공개되면 다운로드가 여기에 표시됩니다.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "목록을 업데이트하지 못했습니다. {date}에 확인한 다운로드를 표시합니다.", "Попробовать снова": "다시 시도", "Загрузки проверены {date}.": "다운로드 확인일: {date}.", "Открыть меню": "메뉴 열기", "Закрыть меню": "메뉴 닫기", "Ocean / Пример сценария": "Ocean / 시나리오 예시"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/privacy/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/privacy/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header" lang="ko">
+  <nav class="nav wrap" aria-label="주요 탐색 메뉴">
+    <a class="brand" href="/ko/" aria-label="Ocean — 홈으로"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="사이트 언어"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>KO</span></summary><nav aria-label="사이트 언어"><a href="/privacy/" lang="ru" hreflang="ru">Русский</a><a href="/en/privacy/" lang="en" hreflang="en">English</a><a href="/zh/privacy/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/privacy/" lang="ja" hreflang="ja">日本語</a><a href="/es/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/privacy/" lang="de" hreflang="de">Deutsch</a><a href="/pt/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/privacy/" lang="ko" hreflang="ko" aria-current="page">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/ko/">홈</a><a href="/ko/plugins/">플러그인</a><a href="/ko/downloads/">다운로드</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page privacy-page wrap">
+  <p class="eyebrow">투명한 데이터 안내</p>
+  <h1>Ocean의 내 데이터</h1>
+  <p>채팅은 내 컴퓨터에 저장됩니다. 답변을 생성하기 위해 Ocean은 선택한 모델에 맥락을 전달하고, 연결된 도구는 작업에 필요한 서비스에 접근합니다.</p>
+  <div class="privacy-overview">
+    <article><h2>기기에 저장</h2><p>채팅 기록, 설정, 저장된 연결 정보.</p></article>
+    <article><h2>모델 제공업체에 전달</h2><p>요청에 포함된 메시지와 자료.</p></article>
+    <article><h2>직접 관리</h2><p>모델, 플러그인, 사이트, 앱 선택.</p></article>
+  </div>
+  <section aria-labelledby="local-data"><h2 id="local-data">로컬에 저장되는 데이터</h2>
+    <p>일반 데스크톱 모드에서 Ocean은 메시지 및 도구 동작 기록, 첨부 파일, 설정, 연결 정보를 앱 데이터 폴더에 저장합니다. 기본 위치는 <code>~/.ocean</code>이며, 사용자 설정으로 위치를 변경할 수 있습니다.</p>
+    <p>API 키와 인증 정보는 설정 텍스트와 별도로 저장됩니다. 로컬 파일의 보호 수준은 컴퓨터 접근 권한에 달려 있습니다. 이 저장소가 에이전트의 모든 도구로부터 격리된 것은 아닙니다.</p>
+  </section>
+  <section aria-labelledby="model-data"><h2 id="model-data">모델이 받는 데이터</h2>
+    <p>요청은 연결한 제공업체로 전송됩니다. 채팅 메시지, 작업을 위해 읽은 파일, 페이지 텍스트, 창 캡처, 도구 결과가 포함될 수 있습니다. 기록이 로컬에 저장된다고 해서 모델 처리도 로컬에서 이루어지는 것은 아닙니다.</p>
+    <p>제공업체의 데이터 보관 기간과 사용 방식은 해당 약관 및 계정 설정에 따라 정해집니다. 검색 서비스, 외부 도구, 타사 플러그인에도 각각의 데이터 처리 규칙이 있습니다.</p>
+  </section>
+  <section aria-labelledby="plugin-data"><h2 id="plugin-data">브라우저와 앱</h2>
+    <p>각 플러그인 설정에서 접근을 허용할 사이트와 앱을 선택하세요. 캡처와 읽은 내용은 채팅 및 모델 요청에 포함될 수 있습니다. 접근 권한을 해제하거나 플러그인을 끌 수 있습니다.</p>
+    <p>Chrome 확장 프로그램의 권한, 페어링, 데이터 저장은 별도 페이지에서 설명합니다: <a href="/ko/plugins/browser-control/privacy/">Browser Control 개인정보 보호</a>.</p>
+  </section>
+  <section aria-labelledby="sharing"><h2 id="sharing">로그 전송 및 진단</h2>
+    <p>DeepSeek 어댑터를 사용할 때는 <strong>‘DeepSeek API 요청과 함께 로그 보내기’</strong> 설정이 ‘설정 → 일반’에 있습니다. 기본 구성에서는 켜져 있으며, 메시지와 도구 결과를 포함한 채팅 로그가 API 요청에 첨부됩니다. 다시 켜면 이전에 쌓인 기록도 전송될 수 있습니다.</p>
+    <p>Ocean의 기본 구성에서는 텔레메트리 서비스로 로그를 별도 전송하는 기능이 꺼져 있습니다. 제품 분석은 수신 대상을 명시적으로 설정하고 별도로 켜야 합니다.</p>
+    <p>DeepSeek 어댑터는 실행 간에 유지되는 임의의 설치 식별자도 전송합니다. 이는 텔레메트리 설정과 무관합니다.</p>
+    <details class="privacy-detail"><summary>사용자 설정을 사용하는 경우</summary><p>설정에 다른 데이터 수신 대상이 포함될 수 있습니다. 내장 피드백 전송 기능을 켜면 맥락을 포함해 피드백 시점까지의 로그가 전송됩니다. 사용 중인 빌드와 연결된 제공업체의 설정을 확인하세요.</p></details>
+  </section>
+  <section aria-labelledby="remove-data"><h2 id="remove-data">저장된 데이터 관리 방법</h2>
+    <p>보관 처리하면 채팅이 기본 목록에서 숨겨지지만 로그는 삭제되지 않습니다. 작업 공간을 삭제해도 해당 폴더와 채팅 기록은 삭제되지 않습니다.</p>
+    <p>Ocean의 모든 로컬 데이터를 삭제하려면 먼저 앱을 종료하고 필요한 결과를 저장한 다음 앱 데이터 폴더를 삭제하세요. 해당 폴더에 있는 모든 프로필의 로컬 채팅, 설정, 저장된 연결 정보도 함께 삭제됩니다. 데이터 저장 위치를 변경했다면 파일을 삭제하기 전에 <a href="https://t.me/oceanchatsupportbot">지원팀에 경로를 확인하세요</a>.</p>
+    <p>프로젝트 파일, 외부 백업, Chrome 확장 프로그램 데이터, 이미 제공업체에 전송된 자료는 삭제되지 않습니다. 해당 앱이나 서비스에서 별도로 관리해야 합니다.</p>
+  </section>
+  <section aria-labelledby="website-data"><h2 id="website-data">이 사이트의 동작</h2>
+    <p>이 사이트에는 가입 양식, 광고 추적기, 내장된 타사 방문 통계 도구가 없습니다. 글꼴과 이미지는 Ocean 도메인에서 불러옵니다. 다운로드 페이지는 GitHub에서 공개된 파일 목록을 가져옵니다.</p>
+    <p>이 사이트는 GitHub Pages에 호스팅됩니다. 사이트, GitHub, 외부 링크에 접근할 때 해당 서비스는 일반적인 네트워크 요청 정보를 받습니다. GitHub의 정책은 다음에서 확인할 수 있습니다: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보 처리방침</a>.</p>
+  </section>
+  <section class="privacy-contact" aria-labelledby="privacy-contact"><h2 id="privacy-contact">데이터 관련 문의</h2><p>문의는 <a href="https://t.me/oceanchatsupportbot">Ocean 지원팀</a> 또는 <a href="mailto:support@oceanharness.com">support@oceanharness.com</a>로 보내 주세요. 필요한 경우가 아니라면 API 키, 비밀번호, 전체 채팅 로그를 첨부하지 마세요.</p></section>
+  <p class="privacy-updated">업데이트: 2026년 11월 17일.</p>
+</main>
+<footer class="footer" lang="ko"><div class="wrap footer-inner"><a class="brand" href="/ko/">Ocean</a><div class="footer-links"><a href="/ko/start/">첫 실행 안내</a><a href="/ko/plugins/">플러그인</a><a href="https://t.me/oceanchatsupportbot">지원</a><a href="/ko/privacy/">개인정보 보호</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

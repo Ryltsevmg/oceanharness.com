@@ -16,14 +16,27 @@
   <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <link rel="preload" as="image" type="image/webp" href="/assets/ocean-whale-1672.webp" imagesrcset="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" imagesizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px">
-  <script src="/site.js" defer></script>
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "ru", "messages": {"Для вашего Mac": "Для вашего Mac", "Для вашего дистрибутива": "Для вашего дистрибутива", "Для вашего ПК": "Для вашего ПК", "Пока нет загрузки": "Пока нет загрузки", "Все релизы": "Все релизы", "Что нового": "Что нового", "Скачать": "Скачать", "МБ": "МБ", "Скачать Ocean для {platform}, {arch}": "Скачать Ocean для {platform}, {arch}", "Проверяем…": "Проверяем…", "Загрузки обновлены с GitHub.": "Загрузки обновлены с GitHub.", "Загрузки появятся здесь после публикации.": "Загрузки появятся здесь после публикации.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Не удалось обновить список. Показаны загрузки, проверенные {date}.", "Попробовать снова": "Попробовать снова", "Загрузки проверены {date}.": "Загрузки проверены {date}.", "Открыть меню": "Открыть меню", "Закрыть меню": "Закрыть меню", "Ocean / Пример сценария": "Ocean / Пример сценария"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/">
+<!-- LOCALES_END -->
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Основная навигация">
       <a class="brand" href="/" aria-label="Ocean — главная"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Открыть меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Язык сайта"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>RU</span></summary><nav aria-label="Язык сайта"><a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a><a href="/en/" lang="en" hreflang="en">English</a><a href="/zh/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/" lang="ja" hreflang="ja">日本語</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Открыть меню"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <div class="nav-links" id="site-menu" data-menu>
         <a href="#features">Возможности</a><a href="/plugins/">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a>
       </div>
@@ -78,7 +91,7 @@
           <div class="app-sidebar-links"><span>Автоматизация</span><span>Плагины</span></div>
           <div class="app-workspace-label">Рабочие пространства</div><div class="app-project">Мой проект</div><div class="app-selected">Командная встреча</div>
         </aside>
-        <div class="app-chat">
+        <div class="app-chat" data-demo-label="Ocean / Пример сценария">
           <div class="app-breadcrumb">Мой проект <span>/</span> Командная встреча</div>
           <div class="app-message">Собери из моих заметок план встречи на 30 минут. Выдели решения, которые нужно принять.</div>
           <details class="demo-notes"><summary>Что было в заметках</summary><p>Нужно согласовать дату запуска, распределить оставшиеся задачи и решить, кто проверяет результат. Вся команда может выделить полчаса.</p></details>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Contrôle des applications — Ocean</title>
+  <meta name="description" content="Connectez Computer Use à Ocean. Configurez les autorisations système, choisissez une application et testez l&#x27;accès avec une première tâche.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contrôle des applications — Ocean">
+  <meta property="og:description" content="Configurez l&#x27;accès aux applications et contrôlez-les depuis le chat Ocean.">
+  <meta property="og:url" content="https://oceanharness.com/fr/plugins/computer-use/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/fr/plugins/computer-use/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/start/start.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "fr", "messages": {"Для вашего Mac": "Pour votre Mac", "Для вашего дистрибутива": "Pour votre distribution", "Для вашего ПК": "Pour votre PC", "Пока нет загрузки": "Pas encore disponible", "Все релизы": "Toutes les versions", "Что нового": "Nouveautés", "Скачать": "Télécharger", "МБ": "Mo", "Скачать Ocean для {platform}, {arch}": "Télécharger Ocean pour {platform}, {arch}", "Проверяем…": "Vérification…", "Загрузки обновлены с GitHub.": "Téléchargements mis à jour depuis GitHub.", "Загрузки появятся здесь после публикации.": "Les téléchargements apparaîtront ici après leur publication.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Impossible de mettre la liste à jour. Les téléchargements affichés ont été vérifiés le {date}.", "Попробовать снова": "Réessayer", "Загрузки проверены {date}.": "Téléchargements vérifiés le {date}.", "Открыть меню": "Ouvrir le menu", "Закрыть меню": "Fermer le menu", "Ocean / Пример сценария": "Ocean / Exemple de scénario"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/computer-use/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/computer-use/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/computer-use/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/computer-use/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/computer-use/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/computer-use/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/computer-use/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/computer-use/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/computer-use/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/computer-use/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Navigation principale">
+    <a class="brand" href="/fr/" aria-label="Ocean — retour à l&#x27;accueil"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Langue du site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>FR</span></summary><nav aria-label="Langue du site"><a href="/plugins/computer-use/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/computer-use/" lang="en" hreflang="en">English</a><a href="/zh/plugins/computer-use/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/plugins/computer-use/" lang="ja" hreflang="ja">日本語</a><a href="/es/plugins/computer-use/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/computer-use/" lang="fr" hreflang="fr" aria-current="page">Français</a><a href="/de/plugins/computer-use/" lang="de" hreflang="de">Deutsch</a><a href="/pt/plugins/computer-use/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/computer-use/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu><a href="/fr/">Accueil</a><a href="/fr/plugins/" aria-current="location">Plugins</a><a href="/fr/downloads/">Télécharger</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="plugin-page guide-page wrap">
+  <a class="plugin-back" href="/fr/plugins/"><span aria-hidden="true">←</span> Tous les plugins</a>
+  <section class="plugin-intro browser-intro" aria-labelledby="computer-title">
+    <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 7.7 18 2.6-6.7L21 11.7 4 3Z"/></svg></span>
+    <p class="eyebrow">Computer Use</p>
+    <h1 id="computer-title">Vos applications.<br>L'aide d'Ocean.</h1>
+    <p class="plugin-lead">Autorisez Ocean à lire les interfaces et à effectuer des tâches dans les applications nécessaires. Vous choisissez l'accès à chaque application.</p>
+    <nav class="guide-route" aria-label="Étapes de connexion des applications"><a href="#enable"><span aria-hidden="true">01</span> Activer le plugin</a><a href="#permissions"><span aria-hidden="true">02</span> Configurer le système</a><a href="#try"><span aria-hidden="true">03</span> Tester dans le chat</a></nav>
+  </section>
+  <section class="guide-section" id="enable" aria-labelledby="enable-title">
+    <div class="guide-heading"><p class="eyebrow">Étape 01</p><h2 id="enable-title">Activez le plugin</h2><p>Commencez dans la section Plugins de la barre latérale d'Ocean.</p></div>
+    <div class="guide-panel"><ol class="guide-instructions"><li><h3>Ouvrez Utilisation de l'ordinateur</h3><p>Activez l'interrupteur dans la fiche du plugin. Si Ocean demande un redémarrage, effectuez-le.</p></li><li><h3>Gardez la fiche ouverte</h3><p>Elle indique si le système est prêt et affiche les autorisations d'accès aux applications.</p></li></ol><p class="guide-note">Si la fiche n'apparaît pas dans la liste, le plugin n'est pas encore installé. <a href="https://t.me/oceanchatsupportbot">Contactez l'assistance</a> — nous vous aiderons à l'installer sur votre système.</p></div>
+  </section>
+  <section class="guide-section" id="permissions" aria-labelledby="permissions-title">
+    <div class="guide-heading"><p class="eyebrow">Étape 02</p><h2 id="permissions-title">Préparez votre système</h2><p>Choisissez votre système d'exploitation. Les fonctions du plugin varient selon la plateforme.</p></div>
+    <div class="guide-panel guide-platforms computer-platforms">
+      <details open><summary>macOS</summary><div><ol><li>Dans les lignes Accessibilité et Enregistrement de l'écran, cliquez sur Demander l'autorisation.</li><li>Dans les réglages système, autorisez l'accès à l'application indiquée dans le panneau Ocean.</li><li>Revenez dans Ocean. Les deux autorisations doivent afficher le statut Autorisé.</li></ol><p>Une fois la configuration terminée, vous pouvez lire les interfaces, capturer les fenêtres, cliquer, saisir du texte et faire défiler le contenu.</p></div></details>
+      <details><summary>Windows</summary><div><ol><li>Lancez Ocean dans une session Windows normale, avec le bureau déverrouillé.</li><li>Vérifiez Bureau interactif et Capture des fenêtres dans la fiche.</li><li>Gardez l'application concernée au premier plan pour les actions à la souris et au clavier.</li></ol><p>La lecture des interfaces, la capture des fenêtres et le contrôle sont disponibles. Les applications lancées en tant qu'administrateur peuvent refuser l'accès.</p><p>Si le composant natif est indisponible, <a href="https://t.me/oceanchatsupportbot">contactez l'assistance</a> pour le configurer sur votre système.</p></div></details>
+      <details><summary>Linux</summary><div><ol><li>Lancez Ocean dans votre session graphique locale et déverrouillez le bureau.</li><li>Vérifiez la disponibilité d'AT-SPI dans la fiche. Python 3 du système, PyGObject et AT-SPI sont nécessaires ; le plugin ne les installe pas automatiquement.</li><li>Ouvrez une application compatible avec AT-SPI.</li></ol><p>La lecture des éléments d'interface et les actions exposées par l'application sont disponibles. Les captures d'écran, les entrées classiques à la souris et au clavier, ainsi que le lancement d'applications ne sont pas pris en charge.</p></div></details>
+    </div>
+  </section>
+  <section class="guide-section" id="try" aria-labelledby="try-title">
+    <div class="guide-heading"><p class="eyebrow">Étape 03</p><h2 id="try-title">Testez l'accès dans le chat</h2><p>Pour commencer, lire une fenêtre suffit. Un modèle doit être <a href="/fr/start/#model">connecté dans Ocean</a>.</p></div>
+    <div class="guide-panel"><ol class="guide-instructions"><li><h3>Ouvrez l'application souhaitée</h3><p>Choisissez une fenêtre sans données personnelles, par exemple un éditeur de texte avec une note de test.</p></li><li><h3>Demandez à Ocean de regarder la fenêtre</h3><blockquote class="guide-prompt computer-example">Lis la fenêtre ouverte de mon éditeur de texte et décris brièvement ce qui est visible. Ne modifie rien.</blockquote><p class="guide-note">Précisez le nom de votre éditeur si plusieurs applications sont ouvertes.</p></li><li><h3>Confirmez l'accès</h3><p>Ocean demandera l'autorisation d'accéder à l'application sélectionnée. Après confirmation, il lira les éléments disponibles et répondra dans le chat.</p></li></ol></div>
+  </section>
+  <section class="guide-next" aria-labelledby="access-title"><div><p class="eyebrow">Vous contrôlez les accès</p><h2 id="access-title">Arrêter ou révoquer</h2><p>Cliquez sur Arrêter dans le chat pour interrompre le travail en cours. Dans la fiche du plugin, cliquez sur Révoquer à côté d'une application pour supprimer son autorisation.</p></div><div><p>La liste des applications se remplit après les demandes d'accès. Il est normal qu'elle soit vide avant la première tâche.</p><a class="text-link" href="/fr/privacy/">En savoir plus sur vos données <span aria-hidden="true">→</span></a></div></section>
+  <section class="guide-trouble" aria-labelledby="help-title"><h2 id="help-title">Connexion impossible ?</h2><p><a href="https://t.me/oceanchatsupportbot">Contactez l'assistance Ocean</a>. Indiquez votre système, le nom de l'application et le message affiché dans la fiche du plugin.</p></section>
+</main>
+<footer class="footer" lang="fr"><div class="wrap footer-inner"><a class="brand" href="/fr/">Ocean</a><div class="footer-links"><a href="/fr/start/">Premier lancement</a><a href="/fr/plugins/">Plugins</a><a href="https://t.me/oceanchatsupportbot">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

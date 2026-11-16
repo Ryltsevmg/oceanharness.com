@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Ocean — équilibre et profondeur</title>
+  <meta name="description" content="Une application de bureau pour les agents IA. Connectez des modèles, explorez des sites et utilisez vos applications dans un même chat.">
+  <link rel="canonical" href="https://oceanharness.com/fr/">
+  <meta property="og:title" content="Ocean — équilibre et profondeur">
+  <meta property="og:description" content="Vos modèles, sites et applications — dans un même chat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oceanharness.com/fr/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preload" as="image" type="image/webp" href="/assets/ocean-whale-1672.webp" imagesrcset="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" imagesizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "fr", "messages": {"Для вашего Mac": "Pour votre Mac", "Для вашего дистрибутива": "Pour votre distribution", "Для вашего ПК": "Pour votre PC", "Пока нет загрузки": "Pas encore disponible", "Все релизы": "Toutes les versions", "Что нового": "Nouveautés", "Скачать": "Télécharger", "МБ": "Mo", "Скачать Ocean для {platform}, {arch}": "Télécharger Ocean pour {platform}, {arch}", "Проверяем…": "Vérification…", "Загрузки обновлены с GitHub.": "Téléchargements mis à jour depuis GitHub.", "Загрузки появятся здесь после публикации.": "Les téléchargements apparaîtront ici après leur publication.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Impossible de mettre la liste à jour. Les téléchargements affichés ont été vérifiés le {date}.", "Попробовать снова": "Réessayer", "Загрузки проверены {date}.": "Téléchargements vérifiés le {date}.", "Открыть меню": "Ouvrir le menu", "Закрыть меню": "Fermer le menu", "Ocean / Пример сценария": "Ocean / Exemple de scénario"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/">
+<!-- LOCALES_END -->
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Navigation principale">
+      <a class="brand" href="/fr/" aria-label="Ocean — accueil"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+      <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Langue du site"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>FR</span></summary><nav aria-label="Langue du site"><a href="/" lang="ru" hreflang="ru">Русский</a><a href="/en/" lang="en" hreflang="en">English</a><a href="/zh/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/" lang="ja" hreflang="ja">日本語</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/fr/" lang="fr" hreflang="fr" aria-current="page">Français</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu"><svg aria-hidden="true" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="nav-links" id="site-menu" data-menu>
+        <a href="#features">Fonctionnalités</a><a href="/fr/plugins/">Plugins</a><a href="/fr/downloads/">Télécharger</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main tabindex="-1" id="main" class="landing">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Ocean / Espace de travail IA</p>
+        <h1 id="hero-title">Équilibre<br>et profondeur.</h1>
+      <div class="hero-art" aria-hidden="true"><picture><source type="image/webp" srcset="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" sizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px"><img src="/ocean-whale-line.png" alt="" width="1672" height="941" fetchpriority="high"></picture></div>
+        <p class="lead">Ocean est une application de bureau pour les agents IA.<br class="desktop-break"> Connectez des modèles, explorez des sites<br class="desktop-break"> et utilisez vos applications dans un même chat.</p>
+        <div class="actions"><a class="button primary" href="/fr/downloads/">Télécharger Ocean <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a><a class="button secondary" href="#demo">Comment fonctionne Ocean <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a></div>
+        <p class="hero-note">Code ouvert. Vos modèles. Des accès que vous choisissez.</p>
+      </div>
+    </section>
+    <section id="demo" class="demo wrap" aria-labelledby="demo-title">
+      <div class="demo-heading"><h2 id="demo-title" class="eyebrow">Des notes à un plan prêt à l'emploi</h2><span>Ocean en action</span></div>
+      <div class="app-preview">
+        <div class="app-titlebar" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>Ocean</span></div>
+        <aside class="app-sidebar" aria-hidden="true">
+          <div class="app-brand"><img src="/ocean-logo.svg" alt="" width="36" height="36">Ocean</div>
+          <div class="app-new">+ Nouvelle session</div>
+          <div class="app-sidebar-links"><span>Automatisation</span><span>Plugins</span></div>
+          <div class="app-workspace-label">Espaces de travail</div><div class="app-project">Mon projet</div><div class="app-selected">Réunion d'équipe</div>
+        </aside>
+        <div class="app-chat" data-demo-label="Ocean / Exemple de scénario">
+          <div class="app-breadcrumb">Mon projet <span>/</span> Réunion d'équipe</div>
+          <div class="app-message">Transforme mes notes en ordre du jour pour une réunion de 30 minutes. Fais ressortir les décisions à prendre.</div>
+          <details class="demo-notes"><summary>Le contenu des notes</summary><p>Il faut convenir de la date de lancement, répartir les tâches restantes et décider qui vérifiera le résultat. Toute l'équipe peut libérer une demi-heure.</p></details>
+          <div class="app-result">
+            <p class="app-tool"><svg class="icon" aria-hidden="true" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Notes lues · Plan préparé</p>
+            <h3>Ordre du jour de la réunion</h3>
+            <ol class="meeting-plan">
+              <li><span class="meeting-time">5 min</span><div><strong>Faire le point</strong><p>Ce qui est terminé et ce qui bloque le lancement.</p></div></li>
+              <li><span class="meeting-time">15 min</span><div><strong>Prendre les décisions</strong><p>Fixer la date de lancement et désigner les responsables.</p></div></li>
+              <li><span class="meeting-time">10 min</span><div><strong>Définir la suite</strong><p>Qui vérifiera le résultat et quand nous ferons le suivi.</p></div></li>
+            </ol>
+            <div class="demo-outcome"><span class="feature-index">RÉSULTAT</span><p>Une date de lancement, des responsables et une liste des prochaines actions.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-next"><p>Commencez par votre tâche. Ajoutez des fichiers ou décrivez le contexte directement dans le chat.</p><a class="text-link" href="/fr/start/">Démarrer avec Ocean <span aria-hidden="true">→</span></a></div>
+    </section>
+    <section id="features" class="features wrap" aria-labelledby="features-title">
+      <p class="eyebrow">01 / Votre expédition</p><h2 id="features-title">D'une question à un résultat clair.</h2><p class="section-lead">Le contexte, les outils et la progression réunis au même endroit.</p>
+      <ol class="feature-grid">
+        <li><span class="feature-index">01</span><div><h3>Fixez le cap</h3><p>Décrivez le résultat attendu et ajoutez du contexte : projet, fichiers ou liens.</p></div></li>
+        <li><span class="feature-index">02</span><div><h3>Explorez ensemble</h3><p>L'agent étudie les documents et utilise les outils connectés.</p></div></li>
+        <li><span class="feature-index">03</span><div><h3>Avancez avec le résultat</h3><p>Lisez les réponses, vérifiez les actions et retrouvez vos chats enregistrés.</p></div></li>
+      </ol>
+    </section>
+    <section class="equipment wide-panel" aria-labelledby="equipment-title">
+      <div class="equipment-copy"><p class="eyebrow">02 / Votre équipement</p><h2 id="equipment-title">L'équipement<br>pour vos tâches.</h2><p class="section-lead">Réunissez une équipe d'agents et connectez<br class="desktop-break"> le navigateur et les applications utiles à votre tâche.</p><a class="text-link" href="/fr/plugins/">Tous les plugins <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14"/>
+  <path d="m12 5 7 7-7 7"/>
+</svg>
+</span></a></div>
+      <ul class="equipment-list">
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <circle cx="9" cy="7" r="4"/>
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+</svg>
+</span><div><h3>Équipe d'agents</h3><p>Répartissez les tâches et suivez<br class="desktop-break"> la progression commune.</p></div></li>
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+  <path d="M2 12h20"/>
+</svg>
+</span><div><h3>Contrôle du navigateur</h3><p>Votre Chrome, avec vos connexions enregistrées.<br class="desktop-break"> Pages, formulaires et gestion des onglets.</p></div></li>
+        <li><span class="feature-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/>
+</svg>
+</span><div><h3>Contrôle des applications</h3><p>Captures de fenêtres et contrôle<br class="desktop-break"> des applications autorisées.</p></div></li>
+      </ul>
+    </section>
+    <section class="control wrap" aria-labelledby="control-title">
+      <div><p class="eyebrow">03 / Vous êtes à la barre</p><h2 id="control-title">Explorez plus loin.<br>Gardez le contrôle.</h2></div>
+      <div class="control-copy"><h3>Vous choisissez ce à quoi Ocean se connecte.</h3><p>La connexion aux comptes et les autres étapes manuelles<br class="desktop-break"> restent entre vos mains.</p><ul class="permissions"><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+  <path d="M2 12h20"/>
+</svg>
+</span><span>Sites</span><small>Vous choisissez</small></li><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="4" width="20" height="16" rx="2"/>
+  <path d="M10 4v4"/>
+  <path d="M2 8h20"/>
+  <path d="M6 4v4"/>
+</svg>
+</span><span>Applications</span><small>Vous choisissez</small></li><li><span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/>
+  <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/>
+  <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/>
+  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+</svg>
+</span><span>Étape manuelle</span><small>Votre contrôle</small></li></ul></div>
+    </section>
+    <section class="faq wrap" aria-labelledby="faq-title">
+      <div><p class="eyebrow">04 / Avant de plonger</p><h2 id="faq-title">Quelques questions<br>avant de commencer.</h2></div>
+      <div class="faq-answers"><div><h3>Faut-il un abonnement à un modèle ?</h3><p>Connectez votre compte ou votre clé API. L'accès aux modèles et les tarifs dépendent du fournisseur choisi.</p></div><div><h3>Par où commencer après l'installation ?</h3><p>Ajoutez un fournisseur dans Paramètres → Modèles, puis créez votre première session. <a href="/fr/start/">Suivre la configuration pas à pas</a>.</p></div></div>
+    </section>
+    <section id="install" class="install wide-panel" aria-labelledby="install-title">
+      <div><p class="eyebrow">Premiers pas</p><h2 id="install-title">Commencez avec Ocean</h2><p class="section-lead">Téléchargez l'application pour votre système, connectez un modèle et confiez-lui votre première tâche.</p><a class="button primary" href="/fr/downloads/">Télécharger Ocean <span><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14"/>
+  <path d="m19 12-7 7-7-7"/>
+</svg>
+</span></a></div>
+      <ol class="install-steps"><li><span>01</span>Installez l'application</li><li><span>02</span>Choisissez votre modèle</li><li><span>03</span>Lancez la conversation</li></ol>
+    </section>
+  </main>
+  <footer class="footer" lang="fr"><div class="wrap footer-inner"><a class="brand" href="/fr/">Ocean</a><div class="footer-links"><a href="/fr/start/">Premier lancement</a><a href="/fr/plugins/">Plugins</a><a href="https://t.me/oceanchatsupportbot">Assistance</a><a href="/fr/privacy/">Confidentialité</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

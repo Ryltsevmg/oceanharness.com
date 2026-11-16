@@ -41,6 +41,14 @@ p { color: var(--muted); }
 .brand { display: inline-flex; align-items: center; gap: 14px; color: var(--text); text-decoration: none; font: 600 28px/1.2 var(--font-heading); letter-spacing: -.8px; flex-shrink: 0; }
 .brand img { width: 40px; height: 40px; }
 .nav-links { display: flex; align-items: center; gap: 28px; }
+.nav > .nav-links { margin-left: auto; order: 1; }
+.language-picker { position: relative; order: 2; flex-shrink: 0; }
+.language-picker summary { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; list-style: none; font-size: 13px; }
+.language-picker summary::-webkit-details-marker { display: none; }
+.language-picker nav { position: absolute; top: calc(100% + 10px); right: 0; display: grid; min-width: 180px; padding: 8px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); box-shadow: 0 16px 40px #0006; }
+.language-picker a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; color: var(--muted); border-radius: 8px; text-decoration: none; }
+.language-picker a:hover, .language-picker a[aria-current] { background: var(--surface); color: var(--text); }
+.nav > .menu-toggle { order: 3; }
 .nav-links a { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; text-decoration: none; color: var(--muted); font-size: 15px; }
 .nav-links a:hover, .nav-links a[aria-current] { color: var(--text); }
 .menu-toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 12px; background: transparent; }
@@ -168,6 +176,8 @@ p { color: var(--muted); }
   html { scroll-padding-top: 20px; }
   .nav { min-height: 80px; flex-wrap: wrap; gap: 0; }
   .brand { font-size: 26px; }
+  .language-picker { margin-left: auto; margin-right: 12px; }
+  .nav > .nav-links { order: 4; }
   .nav-links { width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 24px; }
   .nav-links a { padding: 12px 0; font-size: 17px; }
   .js .menu-toggle { display: flex; }
@@ -189,7 +199,7 @@ p { color: var(--muted); }
   .app-preview { display: block; border-radius: 20px; background: var(--panel); }
   .app-titlebar, .app-sidebar, .app-breadcrumb { display: none; }
   .app-chat { padding: 20px; }
-  .app-chat::before { content: 'Ocean / Пример сценария'; display: block; color: var(--muted); font-size: 12px; }
+  .app-chat::before { content: attr(data-demo-label); display: block; color: var(--muted); font-size: 12px; }
   .app-message { max-width: 100%; font-size: 15px; margin-block: 20px; padding: 14px; }
   .app-tool { align-items: flex-start; font-size: 12px; }
   .app-result h3 { font-size: 22px; line-height: 1.35; }

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Browser Control privacy — Ocean</title>
+  <meta name="description" content="How Ocean Browser Control handles browser data and permissions.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control privacy — Ocean">
+  <meta property="og:description" content="How the Ocean Chrome extension handles browser data and permissions.">
+  <meta property="og:url" content="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "en", "messages": {"Для вашего Mac": "For your Mac", "Для вашего дистрибутива": "For your distribution", "Для вашего ПК": "For your PC", "Пока нет загрузки": "No download yet", "Все релизы": "All releases", "Что нового": "What's new", "Скачать": "Download", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "Download Ocean for {platform}, {arch}", "Проверяем…": "Checking…", "Загрузки обновлены с GitHub.": "Downloads updated from GitHub.", "Загрузки появятся здесь после публикации.": "Downloads will appear here once published.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Could not update the list. Showing downloads checked on {date}.", "Попробовать снова": "Try again", "Загрузки проверены {date}.": "Downloads checked on {date}.", "Открыть меню": "Open menu", "Закрыть меню": "Close menu", "Ocean / Пример сценария": "Ocean / Example workflow"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main" lang="en">Skip to content</a>
+<header class="site-header" lang="en">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="/en/" aria-label="Ocean — back to home"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Site language"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>EN</span></summary><nav aria-label="Site language"><a href="/plugins/browser-control/privacy/ru/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/browser-control/privacy/" lang="en" hreflang="en" aria-current="page">English</a><a href="/zh/plugins/browser-control/privacy/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/plugins/browser-control/privacy/" lang="ja" hreflang="ja">日本語</a><a href="/es/plugins/browser-control/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/browser-control/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/plugins/browser-control/privacy/" lang="de" hreflang="de">Deutsch</a><a href="/pt/plugins/browser-control/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/browser-control/privacy/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/en/">Home</a><a href="/en/plugins/" aria-current="location">Plugins</a><a href="/en/downloads/">Download</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page wrap" lang="en">
+  <a class="plugin-back" href="/en/plugins/browser-control/"><span aria-hidden="true">←</span> Browser Control</a>
+  <h1>Browser Control privacy</h1><p>Effective November 16, 2026. This policy covers the Ocean Browser Control Chrome extension.</p>
+<h2>What the extension does</h2><p>The extension connects Chrome to a paired relay so Ocean can operate task tabs and tabs you share using the toolbar button. Ocean provides a separate allowed-sites setting. Chrome permissions are broader than that setting; it is an application-level restriction, not a separate Chrome sandbox.</p>
+<h2>Data processed</h2><p>Requested operations can read page text, page structure, URLs, tab titles, screenshots and form values; click controls; enter text; and manage tabs. Pages may contain personal, authentication, financial, health or other sensitive information. The relay also supports recording shared tabs when requested. Website sign-ins remain in your Chrome profile and are used through the normal browser session.</p>
+<h2>Where data goes</h2><p>By default the extension exchanges commands and results with a relay on your computer. Advanced settings can point to a relay you choose on another computer. Only use a relay and network you trust. Ocean may send page content and screenshots to the model provider selected for your task. That provider's terms and privacy policy apply. The extension does not select the model provider.</p><p>The extension has no advertising or analytics service and does not send browsing data to an Ocean-operated collection server. Browser data is used to perform the requested browser functions, not sold or used for advertising, profiling or unrelated purposes. Our use and transfer of data follows the Chrome Web Store User Data Policy and its Limited Use requirements.</p>
+<h2>Storage and removal</h2><p>The extension stores pairing credentials and preferences in Chrome extension storage. Relay credentials and any task records saved by Ocean are stored separately. Remove the extension to remove its local extension storage. This does not delete Ocean conversation logs, relay files or copies already sent to a model provider; manage those in the corresponding application or service.</p>
+<h2>Permissions</h2><ul>
+<li><strong>debugger:</strong> inspect shared pages, capture screenshots and perform browser actions through Chrome DevTools Protocol.</li>
+<li><strong>tabs and tabGroups:</strong> manage task tabs and group tabs by agent session.</li>
+<li><strong>storage:</strong> retain pairing credentials and preferences locally.</li>
+<li><strong>alarms:</strong> reconnect to the paired relay after the service worker sleeps.</li>
+<li><strong>offscreen and tabCapture:</strong> process requested shared-tab recordings.</li>
+<li><strong>webNavigation:</strong> associate popups and navigation with their task tabs.</li>
+<li><strong>scripting:</strong> run packaged page helpers for browser interaction.</li>
+<li><strong>notifications:</strong> notify you when a task needs manual interaction.</li>
+<li><strong>All-site access:</strong> operate user-selected websites and contact the configured relay. The extension does not request access to your full browsing-history database.</li></ul>
+<h2>Your control</h2><p>Choose allowed websites in Ocean, share existing tabs explicitly, and disable the plugin or extension to stop using it. Review tasks before allowing actions on sensitive pages. Do not enter secrets in a task unless you intend them to reach the selected model provider.</p>
+<h2>Contact</h2><p>For privacy questions or requests, contact <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> or <a href="https://t.me/oceanchatsupportbot">Ocean support</a>. Updates to this policy will be published here with a revised effective date.</p>
+
+</main>
+<footer class="footer" lang="en"><div class="wrap footer-inner"><a class="brand" href="/en/">Ocean</a><div class="footer-links"><a href="/en/start/">First launch</a><a href="/en/plugins/">Plugins</a><a href="https://t.me/oceanchatsupportbot">Support</a><a href="/en/privacy/">Privacy</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

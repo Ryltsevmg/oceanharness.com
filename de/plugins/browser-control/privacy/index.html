@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Datenschutz bei Browser Control — Ocean</title>
+  <meta name="description" content="Wie die Chrome-Erweiterung Ocean Browser Control Seitendaten verarbeitet, Einstellungen speichert und Browserberechtigungen nutzt.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Datenschutz bei Browser Control — Ocean">
+  <meta property="og:description" content="Seitendaten, Chrome-Berechtigungen und Zugriffskontrolle der Ocean-Erweiterung.">
+  <meta property="og:url" content="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "de", "messages": {"Для вашего Mac": "Für Ihren Mac", "Для вашего дистрибутива": "Für Ihre Distribution", "Для вашего ПК": "Für Ihren PC", "Пока нет загрузки": "Noch kein Download", "Все релизы": "Alle Releases", "Что нового": "Neuigkeiten", "Скачать": "Herunterladen", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "Ocean für {platform}, {arch} herunterladen", "Проверяем…": "Wird geprüft…", "Загрузки обновлены с GitHub.": "Downloads von GitHub aktualisiert.", "Загрузки появятся здесь после публикации.": "Downloads erscheinen hier nach der Veröffentlichung.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Liste konnte nicht aktualisiert werden. Angezeigt werden Downloads, die am {date} geprüft wurden.", "Попробовать снова": "Erneut versuchen", "Загрузки проверены {date}.": "Downloads am {date} geprüft.", "Открыть меню": "Menü öffnen", "Закрыть меню": "Menü schließen", "Ocean / Пример сценария": "Ocean / Beispielablauf"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header" lang="de">
+  <nav class="nav wrap" aria-label="Hauptnavigation">
+    <a class="brand" href="/de/" aria-label="Ocean — zur Startseite"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Website-Sprache"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>DE</span></summary><nav aria-label="Website-Sprache"><a href="/plugins/browser-control/privacy/ru/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/browser-control/privacy/" lang="en" hreflang="en">English</a><a href="/zh/plugins/browser-control/privacy/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/plugins/browser-control/privacy/" lang="ja" hreflang="ja">日本語</a><a href="/es/plugins/browser-control/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/browser-control/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/plugins/browser-control/privacy/" lang="de" hreflang="de" aria-current="page">Deutsch</a><a href="/pt/plugins/browser-control/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/browser-control/privacy/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/de/">Startseite</a><a href="/de/plugins/" aria-current="location">Plugins</a><a href="/de/downloads/">Herunterladen</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page wrap">
+  <a class="plugin-back" href="/de/plugins/browser-control/"><span aria-hidden="true">←</span> Browser Control</a>
+  <h1>Datenschutz bei Browser Control</h1>
+  <p>Gültig ab 16. November 2026. Diese Richtlinie gilt für die Chrome-Erweiterung Ocean Browser Control. Informationen zur Speicherung von Chats und zur Datenverarbeitung in der App selbst finden Sie unter <a href="/de/privacy/">„Ihre Daten in Ocean“</a>.</p>
+  <h2>Was die Erweiterung tut</h2>
+  <p>Die Erweiterung verbindet Chrome mit einem gekoppelten Relay-Dienst, damit Ocean Aufgaben-Tabs und Tabs steuern kann, die Sie über die Schaltfläche in der Browserleiste übergeben haben. Ocean hat eine separate Einstellung für freigegebene Websites. Die Chrome-Berechtigungen sind umfassender als diese Einstellung: Die Beschränkung gilt auf Anwendungsebene und wird nicht durch eine eigene Chrome-Sandbox durchgesetzt.</p>
+  <h2>Welche Daten verarbeitet werden</h2>
+  <p>Auf Anfrage kann die Erweiterung Seitentext und -struktur, Adressen, Tab-Titel, Bildschirmaufnahmen und Feldwerte lesen sowie Elemente anklicken, Text eingeben und Tabs verwalten. Seiten können personenbezogene Daten, Anmeldedaten, finanzielle, medizinische und andere sensible Informationen enthalten. Der Relay-Dienst unterstützt auf Anfrage auch Aufzeichnungen übergebener Tabs. Website-Anmeldungen bleiben in Ihrem Chrome-Profil und werden über die normale Browsersitzung genutzt.</p>
+  <h2>Wohin Daten übermittelt werden</h2>
+  <p>Standardmäßig tauscht die Erweiterung Befehle und Ergebnisse mit einem Relay-Dienst auf Ihrem Computer aus. In den erweiterten Einstellungen können Sie einen Dienst Ihrer Wahl auf einem anderen Computer angeben. Nutzen Sie nur Dienste und Netzwerke, denen Sie vertrauen. Ocean kann Seiteninhalte und Bildschirmaufnahmen an den für die Aufgabe gewählten Modellanbieter übermitteln. Dann gelten dessen Bedingungen und Datenschutzerklärung. Die Erweiterung selbst wählt keinen Modellanbieter aus.</p>
+  <p>Die Erweiterung verwendet keinen Werbe- oder Analysedienst und sendet keine Browserdaten an einen Datenerfassungsserver von Ocean. Browserdaten werden für die angeforderten Aktionen verwendet: Sie werden weder verkauft noch für Werbung, Profilbildung oder andere Zwecke genutzt. Die Verwendung und Weitergabe von Daten entsprechen der Nutzerdatenrichtlinie des Chrome Web Store und den Limited-Use-Anforderungen.</p>
+  <h2>Speicherung und Löschung</h2>
+  <p>Die Erweiterung speichert Kopplungsdaten und Einstellungen im Erweiterungsspeicher von Chrome. Zugangsdaten zum Relay-Dienst und Ocean-Aufgabenaufzeichnungen werden separat gespeichert. Durch Entfernen der Erweiterung wird deren lokaler Speicher gelöscht. Ocean-Chatprotokolle, Dateien des Relay-Dienstes und bereits an den Modellanbieter gesendete Kopien bleiben erhalten und müssen in der jeweiligen App oder beim jeweiligen Dienst verwaltet werden.</p>
+  <h2>Chrome-Berechtigungen</h2>
+  <ul>
+    <li><strong>debugger:</strong> Ansehen übergebener Seiten, Bildschirmaufnahmen und Browseraktionen über das Chrome DevTools Protocol.</li>
+    <li><strong>tabs und tabGroups:</strong> Verwalten von Aufgaben-Tabs und Gruppierung nach Agentensitzung.</li>
+    <li><strong>storage:</strong> Lokales Speichern von Kopplungsdaten und Einstellungen.</li>
+    <li><strong>alarms:</strong> Erneutes Verbinden mit dem Relay-Dienst, nachdem der Hintergrundprozess der Erweiterung angehalten wurde.</li>
+    <li><strong>offscreen und tabCapture:</strong> Verarbeiten angeforderter Aufzeichnungen übergebener Tabs.</li>
+    <li><strong>webNavigation:</strong> Zuordnen von Pop-ups und Navigation zu Aufgaben-Tabs.</li>
+    <li><strong>scripting:</strong> Ausführen der mitgelieferten Hilfsskripte zur Arbeit mit der Seite.</li>
+    <li><strong>notifications:</strong> Benachrichtigungen, wenn eine Aufgabe Ihre Mitwirkung benötigt.</li>
+    <li><strong>Zugriff auf alle Websites:</strong> Arbeiten mit vom Nutzer ausgewählten Websites und Kommunikation mit dem konfigurierten Dienst. Die Erweiterung fordert keinen Zugriff auf die vollständige Browserverlaufsdatenbank an.</li>
+  </ul>
+  <h2>Ihre Kontrolle</h2>
+  <p>Wählen Sie freigegebene Websites in Ocean, übergeben Sie vorhandene Tabs ausdrücklich und deaktivieren Sie das Plugin oder die Erweiterung, um deren Nutzung zu beenden. Prüfen Sie Aufgaben vor Aktionen auf Seiten mit sensiblen Daten. Geben Sie keine Geheimnisse in eine Aufgabe ein, wenn Sie diese nicht an den gewählten Modellanbieter übermitteln möchten.</p>
+  <h2>Kontakt</h2>
+  <p>Bei Datenschutzfragen und datenbezogenen Anfragen schreiben Sie an <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> oder an den <a href="https://t.me/oceanchatsupportbot">Ocean-Support</a>. Aktualisierungen dieser Richtlinie werden auf dieser Seite mit einem neuen Gültigkeitsdatum veröffentlicht.</p>
+</main>
+<footer class="footer" lang="de"><div class="wrap footer-inner"><a class="brand" href="/de/">Ocean</a><div class="footer-links"><a href="/de/start/">Erster Start</a><a href="/de/plugins/">Plugins</a><a href="https://t.me/oceanchatsupportbot">Support</a><a href="/de/privacy/">Datenschutz</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

@@ -1,5 +1,6 @@
 exclude:
   - README.md
+  - i18n
   - scripts
   - tests
   - audit-2026-11-16

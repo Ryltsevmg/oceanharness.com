@@ -1,5 +1,19 @@
 (() => {
   document.documentElement.classList.add('js');
+  const messages = JSON.parse(document.getElementById('site-messages')?.textContent || '{}').messages || {};
+  const text = (source) => messages[source] || source;
+  const languagePicker = document.querySelector('[data-language-picker]');
+  if (languagePicker) {
+    document.addEventListener('click', (event) => {
+      if (!languagePicker.contains(event.target)) languagePicker.open = false;
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && languagePicker.open) {
+        languagePicker.open = false;
+        languagePicker.querySelector('summary').focus();
+      }
+    });
+  }
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
   if (toggle && menu) {
@@ -7,7 +21,7 @@
     const closedIcon = icon?.getAttribute('d');
     const setOpen = (open, restoreFocus = false) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      toggle.setAttribute('aria-label', text(open ? 'Закрыть меню' : 'Открыть меню'));
       if (icon && closedIcon) icon.setAttribute('d', open ? 'M6 6l12 12M6 18 18 6' : closedIcon);
       menu.classList.toggle('is-open', open);
       if (restoreFocus) toggle.focus();

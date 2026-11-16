@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Browser Control のプライバシー — Ocean</title>
+  <meta name="description" content="Chrome 向け Ocean Browser Control 拡張機能による、ページデータの処理、設定の保存、ブラウザ権限の利用について。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control のプライバシー — Ocean">
+  <meta property="og:description" content="ページデータ、Chrome の権限、Ocean 拡張機能のアクセス管理。">
+  <meta property="og:url" content="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "ja", "messages": {"Для вашего Mac": "お使いの Mac 向け", "Для вашего дистрибутива": "お使いのディストリビューション向け", "Для вашего ПК": "お使いの PC 向け", "Пока нет загрузки": "まだダウンロードはありません", "Все релизы": "すべてのリリース", "Что нового": "更新内容", "Скачать": "ダウンロード", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "{platform}、{arch} 向けの Ocean をダウンロード", "Проверяем…": "確認中…", "Загрузки обновлены с GitHub.": "GitHub からダウンロード一覧を更新しました。", "Загрузки появятся здесь после публикации.": "公開後、ここにダウンロードが表示されます。", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "一覧を更新できませんでした。{date}に確認したダウンロードを表示しています。", "Попробовать снова": "もう一度試す", "Загрузки проверены {date}.": "ダウンロードの確認日：{date}。", "Открыть меню": "メニューを開く", "Закрыть меню": "メニューを閉じる", "Ocean / Пример сценария": "Ocean / シナリオの例"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header" lang="ja">
+  <nav class="nav wrap" aria-label="メインナビゲーション">
+    <a class="brand" href="/ja/" aria-label="Ocean — ホームへ"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="サイトの言語"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>JA</span></summary><nav aria-label="サイトの言語"><a href="/plugins/browser-control/privacy/ru/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/browser-control/privacy/" lang="en" hreflang="en">English</a><a href="/zh/plugins/browser-control/privacy/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/plugins/browser-control/privacy/" lang="ja" hreflang="ja" aria-current="page">日本語</a><a href="/es/plugins/browser-control/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/browser-control/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/plugins/browser-control/privacy/" lang="de" hreflang="de">Deutsch</a><a href="/pt/plugins/browser-control/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/browser-control/privacy/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/ja/">ホーム</a><a href="/ja/plugins/" aria-current="location">プラグイン</a><a href="/ja/downloads/">ダウンロード</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page wrap">
+  <a class="plugin-back" href="/ja/plugins/browser-control/"><span aria-hidden="true">←</span> Browser Control</a>
+  <h1>Browser Control のプライバシー</h1>
+  <p>2026年11月16日施行。このポリシーは、Chrome 向け Ocean Browser Control 拡張機能に適用されます。アプリ自体のチャット保存とデータ処理については、次のページをご覧ください： <a href="/ja/privacy/">「Ocean でのあなたのデータ」</a>.</p>
+  <h2>拡張機能の役割</h2>
+  <p>この拡張機能は Chrome をペアリング済みの中継サービスに接続し、Ocean がタスク用のタブや、ブラウザのツールバーボタンから渡されたタブを操作できるようにします。Ocean には、アクセスを許可するサイトの専用設定があります。Chrome の権限はこの設定より広いため、制限は独立した Chrome サンドボックスではなく、アプリのレベルで適用されます。</p>
+  <h2>処理するデータ</h2>
+  <p>拡張機能はリクエストに応じて、ページのテキストや構造、URL、タブのタイトル、スクリーンショット、入力欄の値を読み取り、要素のクリック、文字入力、タブの操作を行えます。ページには、個人情報、認証情報、金融・医療情報などの機密性の高い情報が含まれる場合があります。中継サービスは、リクエストに応じた、渡されたタブの録画にも対応しています。サイトへのログイン状態は Chrome プロファイルに保持され、通常のブラウザセッションを通じて使用されます。</p>
+  <h2>データの送信先</h2>
+  <p>既定では、拡張機能はお使いのパソコン上の中継サービスとコマンドや結果をやり取りします。詳細設定では、別のパソコン上にある任意のサービスを指定できます。信頼できるサービスとネットワークだけを使用してください。Ocean は、タスク用に選択されたモデルプロバイダーにページ内容やスクリーンショットを送信する場合があります。その場合、プロバイダーの利用規約とプライバシーポリシーが適用されます。拡張機能自体がモデルプロバイダーを選ぶことはありません。</p>
+  <p>拡張機能には広告や分析のサービスはなく、ブラウザのデータを Ocean のデータ収集サーバーへ送信することもありません。ブラウザのデータは依頼された操作のために使われ、販売されたり、広告、プロファイリング、無関係な目的に使われたりすることはありません。データの利用と転送は、Chrome Web Store のユーザーデータに関するポリシーおよび Limited Use 要件に準拠します。</p>
+  <h2>保存と削除</h2>
+  <p>拡張機能は、ペアリング情報と設定を Chrome の拡張機能ストレージに保存します。中継サービスへのアクセス情報と Ocean のタスク記録は、別途保存されます。拡張機能を削除すると、そのローカルストレージも削除されます。ただし、Ocean のチャットログ、中継サービスのファイル、モデルプロバイダーへ送信済みのコピーは残ります。それぞれのアプリやサービスで管理してください。</p>
+  <h2>Chrome の権限</h2>
+  <ul>
+    <li><strong>debugger:</strong> Chrome DevTools Protocol を通じた、渡されたページの閲覧、スクリーンショット、ブラウザ操作。</li>
+    <li><strong>tabs と tabGroups：</strong> タスク用のタブを管理し、エージェントのセッションごとにグループ化します。</li>
+    <li><strong>storage:</strong> ペアリング情報と設定のローカル保存。</li>
+    <li><strong>alarms:</strong> 拡張機能のバックグラウンドプロセスが停止した後、中継サービスに再接続します。</li>
+    <li><strong>offscreen と tabCapture：</strong> リクエストに応じて、渡されたタブの録画を処理します。</li>
+    <li><strong>webNavigation:</strong> ポップアップやページ遷移を、タスクのタブに関連付けます。</li>
+    <li><strong>scripting:</strong> ページ操作のために、拡張機能に同梱された補助スクリプトを実行します。</li>
+    <li><strong>notifications:</strong> タスクにあなたの操作が必要なときに通知します。</li>
+    <li><strong>すべてのサイトへのアクセス：</strong> ユーザーが選択したサイトを操作し、設定されたサービスと通信します。拡張機能は、閲覧履歴データベース全体へのアクセスを要求しません。</li>
+  </ul>
+  <h2>あなたによる管理</h2>
+  <p>Ocean でアクセスを許可するサイトを選び、既存のタブは明示的に渡してください。使用を停止するには、プラグインまたは拡張機能を無効にします。機密性の高い情報を含むページで操作する前に、タスクの内容を確認してください。選択したモデルプロバイダーに送信する意図がなければ、秘密情報をタスクに入力しないでください。</p>
+  <h2>お問い合わせ</h2>
+  <p>プライバシーに関するご質問やデータに関するご依頼は、 <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> または <a href="https://t.me/oceanchatsupportbot">Ocean サポート</a>までお寄せください。ポリシーを更新する際は、新しい施行日とともにこのページに掲載します。</p>
+</main>
+<footer class="footer" lang="ja"><div class="wrap footer-inner"><a class="brand" href="/ja/">Ocean</a><div class="footer-links"><a href="/ja/start/">初回起動ガイド</a><a href="/ja/plugins/">プラグイン</a><a href="https://t.me/oceanchatsupportbot">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

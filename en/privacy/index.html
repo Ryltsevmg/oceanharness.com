@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Your data — Ocean</title>
+  <meta name="description" content="How Ocean stores chats, sends context to models and lets you manage plugin access and saved data.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your data — Ocean">
+  <meta property="og:description" content="What stays on your device, what the model receives and how to manage your data.">
+  <meta property="og:url" content="https://oceanharness.com/en/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/en/privacy/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "en", "messages": {"Для вашего Mac": "For your Mac", "Для вашего дистрибутива": "For your distribution", "Для вашего ПК": "For your PC", "Пока нет загрузки": "No download yet", "Все релизы": "All releases", "Что нового": "What's new", "Скачать": "Download", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "Download Ocean for {platform}, {arch}", "Проверяем…": "Checking…", "Загрузки обновлены с GitHub.": "Downloads updated from GitHub.", "Загрузки появятся здесь после публикации.": "Downloads will appear here once published.", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "Could not update the list. Showing downloads checked on {date}.", "Попробовать снова": "Try again", "Загрузки проверены {date}.": "Downloads checked on {date}.", "Открыть меню": "Open menu", "Закрыть меню": "Close menu", "Ocean / Пример сценария": "Ocean / Example workflow"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/privacy/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/privacy/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/privacy/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/privacy/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/privacy/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/privacy/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/privacy/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" lang="en">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="/en/" aria-label="Ocean — back to home"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="Site language"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>EN</span></summary><nav aria-label="Site language"><a href="/privacy/" lang="ru" hreflang="ru">Русский</a><a href="/en/privacy/" lang="en" hreflang="en" aria-current="page">English</a><a href="/zh/privacy/" lang="zh-CN" hreflang="zh-CN">中文</a><a href="/ja/privacy/" lang="ja" hreflang="ja">日本語</a><a href="/es/privacy/" lang="es" hreflang="es">Español</a><a href="/fr/privacy/" lang="fr" hreflang="fr">Français</a><a href="/de/privacy/" lang="de" hreflang="de">Deutsch</a><a href="/pt/privacy/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/privacy/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/en/">Home</a><a href="/en/plugins/">Plugins</a><a href="/en/downloads/">Download</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="policy-page privacy-page wrap">
+  <p class="eyebrow">Clear about data</p>
+  <h1>Your data in Ocean</h1>
+  <p>Chats are saved on your computer. To generate a response, Ocean sends context to your chosen model, while connected tools contact the services needed for the task.</p>
+  <div class="privacy-overview">
+    <article><h2>On your device</h2><p>Chat history, settings and saved connections.</p></article>
+    <article><h2>With the model provider</h2><p>Messages and materials included in the request.</p></article>
+    <article><h2>Under your control</h2><p>Your choice of model, plugins, websites and apps.</p></article>
+  </div>
+  <section aria-labelledby="local-data"><h2 id="local-data">What is stored locally</h2>
+    <p>In standard desktop mode, Ocean stores message and tool-action history, attachments, settings and connection data in the app's data folder. By default, this is <code>~/.ocean</code>; you can change the location in a custom configuration.</p>
+    <p>API keys and authorization data are stored separately from the settings text. Protection of local files depends on access to your computer: this storage is not isolated from all agent tools.</p>
+  </section>
+  <section aria-labelledby="model-data"><h2 id="model-data">What the model receives</h2>
+    <p>Requests are sent to the provider you connected. They may include chat messages, files read for the task, page text, window captures and tool results. Storing history locally does not mean model processing also happens locally.</p>
+    <p>The provider's retention periods and use of data are governed by its terms and your account settings. Search services, external tools and third-party plugins also have their own data-handling rules.</p>
+  </section>
+  <section aria-labelledby="plugin-data"><h2 id="plugin-data">Browser and apps</h2>
+    <p>Choose allowed websites and apps in the relevant plugin's settings. Captures and content read by tools may become part of the chat and model request. You can revoke access and disable the plugin.</p>
+    <p>The Chrome extension's permissions, pairing and data storage are described separately: <a href="/en/plugins/browser-control/privacy/">Browser Control privacy</a>.</p>
+  </section>
+  <section aria-labelledby="sharing"><h2 id="sharing">Log sharing and diagnostics</h2>
+    <p>When using the DeepSeek adapter, there is a separate setting called <strong>“Send log with DeepSeek API requests”</strong> in Settings → General. It is enabled in the default configuration: the chat log, including messages and tool results, is added to API requests. Re-enabling it may also send previously accumulated records.</p>
+    <p>Separate log uploads to a telemetry service are disabled in Ocean's default configuration. Product analytics require an explicitly configured recipient and separate activation.</p>
+    <p>The DeepSeek adapter also sends a random installation identifier that persists between launches. This is independent of the telemetry setting.</p>
+    <details class="privacy-detail"><summary>If you use a custom configuration</summary><p>Your configuration may include other data recipients. When enabled, the built-in feedback mechanism sends the log up to the point of the feedback, including context. Check the settings of your build and connected providers.</p></details>
+  </section>
+  <section aria-labelledby="remove-data"><h2 id="remove-data">How to manage saved data</h2>
+    <p>Archiving hides a chat from the main list but does not delete its log. Deleting a workspace does not delete its folder or chat history either.</p>
+    <p>To delete all local Ocean data, first close the app and save any results you need, then delete the app's data folder. This also deletes local chats, settings and saved connections for every profile in that folder. If you use a nonstandard data location, <a href="https://t.me/oceanchatsupportbot">confirm the path with support</a>before deleting files.</p>
+    <p>This does not delete your project files, external backups, Chrome extension data or materials already sent to providers. Manage those in the relevant app or service.</p>
+  </section>
+  <section aria-labelledby="website-data"><h2 id="website-data">What this website does</h2>
+    <p>The website has no registration forms, advertising trackers or embedded third-party analytics. Fonts and images are loaded from the Ocean domain. The downloads page requests the list of published files from GitHub.</p>
+    <p>The site is hosted on GitHub Pages. When you visit the site, GitHub or external links, the corresponding services receive standard network request data. GitHub's rules are described in <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">its privacy policy</a>.</p>
+  </section>
+  <section class="privacy-contact" aria-labelledby="privacy-contact"><h2 id="privacy-contact">Questions about data</h2><p>Contact <a href="https://t.me/oceanchatsupportbot">Ocean support</a> or email <a href="mailto:support@oceanharness.com">support@oceanharness.com</a>. Do not include API keys, passwords or a full chat log unless necessary.</p></section>
+  <p class="privacy-updated">Updated November 17, 2026.</p>
+</main>
+<footer class="footer" lang="en"><div class="wrap footer-inner"><a class="brand" href="/en/">Ocean</a><div class="footer-links"><a href="/en/start/">First launch</a><a href="/en/plugins/">Plugins</a><a href="https://t.me/oceanchatsupportbot">Support</a><a href="/en/privacy/">Privacy</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>

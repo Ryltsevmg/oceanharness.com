@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Browser Control — Ocean</title>
+  <meta name="description" content="将 Google Chrome 连接到 Ocean，保留现有登录状态。在聊天中操作已授权的网站、表单和标签页。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control — Ocean">
+  <meta property="og:description" content="将 Google Chrome 连接到 Ocean，保留现有登录状态。在聊天中操作已授权的网站、表单和标签页。">
+  <meta property="og:url" content="https://oceanharness.com/zh/plugins/browser-control/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/zh/plugins/browser-control/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <!-- LOCALIZED_MESSAGES_START --><script type="application/json" id="site-messages">{"locale": "zh-CN", "messages": {"Для вашего Mac": "适用于你的 Mac", "Для вашего дистрибутива": "适用于你的发行版", "Для вашего ПК": "适用于你的 PC", "Пока нет загрузки": "暂无下载", "Все релизы": "所有版本", "Что нового": "更新内容", "Скачать": "下载", "МБ": "MB", "Скачать Ocean для {platform}, {arch}": "下载适用于 {platform}、{arch} 的 Ocean", "Проверяем…": "正在检查…", "Загрузки обновлены с GitHub.": "下载列表已从 GitHub 更新。", "Загрузки появятся здесь после публикации.": "发布后，下载会显示在这里。", "Не удалось обновить список. Показаны загрузки, проверенные {date}.": "无法更新列表。当前显示 {date} 核验的下载。", "Попробовать снова": "重试", "Загрузки проверены {date}.": "下载已于 {date} 核验。", "Открыть меню": "打开菜单", "Закрыть меню": "关闭菜单", "Ocean / Пример сценария": "Ocean / 场景示例"}}</script><!-- LOCALIZED_MESSAGES_END -->
+<script src="/site.js" defer></script>
+<!-- LOCALES_START -->
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/en/plugins/browser-control/">
+  <link rel="alternate" hreflang="zh-CN" href="https://oceanharness.com/zh/plugins/browser-control/">
+  <link rel="alternate" hreflang="ja" href="https://oceanharness.com/ja/plugins/browser-control/">
+  <link rel="alternate" hreflang="es" href="https://oceanharness.com/es/plugins/browser-control/">
+  <link rel="alternate" hreflang="fr" href="https://oceanharness.com/fr/plugins/browser-control/">
+  <link rel="alternate" hreflang="de" href="https://oceanharness.com/de/plugins/browser-control/">
+  <link rel="alternate" hreflang="pt-BR" href="https://oceanharness.com/pt/plugins/browser-control/">
+  <link rel="alternate" hreflang="ko" href="https://oceanharness.com/ko/plugins/browser-control/">
+  <link rel="alternate" hreflang="x-default" href="https://oceanharness.com/plugins/browser-control/">
+<!-- LOCALES_END -->
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到内容</a>
+<header class="site-header" lang="zh-CN">
+  <nav class="nav wrap" aria-label="主导航">
+    <a class="brand" href="/zh/" aria-label="Ocean — 返回首页"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <!-- LANGUAGE_MENU_START --><details class="language-picker" data-language-picker><summary aria-label="网站语言"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg><span>ZH</span></summary><nav aria-label="网站语言"><a href="/plugins/browser-control/" lang="ru" hreflang="ru">Русский</a><a href="/en/plugins/browser-control/" lang="en" hreflang="en">English</a><a href="/zh/plugins/browser-control/" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a><a href="/ja/plugins/browser-control/" lang="ja" hreflang="ja">日本語</a><a href="/es/plugins/browser-control/" lang="es" hreflang="es">Español</a><a href="/fr/plugins/browser-control/" lang="fr" hreflang="fr">Français</a><a href="/de/plugins/browser-control/" lang="de" hreflang="de">Deutsch</a><a href="/pt/plugins/browser-control/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ko/plugins/browser-control/" lang="ko" hreflang="ko">한국어</a></nav></details><!-- LANGUAGE_MENU_END --><button class="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu>
+      <a href="/zh/">首页</a><a href="/zh/plugins/" aria-current="location">插件</a><a href="/zh/downloads/">下载</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+    </div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="plugin-page wrap">
+  <a class="plugin-back" href="/zh/plugins/"><span aria-hidden="true">←</span> 所有插件</a>
+  <section class="plugin-intro browser-intro" aria-labelledby="browser-title">
+    <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18"/></svg></span>
+    <p class="eyebrow">Browser Control</p>
+    <h1 id="browser-title">你的 Chrome。<br>Ocean 的能力。</h1>
+    <p class="plugin-lead">在聊天中阅读页面、填写表单、管理标签页。网站登录状态保留在你常用的 Chrome 个人资料中。</p>
+  </section>
+  <section class="browser-setup" aria-labelledby="setup-title">
+    <div><p class="eyebrow">开始使用</p><h2 id="setup-title">只需两步，<br>完成连接</h2><p>从 Ocean 的“插件”→“浏览器控制”开始。</p></div>
+    <ol class="setup-steps">
+      <li><span class="step-number" aria-hidden="true">01</span><div><h3>安装扩展程序</h3><p>在 Ocean 中点击“安装扩展程序”，然后按照 Chrome 中的提示操作。</p></div></li>
+      <li><span class="step-number" aria-hidden="true">02</span><div><h3>连接到 Ocean</h3><p>返回应用并点击“连接”，然后选择允许访问的网站。</p></div></li>
+    </ol>
+  </section>
+  <section class="browser-control" aria-labelledby="control-title">
+    <div><p class="eyebrow">范围由你决定</p><h2 id="control-title">标签页尽在掌控</h2></div>
+    <div><p>Ocean 为每个聊天打开独立的标签页。要交出已打开的个人标签页，请使用 Chrome 中的扩展程序按钮。</p><p>仅完成连接不会让 Ocean 获得所有网站的访问权限。你可以在应用中修改权限。</p><a class="text-link" href="/zh/plugins/browser-control/privacy/">数据如何处理 <span aria-hidden="true">→</span></a></div>
+  </section>
+  <section class="plugin-start" aria-labelledby="help-title">
+    <div><h2 id="help-title">连接需要帮助？</h2><p>联系我们，我们会帮你解决。</p></div>
+    <a class="button secondary" href="https://t.me/oceanchatsupportbot">Ocean 支持 <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
+<footer class="footer" lang="zh-CN"><div class="wrap footer-inner"><a class="brand" href="/zh/">Ocean</a><div class="footer-links"><a href="/zh/start/">首次启动</a><a href="/zh/plugins/">插件</a><a href="https://t.me/oceanchatsupportbot">支持</a><a href="/zh/privacy/">隐私</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>
