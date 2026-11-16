@@ -6,25 +6,35 @@
   <meta name="theme-color" content="#0b111c">
   <title>Browser Control privacy — Ocean</title>
   <meta name="description" content="How Ocean Browser Control handles browser data and permissions.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control privacy — Ocean">
+  <meta property="og:description" content="How the Ocean Chrome extension handles browser data and permissions.">
+  <meta property="og:url" content="https://oceanharness.com/plugins/browser-control/privacy/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://oceanharness.com/plugins/browser-control/privacy/">
+  <link rel="alternate" hreflang="ru" href="https://oceanharness.com/plugins/browser-control/privacy/ru/">
   <link rel="canonical" href="https://oceanharness.com/plugins/browser-control/privacy/">
   <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/privacy/privacy.css">
   <script src="/site.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Перейти к содержанию</a>
+<a class="skip-link" href="#main" lang="ru">Перейти к содержанию</a>
 <header class="site-header" lang="ru">
   <nav class="nav wrap" aria-label="Основная навигация">
     <a class="brand" href="/" aria-label="Ocean — на главную"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <div class="nav-links" id="site-menu" data-menu>
-      <a href="/">Главная</a><a href="/plugins/">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+      <a href="/">Главная</a><a href="/plugins/" aria-current="location">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
     </div>
   </nav>
 </header>
-<main id="main" class="policy-page wrap" lang="en">
+<main tabindex="-1" id="main" class="policy-page wrap" lang="en">
   <a class="plugin-back" href="/plugins/browser-control/"><span aria-hidden="true">←</span> Browser Control</a>
+  <nav class="policy-languages" aria-label="Language"><a href="/plugins/browser-control/privacy/ru/" lang="ru" hreflang="ru">Русский</a><a href="/plugins/browser-control/privacy/" lang="en" hreflang="en" aria-current="page">English</a></nav>
   <h1>Browser Control privacy</h1><p>Effective November 16, 2026. This policy covers the Ocean Browser Control Chrome extension.</p>
 <h2>What the extension does</h2><p>The extension connects Chrome to a paired relay so Ocean can operate task tabs and tabs you share using the toolbar button. Ocean provides a separate allowed-sites setting. Chrome permissions are broader than that setting; it is an application-level restriction, not a separate Chrome sandbox.</p>
 <h2>Data processed</h2><p>Requested operations can read page text, page structure, URLs, tab titles, screenshots and form values; click controls; enter text; and manage tabs. Pages may contain personal, authentication, financial, health or other sensitive information. The relay also supports recording shared tabs when requested. Website sign-ins remain in your Chrome profile and are used through the normal browser session.</p>
@@ -44,11 +54,6 @@
 <h2>Contact</h2><p>For privacy questions or requests, contact <a href="mailto:support@oceanharness.com">support@oceanharness.com</a> or <a href="https://t.me/oceanchatsupportbot">Ocean support</a>. Updates to this policy will be published here with a revised effective date.</p>
 
 </main>
-<footer class="footer" lang="ru">
-  <div class="footer-inner wrap">
-    <a class="brand" href="/"><img src="/ocean-logo.svg" alt="" width="32" height="32">Ocean</a>
-    <div class="footer-links"><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Помощь</a><a href="/plugins/browser-control/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a></div>
-  </div>
-</footer>
+<footer class="footer" lang="ru"><div class="wrap footer-inner"><a class="brand" href="/">Ocean</a><div class="footer-links"><a href="/start/">Первый запуск</a><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Поддержка</a><a href="/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
 </body>
 </html>

@@ -6,6 +6,12 @@
   <meta name="theme-color" content="#0b111c">
   <title>Browser Control — Ocean</title>
   <meta name="description" content="Подключите Google Chrome к Ocean с сохранёнными входами. Работайте с разрешёнными сайтами, формами и вкладками через чат.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browser Control — Ocean">
+  <meta property="og:description" content="Подключите Google Chrome к Ocean с сохранёнными входами. Работайте с разрешёнными сайтами, формами и вкладками через чат.">
+  <meta property="og:url" content="https://oceanharness.com/plugins/browser-control/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://oceanharness.com/plugins/browser-control/">
   <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -19,11 +25,11 @@
     <a class="brand" href="/" aria-label="Ocean — на главную"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <div class="nav-links" id="site-menu" data-menu>
-      <a href="/">Главная</a><a href="/plugins/">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
+      <a href="/">Главная</a><a href="/plugins/" aria-current="location">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a>
     </div>
   </nav>
 </header>
-<main id="main" class="plugin-page wrap">
+<main tabindex="-1" id="main" class="plugin-page wrap">
   <a class="plugin-back" href="/plugins/"><span aria-hidden="true">←</span> Все плагины</a>
   <section class="plugin-intro browser-intro" aria-labelledby="browser-title">
     <span class="plugin-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18"/></svg></span>
@@ -40,18 +46,13 @@
   </section>
   <section class="browser-control" aria-labelledby="control-title">
     <div><p class="eyebrow">Вы задаёте границы</p><h2 id="control-title">Вкладки под вашим контролем</h2></div>
-    <div><p>Для каждого чата Ocean открывает отдельные вкладки. Чтобы передать уже открытую личную вкладку, используйте кнопку расширения в Chrome.</p><p>Подключение само по себе не даёт Ocean доступ ко всем сайтам. Разрешения можно изменить в приложении.</p><a class="text-link" href="/plugins/browser-control/privacy/">Как обрабатываются данные <span aria-hidden="true">→</span></a></div>
+    <div><p>Для каждого чата Ocean открывает отдельные вкладки. Чтобы передать уже открытую личную вкладку, используйте кнопку расширения в Chrome.</p><p>Подключение само по себе не даёт Ocean доступ ко всем сайтам. Разрешения можно изменить в приложении.</p><a class="text-link" href="/plugins/browser-control/privacy/ru/">Как обрабатываются данные <span aria-hidden="true">→</span></a></div>
   </section>
   <section class="plugin-start" aria-labelledby="help-title">
     <div><h2 id="help-title">Нужна помощь с подключением?</h2><p>Напишите нам — поможем разобраться.</p></div>
     <a class="button secondary" href="https://t.me/oceanchatsupportbot">Поддержка Ocean <span aria-hidden="true">↗</span></a>
   </section>
 </main>
-<footer class="footer" lang="ru">
-  <div class="footer-inner wrap">
-    <a class="brand" href="/"><img src="/ocean-logo.svg" alt="" width="32" height="32">Ocean</a>
-    <div class="footer-links"><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Помощь</a><a href="/plugins/browser-control/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub ↗</a></div>
-  </div>
-</footer>
+<footer class="footer" lang="ru"><div class="wrap footer-inner"><a class="brand" href="/">Ocean</a><div class="footer-links"><a href="/start/">Первый запуск</a><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Поддержка</a><a href="/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
 </body>
 </html>

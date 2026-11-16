@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка фокуса загрузок Ocean</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/downloads/downloads.css">
+<main class="wrap" style="padding-block: 32px">
+  <h1>Проверка фокуса загрузок</h1>
+  <p>Локальная проверка в настоящем DOM. Запросы заменены тестовыми ответами, файлы не скачиваются.</p>
+  <button id="run" class="button primary" type="button">Запустить проверки</button>
+  <button id="outside" class="button secondary" type="button">Вне списка</button>
+  <ol id="results" aria-live="polite"></ol>
+  <section id="cards" class="download-grid" aria-label="Тестовые загрузки"></section>
+  <div class="download-freshness">
+    <p id="status" role="status" data-checked-at="2026-11-16T00:00:00Z"></p>
+    <button id="retry" class="refresh-downloads" type="button">Попробовать снова</button>
+  </div>
+</main>
+<script type="module">
+  import { updateDownloadCards, refreshDownloads } from '../downloads/downloads.js';
+
+  const cards = document.getElementById('cards');
+  const status = document.getElementById('status');
+  const retry = document.getElementById('retry');
+  const outside = document.getElementById('outside');
+  const results = document.getElementById('results');
+  const run = document.getElementById('run');
+  const controls = { cards, status, retry };
+  const base = [{ platform: 'mac', arch: 'arm64', format: 'DMG', size: 200_000_000, publishedAt: '2026-11-16T00:00:00Z',
+    url: 'https://github.com/Ryltsevmg/Ocean/releases/download/test/ocean-chat-test-mac-arm64.dmg',
+    releaseUrl: 'https://github.com/Ryltsevmg/Ocean/releases/tag/test' }];
+  const changed = [{ ...base[0], url: base[0].url.replace('/test/', '/new/'), size: 300_000_000 }];
+  const linux = { ...base[0], platform: 'linux', arch: 'x64', format: 'TAR.GZ',
+    url: 'https://github.com/Ryltsevmg/Ocean/releases/download/test/ocean-chat-test-linux-x64.tar.gz' };
+  const first = selector => cards.querySelector('[data-platform="mac"] .architecture').querySelector(selector);
+  function assert(value, message) { if (!value) throw new Error(message); }
+  function deferred() {
+    let resolve;
+    const promise = new Promise(done => { resolve = done; });
+    return { promise, resolve };
+  }
+  async function check(name, action) {
+    const row = document.createElement('li');
+    try { await action(); row.textContent = `PASS — ${name}`; }
+    catch (error) { row.textContent = `FAIL — ${name}: ${error.message}`; row.dataset.failed = 'true'; }
+    results.append(row);
+  }
+  run.addEventListener('click', async () => {
+    run.disabled = true;
+    results.replaceChildren();
+    await check('Неизменённые данные сохраняют узел и фокус', () => {
+      updateDownloadCards(cards, base);
+      const link = first('.download-button');
+      link.focus();
+      updateDownloadCards(cards, base);
+      assert(link === first('.download-button') && document.activeElement === link, 'Ссылка была заменена');
+    });
+    await check('Новая сборка сохраняет действие той же архитектуры', () => {
+      first('.download-button').focus();
+      updateDownloadCards(cards, changed);
+      assert(document.activeElement === first('.download-button'), 'Фокус не на скачивании');
+      assert(document.activeElement.href === changed[0].url, 'Осталась прежняя ссылка');
+    });
+    await check('Изменение другой платформы не затрагивает текущую', () => {
+      const link = first('.download-button');
+      link.focus();
+      updateDownloadCards(cards, [...changed, linux]);
+      assert(first('.download-button') === link && document.activeElement === link, 'Карточка macOS была заменена');
+    });
+    await check('Исчезнувшая загрузка переводит фокус на все релизы', () => {
+      first('.download-button').focus();
+      updateDownloadCards(cards, []);
+      assert(document.activeElement === first('.text-link'), 'Нет доступного продолжения');
+    });
+    await check('Появившаяся загрузка сохраняет переход к сведениям о релизе', () => {
+      first('.text-link').focus();
+      updateDownloadCards(cards, base);
+      assert(document.activeElement === first('.release-notes'), 'Фокус переключился на скачивание');
+    });
+    await check('Обновление не перехватывает фокус вне списка', () => {
+      outside.focus();
+      updateDownloadCards(cards, changed);
+      assert(document.activeElement === outside, 'Фокус перехвачен');
+    });
+    await check('Ошибка API сохраняет фокус и показывает повтор', async () => {
+      updateDownloadCards(cards, base);
+      const link = first('.download-button');
+      link.focus();
+      await refreshDownloads(controls, async url => url.startsWith('https:')
+        ? new Response('{}', { status: 403 })
+        : new Response(JSON.stringify({ checkedAt: status.dataset.checkedAt, downloads: base })));
+      assert(document.activeElement === link, 'Запасной список удалил фокус');
+      assert(!retry.hidden && status.textContent.includes('Не удалось'), 'Нет сообщения и повтора');
+    });
+    await check('Повтор остаётся в фокусе во время запроса и не запускает дубликат', async () => {
+      const gate = deferred();
+      let calls = 0;
+      const fetcher = () => { calls++; return gate.promise; };
+      retry.hidden = false;
+      retry.focus();
+      const pending = refreshDownloads(controls, fetcher);
+      assert(!retry.hidden && document.activeElement === retry && retry.getAttribute('aria-disabled') === 'true', 'Повтор исчез во время запроса');
+      await refreshDownloads(controls, fetcher);
+      assert(calls === 1, 'Запущен второй запрос');
+      gate.resolve(new Response('[]'));
+      await pending;
+      assert(retry.hidden && document.activeElement === status, 'Результат не получил фокус');
+      assert(!cards.hasAttribute('aria-busy'), 'Не снято состояние загрузки');
+    });
+    await check('Завершение повтора не забирает фокус у другого элемента', async () => {
+      const gate = deferred();
+      retry.hidden = false;
+      retry.focus();
+      const pending = refreshDownloads(controls, () => gate.promise);
+      outside.focus();
+      gate.resolve(new Response('[]'));
+      await pending;
+      assert(document.activeElement === outside, 'Фокус был перехвачен');
+    });
+    await check('Полный отказ сети сохраняет доступный список и повтор', async () => {
+      updateDownloadCards(cards, base);
+      const link = first('.download-button');
+      retry.hidden = false;
+      retry.focus();
+      await refreshDownloads(controls, async () => { throw new Error('Offline'); });
+      assert(!retry.hidden && document.activeElement === retry, 'Фокус повтора потерян');
+      assert(first('.download-button') === link, 'Удалён локальный список');
+      assert(!retry.hasAttribute('aria-disabled'), 'Повтор остался недоступен');
+    });
+    const failed = results.querySelectorAll('[data-failed]').length;
+    document.title = failed ? `FAIL: ${failed} — проверка загрузок` : 'PASS: 10 — проверка загрузок';
+    run.disabled = false;
+    run.focus();
+  });
+</script>
+</html>

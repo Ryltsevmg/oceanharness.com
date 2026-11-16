@@ -134,34 +134,79 @@ export function renderDownloadCards(downloads) {
   </article>`).join('\n');
 }
 
-async function refreshDownloads() {
-  const cards = document.querySelector('[data-download-cards]');
-  const status = document.querySelector('[data-download-status]');
-  if (!cards || !status) return;
+/** Preserve unchanged cards and keep keyboard focus on the same architecture and action when release data changes. */
+export function updateDownloadCards(cards, downloads) {
+  const template = cards.ownerDocument.createElement('template');
+  template.innerHTML = renderDownloadCards(downloads);
+  for (const nextCard of [...template.content.children]) {
+    const currentCard = cards.querySelector(`[data-platform="${nextCard.dataset.platform}"]`);
+    if (!currentCard) {
+      cards.append(nextCard);
+      continue;
+    }
+    if (currentCard.isEqualNode(nextCard)) continue;
+    const focused = cards.ownerDocument.activeElement;
+    const restoreFocus = currentCard.contains(focused);
+    const architectureIndex = restoreFocus ? [...currentCard.querySelectorAll('.architecture')].findIndex(item => item.contains(focused)) : -1;
+    const action = restoreFocus && ['.download-button', '.release-notes', '.text-link'].find(selector => focused.matches(selector));
+    currentCard.replaceWith(nextCard);
+    if (restoreFocus) {
+      const architecture = nextCard.querySelectorAll('.architecture')[architectureIndex] || nextCard;
+      const replacement = (action && architecture.querySelector(action)) || architecture.querySelector('.text-link')
+        || architecture.querySelector('.release-notes') || architecture.querySelector('.download-button');
+      replacement?.focus({ preventScroll: true });
+    }
+  }
+}
+
+/** Refresh available files without removing a focused retry control while the request is pending. */
+export async function refreshDownloads({ cards, status, retry }, fetcher = fetch) {
+  if (cards.getAttribute('aria-busy') === 'true') return;
+  cards.setAttribute('aria-busy', 'true');
+  if (retry) {
+    retry.setAttribute('aria-disabled', 'true');
+    retry.textContent = 'Проверяем…';
+  }
   try {
-    const downloads = await fetchLatestDownloads(fetch, { signal: AbortSignal.timeout(12_000) });
-    cards.innerHTML = renderDownloadCards(downloads);
+    const downloads = await fetchLatestDownloads(fetcher, { signal: AbortSignal.timeout(12_000) });
+    updateDownloadCards(cards, downloads);
     status.textContent = downloads.length ? 'Загрузки обновлены с GitHub.' : 'Загрузки появятся здесь после публикации.';
+    if (retry) {
+      if (cards.ownerDocument.activeElement === retry) {
+        status.tabIndex = -1;
+        status.focus({ preventScroll: true });
+      }
+      retry.hidden = true;
+    }
   } catch {
     let savedDate = status.dataset.checkedAt;
     try {
-      const response = await fetch('/downloads/releases.json', { signal: AbortSignal.timeout(3_000) });
+      const response = await fetcher('/downloads/releases.json', { signal: AbortSignal.timeout(3_000) });
       if (!response.ok) throw new Error('Local download list unavailable');
       const snapshot = parseSnapshot(await response.json());
-      cards.innerHTML = renderDownloadCards(snapshot.downloads);
+      updateDownloadCards(cards, snapshot.downloads);
       savedDate = snapshot.checkedAt;
     } catch {
       // The static HTML contains the same checked download list for offline use.
     }
     status.textContent = `Не удалось обновить список. Показаны загрузки, проверенные ${formatDate(savedDate)}.`;
-    document.querySelector('[data-download-retry]').hidden = false;
+    if (retry) retry.hidden = false;
+  } finally {
+    cards.removeAttribute('aria-busy');
+    if (retry) {
+      retry.removeAttribute('aria-disabled');
+      retry.textContent = 'Попробовать снова';
+    }
   }
 }
 
 if (typeof document !== 'undefined') {
-  document.querySelector('[data-download-retry]')?.addEventListener('click', event => {
-    event.currentTarget.hidden = true;
-    refreshDownloads();
-  });
-  refreshDownloads();
+  const cards = document.querySelector('[data-download-cards]');
+  const status = document.querySelector('[data-download-status]');
+  const retry = document.querySelector('[data-download-retry]');
+  if (cards && status) {
+    const controls = { cards, status, retry };
+    retry?.addEventListener('click', () => refreshDownloads(controls));
+    refreshDownloads(controls);
+  }
 }

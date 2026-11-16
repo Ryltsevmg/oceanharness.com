@@ -6,6 +6,12 @@
   <meta name="theme-color" content="#0B111C">
   <title>Скачать Ocean — macOS, Windows и Linux</title>
   <meta name="description" content="Скачайте Ocean для своего компьютера. Актуальные загрузки для macOS, Windows и Linux, выбор архитектуры и помощь с установкой.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Скачать Ocean — macOS, Windows и Linux">
+  <meta property="og:description" content="Скачайте Ocean для своего компьютера. Актуальные загрузки для macOS, Windows и Linux, выбор архитектуры и помощь с установкой.">
+  <meta property="og:url" content="https://oceanharness.com/downloads/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://oceanharness.com/downloads/">
   <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -22,7 +28,7 @@
       <div class="nav-links" id="site-menu" data-menu><a href="/">Главная</a><a href="/plugins/">Плагины</a><a href="/downloads/" aria-current="page">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div>
     </nav>
   </header>
-  <main class="download-main wrap" id="main">
+  <main tabindex="-1" class="download-main wrap" id="main">
     <div class="download-heading"><p class="eyebrow">Начало погружения</p><h1>Ocean для вашего компьютера</h1><p class="lead">Выберите систему и скачайте приложение.</p></div>
     <section class="download-grid" aria-label="Загрузки по платформам" data-download-cards>
 <!-- DOWNLOAD_CARDS_START -->
@@ -47,15 +53,15 @@
       <button class="refresh-downloads" data-download-retry hidden type="button">Попробовать снова</button>
     </div><a class="downloads-all" href="https://github.com/Ryltsevmg/Ocean/releases">Все загрузки на GitHub <span aria-hidden="true">↗</span></a></div>
     <section class="download-help" aria-labelledby="help-title">
-      <div><p class="eyebrow">Перед первым запуском</p><h2 id="help-title">Пара простых шагов</h2><p>Установите приложение, подключите модель и начните разговор.</p></div>
+      <div><p class="eyebrow">Перед первым запуском</p><h2 id="help-title">Пара простых шагов</h2><p>Установите приложение, подключите модель и начните разговор.</p><a class="text-link" href="/start/">Инструкция первого запуска <span aria-hidden="true">→</span></a></div>
       <div class="download-faq">
         <details><summary>Какую архитектуру выбрать?</summary><p>На Mac откройте меню Apple → «Об этом Mac»: чип Apple M означает Apple silicon, процессор Intel — Intel. На Windows архитектура указана в «Параметры → Система → О системе». На Linux команда <code>uname -m</code> покажет <code>x86_64</code> для x64 или <code>aarch64</code> для ARM64.</p></details>
-        <details><summary>Как установить Ocean?</summary><p>На macOS откройте DMG или распакуйте ZIP и перенесите Ocean в «Программы». На Windows запустите скачанный установщик. На Linux распакуйте архив и запустите приложение из него. Если скачан AppImage, разрешите запуск файла в его свойствах.</p></details>
-        <details><summary>Что нужно после установки?</summary><p>Подключите доступную модель в настройках Ocean. Для работы с браузером и приложениями включите нужные плагины и выберите, к чему предоставить доступ.</p></details>
+        <details><summary>Как установить Ocean?</summary><p>На macOS откройте DMG или распакуйте ZIP и перенесите приложение в «Программы». На Windows запустите скачанный установщик. На Linux распакуйте TAR.GZ, откройте полученную папку в терминале и выполните <code>./ocean</code>. Если скачан AppImage, разрешите запуск файла в его свойствах. <a href="/start/#install">Подробнее об установке</a>.</p></details>
+        <details><summary>Что нужно после установки?</summary><p>Откройте «Настройки → Модели» и нажмите «Добавить провайдера моделей». Укажите данные подключения и нажмите «Применить». Затем создайте новую сессию и выберите модель. <a href="/start/#model">Настройка и первая задача</a>.</p></details>
       </div>
     </section>
     <p class="download-support">Не получается установить? <a href="https://t.me/oceanchatsupportbot">Напишите нам</a>.</p>
   </main>
-  <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="/">Ocean</a><div><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Помощь</a><a href="/plugins/browser-control/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+  <footer class="footer" lang="ru"><div class="wrap footer-inner"><a class="brand" href="/">Ocean</a><div class="footer-links"><a href="/start/">Первый запуск</a><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Поддержка</a><a href="/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
 </body>
 </html>

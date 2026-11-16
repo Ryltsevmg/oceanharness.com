@@ -9,7 +9,7 @@
 .platform-icon { display: grid; place-items: center; width: 52px; height: 52px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 14px; color: var(--ice); }
 .platform-icon svg { width: 28px; height: 28px; }
 .platform-heading h2 { margin: 0 0 4px; font-family: Manrope, sans-serif; font-size: 26px; font-weight: 600; }
-.platform-heading p { color: var(--muted); margin: 0; font-size: 14px; }
+.platform-heading p { color: var(--muted); margin: 0; font-size: 14px; line-height: 1.5; min-height: 3em; }
 .architecture { padding-block: 26px; border-top: 1px solid var(--line); }
 .architecture:last-child { padding-bottom: 0; }
 .architecture h3 { font-size: 17px; line-height: 1.5; font-weight: 600; margin: 0 0 12px; }
@@ -25,9 +25,12 @@
 .downloads-all { display: inline-flex; gap: 8px; flex-shrink: 0; align-items: center; color: var(--ice); text-decoration: none; min-height: 44px; margin-top: -10px; }
 .refresh-downloads { background: none; border: 0; color: var(--ice); font: inherit; cursor: pointer; padding: 8px 0; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; }
 .refresh-downloads[hidden] { display: none; }
+.refresh-downloads[aria-disabled='true'] { cursor: progress; text-decoration: none; }
+.download-freshness [data-download-status]:focus { outline: 2px solid var(--ice); outline-offset: 6px; border-radius: 4px; }
 .download-help { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; padding-block: 48px; border-top: 1px solid var(--line); }
 .download-help h2 { font-family: Manrope, sans-serif; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; line-height: 1.2; margin: 0 0 16px; }
 .download-help > div > p:not(.eyebrow) { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0; }
+.download-help > div > .text-link { margin-top: 20px; font-size: 16px; }
 .download-faq details { border-bottom: 1px solid var(--line); padding: 0; }
 .download-faq details:first-child { border-top: 1px solid var(--line); }
 .download-faq summary { padding: 20px 32px 20px 0; min-height: 64px; position: relative; cursor: pointer; list-style: none; font-size: 16px; }
@@ -48,6 +51,7 @@
   .download-heading .lead { font-size: 18px; }
   .download-grid { grid-template-columns: 1fr; gap: 20px; }
   .download-card { padding: 26px; }
+  .platform-heading p { min-height: 0; }
   .download-freshness { flex-direction: column; gap: 16px; margin-bottom: 48px; }
   .download-help { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
 }

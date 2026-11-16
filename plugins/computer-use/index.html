@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111c">
+  <title>Управление приложениями — Ocean</title>
+  <meta name="description" content="Подключите Computer Use к Ocean. Настройте системные разрешения, выберите приложение и проверьте доступ первой задачей.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Управление приложениями — Ocean">
+  <meta property="og:description" content="Настройте доступ к приложениям и управляйте ими через чат Ocean.">
+  <meta property="og:url" content="https://oceanharness.com/plugins/computer-use/">
+  <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://oceanharness.com/plugins/computer-use/">
+  <link rel="icon" href="/ocean-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/plugins/plugins.css">
+  <link rel="stylesheet" href="/start/start.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Основная навигация">
+    <a class="brand" href="/" aria-label="Ocean — на главную"><img src="/ocean-logo.svg" alt="" width="40" height="40">Ocean</a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-menu" data-menu-toggle><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="nav-links" id="site-menu" data-menu><a href="/">Главная</a><a href="/plugins/" aria-current="location">Плагины</a><a href="/downloads/">Скачать</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div>
+  </nav>
+</header>
+<main tabindex="-1" id="main" class="plugin-page guide-page wrap">
+  <a class="plugin-back" href="/plugins/"><span aria-hidden="true">←</span> Все плагины</a>
+  <section class="plugin-intro browser-intro" aria-labelledby="computer-title">
+    <span class="plugin-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 7.7 18 2.6-6.7L21 11.7 4 3Z"/></svg></span>
+    <p class="eyebrow">Computer Use</p>
+    <h1 id="computer-title">Ваши приложения.<br>Помощь Ocean.</h1>
+    <p class="plugin-lead">Разрешите Ocean читать интерфейс и выполнять задачи в нужных приложениях. Доступ к каждому приложению выбираете вы.</p>
+    <nav class="guide-route" aria-label="Шаги подключения приложений"><a href="#enable"><span aria-hidden="true">01</span> Включить плагин</a><a href="#permissions"><span aria-hidden="true">02</span> Настроить систему</a><a href="#try"><span aria-hidden="true">03</span> Проверить в чате</a></nav>
+  </section>
+  <section class="guide-section" id="enable" aria-labelledby="enable-title">
+    <div class="guide-heading"><p class="eyebrow">Шаг 01</p><h2 id="enable-title">Включите плагин</h2><p>Начните в разделе «Плагины» в боковой панели Ocean.</p></div>
+    <div class="guide-panel"><ol class="guide-instructions"><li><h3>Откройте «Использование компьютера»</h3><p>Включите переключатель в карточке плагина. Если Ocean попросит перезапуск, выполните его.</p></li><li><h3>Оставьте карточку открытой</h3><p>Здесь показана готовность системы и разрешения на доступ к приложениям.</p></li></ol><p class="guide-note">Если карточки нет в списке, плагин ещё не установлен. <a href="https://t.me/oceanchatsupportbot">Напишите в поддержку</a> — поможем с установкой для вашей системы.</p></div>
+  </section>
+  <section class="guide-section" id="permissions" aria-labelledby="permissions-title">
+    <div class="guide-heading"><p class="eyebrow">Шаг 02</p><h2 id="permissions-title">Подготовьте систему</h2><p>Выберите свою ОС. Возможности плагина различаются между платформами.</p></div>
+    <div class="guide-panel guide-platforms computer-platforms">
+      <details open><summary>macOS</summary><div><ol><li>В строках «Доступность» и «Запись экрана» нажмите «Запросить разрешение».</li><li>В системных настройках разрешите доступ приложению, которое указано в панели Ocean.</li><li>Вернитесь в Ocean. У обоих разрешений должен появиться статус «Разрешено».</li></ol><p>После настройки доступны чтение интерфейса, снимки окон, нажатия, ввод текста и прокрутка.</p></div></details>
+      <details><summary>Windows</summary><div><ol><li>Запустите Ocean в обычном сеансе Windows с разблокированным рабочим столом.</li><li>В карточке проверьте «Интерактивный рабочий стол» и «Захват окон».</li><li>Для действий мышью и клавиатурой оставьте нужное приложение на переднем плане.</li></ol><p>Доступны чтение интерфейса, снимки окон и управление. Приложения, запущенные от администратора, могут отказать в доступе.</p><p>Если нативный компонент недоступен, <a href="https://t.me/oceanchatsupportbot">обратитесь в поддержку</a> для его настройки под вашу систему.</p></div></details>
+      <details><summary>Linux</summary><div><ol><li>Запустите Ocean в своём локальном графическом сеансе и разблокируйте рабочий стол.</li><li>В карточке проверьте доступность AT-SPI. Нужны системный Python 3, PyGObject и AT-SPI; плагин не устанавливает их автоматически.</li><li>Откройте приложение с поддержкой AT-SPI.</li></ol><p>Доступны чтение элементов интерфейса и действия, которые предоставляет само приложение. Снимки экрана, обычный ввод мышью и клавиатурой, запуск приложений не поддерживаются.</p></div></details>
+    </div>
+  </section>
+  <section class="guide-section" id="try" aria-labelledby="try-title">
+    <div class="guide-heading"><p class="eyebrow">Шаг 03</p><h2 id="try-title">Проверьте доступ в чате</h2><p>Для начала достаточно прочитать окно. Модель должна быть <a href="/start/#model">подключена в Ocean</a>.</p></div>
+    <div class="guide-panel"><ol class="guide-instructions"><li><h3>Откройте нужное приложение</h3><p>Выберите окно без личных данных — например, текстовый редактор с тестовой заметкой.</p></li><li><h3>Попросите Ocean посмотреть окно</h3><blockquote class="guide-prompt computer-example">Прочитай открытое окно моего текстового редактора и кратко опиши, что в нём видно. Ничего не изменяй.</blockquote><p class="guide-note">Укажите название своего редактора, если открыто несколько приложений.</p></li><li><h3>Подтвердите доступ</h3><p>Ocean запросит разрешение на выбранное приложение. После подтверждения прочитает доступные элементы и ответит в чате.</p></li></ol></div>
+  </section>
+  <section class="guide-next" aria-labelledby="access-title"><div><p class="eyebrow">Вы управляете доступом</p><h2 id="access-title">Остановить или отозвать</h2><p>Нажмите «Остановить» в чате, чтобы прервать текущую работу. В карточке плагина нажмите «Отозвать» рядом с приложением, чтобы убрать его разрешение.</p></div><div><p>Список приложений заполняется после запросов доступа. Пустой список до первой задачи — нормальное состояние.</p><a class="text-link" href="/privacy/">Подробнее о данных <span aria-hidden="true">→</span></a></div></section>
+  <section class="guide-trouble" aria-labelledby="help-title"><h2 id="help-title">Не удаётся подключить?</h2><p><a href="https://t.me/oceanchatsupportbot">Напишите в поддержку Ocean</a>. Укажите систему, название приложения и сообщение из карточки плагина.</p></section>
+</main>
+<footer class="footer" lang="ru"><div class="wrap footer-inner"><a class="brand" href="/">Ocean</a><div class="footer-links"><a href="/start/">Первый запуск</a><a href="/plugins/">Плагины</a><a href="https://t.me/oceanchatsupportbot">Поддержка</a><a href="/privacy/">Конфиденциальность</a><a href="https://github.com/Ryltsevmg/Ocean">GitHub <span aria-hidden="true">↗</span></a></div></div></footer>
+</body>
+</html>
