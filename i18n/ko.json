@@ -375,5 +375,17 @@
   "05651e12e13f": "목록을 업데이트하지 못했습니다. 저장된 다운로드를 표시합니다.",
   "9ab9e9a0b14e": "다시 시도",
   "e534ed76a117": "목록을 업데이트하지 못했습니다. {date}에 확인한 다운로드를 표시합니다.",
-  "95da2841986d": "다운로드 확인일: {date}."
+  "95da2841986d": "다운로드 확인일: {date}.",
+  "d4a8bbf7e20f": "작업 보드",
+  "a1adf6535771": "지속되는 개발 보드: 에이전트가 별도 git 워크트리에서 작업을 가져가 저장소 검사를 실행하고 결과를 보고합니다.",
+  "c325772cff27": "작업은 세션보다 오래 남습니다. 보드는 그대로 있고, 실행기가 검증된 결과까지 작업을 이끕니다.",
+  "d37366153ffb": "에이전트 개발 패턴",
+  "b3e4e5eda03a": "디스패처 스킬: 지금 어떤 단계인지 판별하고 바로 쓸 수 있는 절차 하나를 건넵니다 — 계획, 인터뷰, TDD, 가설 기반 디버깅, 리뷰 또는 핸드오프.",
+  "31ced23c43a9": "번들 자체로 동작하며 추가 스킬 세트는 선택 사항입니다.",
+  "14d6cd3880ee": "릴 스튜디오",
+  "b515c7f729df": "템플릿에서 Remotion 프로젝트를 만들고 Studio에서 미리 본 뒤 대화를 떠나지 않고 MP4로 렌더링합니다.",
+  "3d1915d99eef": "렌더링은 백그라운드 작업으로 실행되므로 긴 인코딩이 채팅을 막지 않습니다.",
+  "90626ec37e08": "인터페이스 테마",
+  "496276559089": "스물일곱 가지 팔레트: Abyss, One Dark/Light, Dracula/Alucard, GitHub, Solarized, Nord, Tokyo Night, Catppuccin, Gruvbox, Everforest, Rosé Pine, Kanagawa, Ayu, Night Owl, Material, Flexoki, Modus, Darcula, Mariana, Oxocarbon, PaperColor, Seoul256, Monokai, SynthWave '84, Cobalt2, Horizon, Jellybeans.",
+  "db4bddfa55d1": "선택기 번들 하나가 라이트와 다크 두 체계에서 인터페이스를 다시 칠하며 「모양」 설정은 그대로 둡니다."
 }

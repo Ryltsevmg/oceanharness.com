@@ -375,5 +375,17 @@
   "05651e12e13f": "Impossible de mettre la liste à jour. Les téléchargements enregistrés sont affichés.",
   "9ab9e9a0b14e": "Réessayer",
   "e534ed76a117": "Impossible de mettre la liste à jour. Les téléchargements affichés ont été vérifiés le {date}.",
-  "95da2841986d": "Téléchargements vérifiés le {date}."
+  "95da2841986d": "Téléchargements vérifiés le {date}.",
+  "d4a8bbf7e20f": "Tableau des tâches",
+  "a1adf6535771": "Un tableau de développement persistant : l'agent prend une tâche dans son propre arbre de travail Git, exécute les vérifications du dépôt et renvoie le résultat.",
+  "c325772cff27": "Le travail survit à la session : le tableau reste, et l'exécuteur mène la tâche jusqu'à un résultat vérifié.",
+  "d37366153ffb": "Patrons de développement d'agents",
+  "b3e4e5eda03a": "Une compétence répartitrice : elle nomme la phase en cours et fournit une procédure prête — plan, entretien, TDD, débogage par hypothèses, revue ou passation.",
+  "31ced23c43a9": "Fonctionne depuis le paquet lui-même ; les jeux de compétences supplémentaires sont facultatifs.",
+  "14d6cd3880ee": "Studio de vidéos",
+  "b515c7f729df": "Créez un projet Remotion à partir d'un modèle, prévisualisez-le dans Studio et rendez un MP4 sans quitter la conversation.",
+  "3d1915d99eef": "Le rendu s'exécute en tâche de fond : un encodage long ne bloque pas la conversation.",
+  "90626ec37e08": "Thèmes d'interface",
+  "496276559089": "Vingt-sept palettes : Abyss, One Dark/Light, Dracula/Alucard, GitHub, Solarized, Nord, Tokyo Night, Catppuccin, Gruvbox, Everforest, Rosé Pine, Kanagawa, Ayu, Night Owl, Material, Flexoki, Modus, Darcula, Mariana, Oxocarbon, PaperColor, Seoul256, Monokai, SynthWave '84, Cobalt2, Horizon et Jellybeans.",
+  "db4bddfa55d1": "Un seul paquet sélecteur repeint l'interface dans les deux schémas et laisse « Apparence » décider."
 }

@@ -375,5 +375,17 @@
   "05651e12e13f": "Liste konnte nicht aktualisiert werden. Gespeicherte Downloads werden angezeigt.",
   "9ab9e9a0b14e": "Erneut versuchen",
   "e534ed76a117": "Liste konnte nicht aktualisiert werden. Angezeigt werden Downloads, die am {date} geprüft wurden.",
-  "95da2841986d": "Downloads am {date} geprüft."
+  "95da2841986d": "Downloads am {date} geprüft.",
+  "d4a8bbf7e20f": "Aufgabenboard",
+  "a1adf6535771": "Ein dauerhaftes Entwicklungsboard: Der Agent übernimmt eine Aufgabe in einem eigenen Git-Worktree, führt die Repository-Prüfungen aus und meldet das Ergebnis.",
+  "c325772cff27": "Die Arbeit überlebt die Sitzung: Das Board bleibt, und der Executor führt die Aufgabe zu einem geprüften Ergebnis.",
+  "d37366153ffb": "Entwicklungsmuster für Agenten",
+  "b3e4e5eda03a": "Ein Dispatcher-Skill: Er benennt die aktuelle Phase und übergibt ein fertiges Verfahren — Plan, Interview, TDD, hypothesengetriebenes Debugging, Review oder Übergabe.",
+  "31ced23c43a9": "Funktioniert aus dem Bundle selbst; zusätzliche Skill-Sets sind optional.",
+  "14d6cd3880ee": "Video-Studio",
+  "b515c7f729df": "Erstellen Sie ein Remotion-Projekt aus einer Vorlage, sehen Sie es in Studio an und rendern Sie ein MP4, ohne den Dialog zu verlassen.",
+  "3d1915d99eef": "Das Rendern läuft als Hintergrundaufgabe, sodass ein langes Encoding den Chat nicht blockiert.",
+  "90626ec37e08": "Oberflächenthemen",
+  "496276559089": "Siebenundzwanzig Paletten: Abyss, One Dark/Light, Dracula/Alucard, GitHub, Solarized, Nord, Tokyo Night, Catppuccin, Gruvbox, Everforest, Rosé Pine, Kanagawa, Ayu, Night Owl, Material, Flexoki, Modus, Darcula, Mariana, Oxocarbon, PaperColor, Seoul256, Monokai, SynthWave '84, Cobalt2, Horizon und Jellybeans.",
+  "db4bddfa55d1": "Ein einziges Auswahl-Bundle malt die Oberfläche in beiden Schemata neu und lässt „Darstellung“ unangetastet."
 }

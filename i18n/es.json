@@ -375,5 +375,17 @@
   "05651e12e13f": "No se pudo actualizar la lista. Se muestran las descargas guardadas.",
   "9ab9e9a0b14e": "Reintentar",
   "e534ed76a117": "No se pudo actualizar la lista. Se muestran las descargas verificadas el {date}.",
-  "95da2841986d": "Descargas verificadas el {date}."
+  "95da2841986d": "Descargas verificadas el {date}.",
+  "d4a8bbf7e20f": "Panel de tareas",
+  "a1adf6535771": "Un panel de desarrollo persistente: el agente toma una tarea en su propio árbol de trabajo de Git, ejecuta las comprobaciones del repositorio y devuelve el resultado.",
+  "c325772cff27": "El trabajo dura más que la sesión: el panel permanece y el ejecutor lleva la tarea hasta un resultado verificado.",
+  "d37366153ffb": "Patrones de desarrollo de agentes",
+  "b3e4e5eda03a": "Una habilidad despachadora: identifica la fase en la que estás y entrega un procedimiento listo — plan, entrevista, TDD, depuración por hipótesis, revisión o traspaso.",
+  "31ced23c43a9": "Funciona desde el propio paquete; los conjuntos de habilidades adicionales son opcionales.",
+  "14d6cd3880ee": "Estudio de vídeo",
+  "b515c7f729df": "Crea un proyecto Remotion desde una plantilla, previsualízalo en Studio y renderiza un MP4 sin salir de la conversación.",
+  "3d1915d99eef": "El render se ejecuta como tarea en segundo plano, así que una codificación larga no bloquea el chat.",
+  "90626ec37e08": "Temas de interfaz",
+  "496276559089": "Veintisiete paletas: Abyss, One Dark/Light, Dracula/Alucard, GitHub, Solarized, Nord, Tokyo Night, Catppuccin, Gruvbox, Everforest, Rosé Pine, Kanagawa, Ayu, Night Owl, Material, Flexoki, Modus, Darcula, Mariana, Oxocarbon, PaperColor, Seoul256, Monokai, SynthWave '84, Cobalt2, Horizon y Jellybeans.",
+  "db4bddfa55d1": "Un solo paquete selector repinta la interfaz en ambos esquemas y no sustituye «Apariencia»."
 }

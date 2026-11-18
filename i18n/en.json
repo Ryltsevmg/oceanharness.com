@@ -375,5 +375,17 @@
   "05651e12e13f": "Could not update the list. Showing saved downloads.",
   "9ab9e9a0b14e": "Try again",
   "e534ed76a117": "Could not update the list. Showing downloads checked on {date}.",
-  "95da2841986d": "Downloads checked on {date}."
+  "95da2841986d": "Downloads checked on {date}.",
+  "d4a8bbf7e20f": "Task board",
+  "a1adf6535771": "A persistent development board: the agent takes an issue in its own Git worktree, runs the repository checks and reports the result.",
+  "c325772cff27": "Work outlives the session: the board stays, and the executor drives the issue to a verified result.",
+  "d37366153ffb": "Agent developer patterns",
+  "b3e4e5eda03a": "A dispatcher skill: it names the phase you are in and hands over one ready procedure — plan, interview, TDD, hypothesis-driven debugging, review or handoff.",
+  "31ced23c43a9": "Works from the bundle itself; extra skill sets are optional.",
+  "14d6cd3880ee": "Reel studio",
+  "b515c7f729df": "Scaffold a Remotion project from a template, preview it in Studio and render an MP4 without leaving the conversation.",
+  "3d1915d99eef": "The render runs as a background job, so a long encode never blocks the chat.",
+  "90626ec37e08": "Interface themes",
+  "496276559089": "Twenty-seven palettes: Abyss, One Dark/Light, Dracula/Alucard, GitHub, Solarized, Nord, Tokyo Night, Catppuccin, Gruvbox, Everforest, Rosé Pine, Kanagawa, Ayu, Night Owl, Material, Flexoki, Modus, Darcula, Mariana, Oxocarbon, PaperColor, Seoul256, Monokai, SynthWave '84, Cobalt2, Horizon and Jellybeans.",
+  "db4bddfa55d1": "One picker bundle repaints the interface in both schemes and leaves Appearance in charge."
 }

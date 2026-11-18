@@ -375,5 +375,17 @@
   "05651e12e13f": "无法更新列表。当前显示已保存的下载。",
   "9ab9e9a0b14e": "重试",
   "e534ed76a117": "无法更新列表。当前显示 {date} 核验的下载。",
-  "95da2841986d": "下载已于 {date} 核验。"
+  "95da2841986d": "下载已于 {date} 核验。",
+  "d4a8bbf7e20f": "任务看板",
+  "a1adf6535771": "持久化的开发看板：智能体在独立的 git 工作树中领取任务，运行仓库检查并返回结果。",
+  "c325772cff27": "任务比会话活得更久：看板保留，执行器把任务推进到经过验证的结果。",
+  "d37366153ffb": "智能体开发模式",
+  "b3e4e5eda03a": "调度型技能：先判断你处于哪个阶段，再给出一份现成的流程——计划、访谈、TDD、假设驱动调试、评审或交接。",
+  "31ced23c43a9": "仅靠该捆绑包即可运行，额外的技能集不是必需的。",
+  "14d6cd3880ee": "影片工作室",
+  "b515c7f729df": "从模板生成 Remotion 项目，在 Studio 中预览，并直接在对话里渲染 MP4。",
+  "3d1915d99eef": "渲染在后台任务中进行，长时间的编码不会阻塞对话。",
+  "90626ec37e08": "界面主题",
+  "496276559089": "二十七套配色：Abyss、One Dark/Light、Dracula/Alucard、GitHub、Solarized、Nord、Tokyo Night、Catppuccin、Gruvbox、Everforest、Rosé Pine、Kanagawa、Ayu、Night Owl、Material、Flexoki、Modus、Darcula、Mariana、Oxocarbon、PaperColor、Seoul256、Monokai、SynthWave '84、Cobalt2、Horizon 和 Jellybeans。",
+  "db4bddfa55d1": "一个选择器捆绑包即可在明暗两种方案下重绘界面，并且不取代「外观」设置。"
 }
