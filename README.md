@@ -69,6 +69,10 @@ placeholder such as `{date}` is lost. `tests/site.test.mjs` checks the built HTM
 ten `hreflang` entries per page, the sitemap, the language menu, that no internal link points at a missing file, and
 that a translated page contains no Russian text outside the language menu.
 
-The published URL set is a compatibility contract: `/plugins/browser-control/privacy/` keeps serving the English text
-it was published with and canonicalizes to `/en/plugins/browser-control/privacy/`, while Russian uses
+The published URL set is a compatibility contract: `/plugins/browser-control/privacy/` keeps serving English and
+canonicalizes to `/en/plugins/browser-control/privacy/`, while Russian uses
 `/plugins/browser-control/privacy/ru/`.
+
+The English policy text is now the current Russian policy translated, like the other eight locales. The static site
+kept `/en/plugins/browser-control/privacy/` on an older English draft, so the English page grew by one paragraph and
+gained the link to the app privacy page; the section list and the effective date are unchanged.
