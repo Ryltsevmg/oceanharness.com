@@ -3,3 +3,9 @@ node_modules/
 out/
 *.tsbuildinfo
 next-env.d.ts
+
+# Local design scratch: screenshots, review notes and the Pen source stay out of the tree.
+audit-*/
+design-previews/
+design-review.md
+*.pen
