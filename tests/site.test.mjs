@@ -146,3 +146,20 @@ test('the sitemap lists every published address once', () => {
   assert.deepEqual(new Set(urls).size, urls.length, 'sitemap has duplicates');
   assert.deepEqual(urls.slice().sort(), expected.slice().sort(), 'sitemap coverage');
 });
+
+test('a translated page never links at the Russian route of another page', () => {
+  // Internal links must carry the locale prefix. A bare `/plugins/` on `/de/` would still resolve to a built file,
+  // so the link check cannot see it: the visitor would silently land on the Russian page.
+  const russianRoutes = new Set(PAGES.map(page => localizedPath(page.key, 'ru')));
+  for (const page of PAGES) {
+    for (const locale of LOCALES.filter(code => code !== 'ru')) {
+      const path = localizedPath(page.key, locale);
+      // The language menu is allowed to reach every locale, Russian included.
+      const html = read(path).replace(/<details class="language-picker"[\s\S]*?<\/details>/g, '');
+      const offenders = [...html.matchAll(/(?:href|src)="(\/[^"#]*?)"/g)]
+        .map(([, href]) => href)
+        .filter(href => russianRoutes.has(href.endsWith('/') ? href : `${href}/`) && !href.startsWith('/assets/'));
+      assert.deepEqual(offenders, [], `${path} links to Russian routes: ${offenders.join(' ')}`);
+    }
+  }
+});
