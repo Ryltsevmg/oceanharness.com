@@ -3,6 +3,7 @@ name: pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.ref || 'pages' }}
   cancel-in-progress: true
 
 jobs:
@@ -37,13 +38,18 @@ jobs:
       - name: Check the built site
         run: node --import tsx --test tests/*.test.mjs
 
-      - uses: actions/configure-pages@v5
+      # A pull request proves the pipeline; only a push to main publishes, because Pages accepts an artifact from
+      # the default branch and the deployment would otherwise overwrite the live site from a review branch.
+      - if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
 
-      - uses: actions/upload-pages-artifact@v3
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: out
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
