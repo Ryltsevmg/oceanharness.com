@@ -38,8 +38,6 @@ jobs:
         run: node --test tests/*.test.mjs
 
       - uses: actions/configure-pages@v5
-        with:
-          enable-jekyll: false
 
       - uses: actions/upload-pages-artifact@v3
         with:
