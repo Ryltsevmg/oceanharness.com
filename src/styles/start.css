@@ -1,0 +1,59 @@
+.guide-page .plugin-intro { padding-bottom: 48px; }
+.guide-route { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.guide-route a { display: flex; align-items: center; gap: 16px; min-height: 76px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--text); background: var(--panel); }
+.guide-route a:hover { border-color: var(--ice); }
+.guide-route span { color: var(--ice); font: 13px var(--font-mono); }
+.guide-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; padding-block: 48px; border-top: 1px solid var(--line); }
+.guide-heading h2, .guide-next h2 { margin-top: 14px; }
+.guide-heading > p:not(.eyebrow), .guide-next p:not(.eyebrow), .guide-trouble p { margin-top: 18px; font-size: 17px; line-height: 1.65; }
+.guide-heading .button { margin-top: 28px; }
+.guide-panel { min-width: 0; padding: 32px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.guide-instructions { padding-left: 24px; margin: 0; }
+.guide-instructions li { padding-left: 8px; }
+.guide-instructions li + li { margin-top: 28px; }
+.guide-instructions li::marker { color: var(--ice); font: 14px var(--font-mono); }
+.guide-instructions h3 { font-size: 19px; margin-bottom: 10px; }
+.guide-panel p { font-size: 16px; line-height: 1.65; }
+.guide-panel .guide-note { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; }
+.guide-platforms details + details { border-top: 1px solid var(--line); }
+.guide-platforms summary { display: flex; justify-content: space-between; gap: 16px; min-height: 58px; align-items: center; cursor: pointer; list-style: none; font-size: 19px; }
+.guide-platforms summary::-webkit-details-marker { display: none; }
+.guide-platforms summary::after { content: '+'; color: var(--ice); font-size: 22px; }
+.guide-platforms details[open] > summary::after { content: '−'; }
+.guide-platforms summary:focus-visible { outline: 2px solid var(--ice); outline-offset: 4px; border-radius: 4px; }
+.guide-platforms details > div { padding: 4px 0 24px; }
+.guide-platforms ol { margin: 0 0 16px; padding-left: 24px; color: var(--muted); }
+.guide-platforms li + li { margin-top: 8px; }
+.guide-platforms code { color: var(--ice); font: .9em var(--font-mono); overflow-wrap: anywhere; }
+.guide-prompt { margin: 16px 0 0; padding: 20px; border-radius: 14px; background: var(--surface); font-size: 16px; line-height: 1.65; }
+.guide-next { display: grid; grid-template-columns: 1fr .7fr; gap: 48px; align-items: center; margin-top: 24px; padding: 40px; background: var(--surface); border-radius: var(--radius); }
+.guide-next-links { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.guide-trouble { max-width: 850px; margin-top: 56px; }
+.guide-trouble h2 { font-size: 28px; }
+.computer-platforms { margin-top: 8px; }
+.computer-platforms h3 { font-size: 19px; margin-block: 0 12px; }
+.computer-platforms p + p { margin-top: 14px; }
+.computer-platforms details p { margin-bottom: 0; }
+.computer-example { margin-top: 20px; }
+@media (max-width: 900px) {
+  .guide-section { gap: 32px; grid-template-columns: .8fr 1.2fr; }
+  .guide-route a { padding-inline: 16px; font-size: 15px; gap: 12px; }
+}
+@media (max-width: 760px) {
+  .guide-route, .guide-section, .guide-next { grid-template-columns: 1fr; }
+  .guide-route { gap: 10px; margin-top: 28px; }
+  .guide-route a { min-height: 64px; font-size: 16px; }
+  .guide-section { gap: 24px; padding-block: 36px; }
+  .guide-panel, .guide-next { padding: 24px; border-radius: 20px; }
+  .guide-next { gap: 24px; }
+  .guide-instructions { padding-left: 20px; }
+  .guide-instructions li { padding-left: 3px; }
+  .guide-instructions h3 { font-size: 18px; }
+  .guide-heading .button { width: 100%; }
+  .guide-trouble { margin-top: 40px; }
+}
+@media (max-width: 360px) {
+  .guide-panel, .guide-next { padding: 20px; }
+  .guide-prompt { padding: 16px; font-size: 15px; }
+  .guide-page h1 { font-size: 36px; }
+}

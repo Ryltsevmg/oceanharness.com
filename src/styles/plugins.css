@@ -1,0 +1,372 @@
+.plugin-page,
+.policy-page {
+  padding-block: 64px 96px;
+}
+
+.plugin-page h1,
+.policy-page h1 {
+  margin: 0;
+  max-width: 960px;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(40px, 5.2vw, 72px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+
+.plugin-page h2,
+.policy-page h2 {
+  margin: 0;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.plugin-page h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.plugin-intro {
+  padding: 12px 0 44px;
+}
+
+.plugin-lead {
+  max-width: 700px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.plugin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plugin-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.plugin-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.plugin-symbol {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ice);
+  background: var(--bg);
+}
+
+.plugin-symbol svg {
+  width: 24px;
+  height: 24px;
+}
+
+.plugin-head .plugin-symbol {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+
+.plugin-head .plugin-symbol svg {
+  width: 18px;
+  height: 18px;
+}
+
+.plugin-kicker {
+  margin: 0;
+  color: var(--ice);
+  font: 400 13px/1.4 var(--font-mono);
+  letter-spacing: .02em;
+}
+
+.plugin-card h2 {
+  margin-top: 16px;
+  font-size: 20px;
+  letter-spacing: -.015em;
+}
+
+.plugin-card > p:not(.plugin-head) {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.plugin-team p:not(.eyebrow),
+.plugin-start p,
+.browser-setup p,
+.browser-control p {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.plugin-page .text-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ice);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.plugin-page .plugin-card > .text-link {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 15px;
+}
+
+.plugin-page .text-link:hover,
+.plugin-back:hover {
+  color: var(--text);
+}
+
+.plugin-team {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px 0;
+  margin-top: 24px;
+}
+
+.plugin-team .eyebrow {
+  margin-bottom: 12px;
+}
+
+.plugin-team h2 {
+  font-size: 24px;
+}
+
+.plugin-team p:not(.eyebrow) {
+  margin-top: 12px;
+}
+
+.plugin-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 32px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.plugin-start h2 {
+  max-width: 700px;
+  font-size: 26px;
+}
+
+.plugin-start p {
+  max-width: 690px;
+  margin-top: 16px;
+}
+
+.plugin-start .button {
+  flex-shrink: 0;
+}
+
+.plugin-back {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.browser-intro .plugin-symbol {
+  margin-bottom: 28px;
+}
+
+.browser-setup,
+.browser-control {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  padding-block: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.browser-setup > div > p:last-child {
+  max-width: 440px;
+}
+
+.setup-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.setup-steps li {
+  display: flex;
+  gap: 24px;
+}
+
+.setup-steps p {
+  margin-top: 0;
+}
+
+.step-number {
+  padding-top: 5px;
+  color: var(--ice);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.browser-control > div > p:first-child {
+  margin-top: 0;
+}
+
+.browser-control .text-link {
+  margin-top: 24px;
+}
+
+.policy-page {
+  max-width: 900px;
+}
+
+.policy-page h1 {
+  margin-bottom: 24px;
+  font-size: clamp(36px, 5vw, 60px);
+}
+
+.policy-page h2 {
+  margin: 48px 0 16px;
+  font-size: 28px;
+}
+
+.policy-page p,
+.policy-page li {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.policy-page p {
+  margin: 0 0 20px;
+}
+
+.policy-page li {
+  margin-bottom: 12px;
+}
+
+.policy-page ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.policy-page strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.policy-page a:not(.plugin-back) {
+  color: var(--ice);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  .plugin-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .plugin-page,
+  .policy-page {
+    padding-block: 40px 64px;
+  }
+
+  .plugin-intro {
+    padding-bottom: 40px;
+  }
+
+  .plugin-grid,
+  .browser-setup,
+  .browser-control {
+    grid-template-columns: 1fr;
+  }
+
+  .browser-setup,
+  .browser-control {
+    gap: 32px;
+    padding-block: 40px;
+  }
+
+  .plugin-start {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plugin-page h1 {
+    font-size: 40px;
+  }
+
+  .plugin-lead {
+    font-size: 18px;
+  }
+
+  .plugin-card,
+  .plugin-start {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .plugin-start h2 {
+    font-size: 24px;
+  }
+
+  .plugin-team {
+    gap: 16px;
+    padding-block: 32px;
+  }
+
+  .plugin-team h2 {
+    font-size: 26px;
+  }
+
+  .plugin-team .eyebrow {
+    font-size: 12px;
+  }
+
+  .plugin-start .button {
+    width: 100%;
+  }
+
+  .setup-steps li {
+    gap: 16px;
+  }
+}
