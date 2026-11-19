@@ -26,6 +26,8 @@ Run `python3 scripts/localize-site.py` with Node on PATH to regenerate locale pa
 
 `start/` explains installation and the first chat. `plugins/` contains the catalog and connection guides. `privacy/` describes Ocean's data handling; the separate Browser Control policy remains at its published URL, with a Russian translation under `ru/`.
 
+The card grid mirrors the Ocean market catalogue in `@ocean/ocean-plugin-market`: one card per installable plugin, the market's own card excluded. Adding a plugin means one Russian card in `plugins/index.html`, its new strings in every `i18n/*.json` catalog and a regeneration run; the card carries the icon, the product name, the Russian title and a single description.
+
 Shared navigation styles and mobile behavior live in `styles.css` and `site.js`. HTML navigation and footers are repeated across pages; update them together in the Russian source pages.
 
 The approved whale source is `ocean-whale-line.png`. Responsive WebP copies in `assets/` reduce page weight without changing the artwork; `assets/ocean-social.jpg` is used for link previews.

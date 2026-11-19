@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b111c">
   <title>插件 — Ocean</title>
-  <meta name="description" content="将 Google Chrome 和电脑上的应用连接到 Ocean。在一个工作空间中管理工具和访问权限。">
+  <meta name="description" content="Ocean 插件：浏览器、电脑应用、模型与开发工具，在同一个工作空间中管理。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="插件 — Ocean">
-  <meta property="og:description" content="将 Google Chrome 和电脑上的应用连接到 Ocean。在一个工作空间中管理工具和访问权限。">
+  <meta property="og:description" content="Ocean 插件：浏览器、电脑应用、模型与开发工具，在同一个工作空间中管理。">
   <meta property="og:url" content="https://oceanharness.com/zh/plugins/">
   <meta property="og:image" content="https://oceanharness.com/assets/ocean-social.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -46,52 +46,70 @@
   <section class="plugin-intro" aria-labelledby="plugins-title">
     <p class="eyebrow">为你的任务配备工具</p>
     <h1 id="plugins-title">更多可能。<br>你的 Ocean。</h1>
-    <p class="plugin-lead">连接你每天使用的浏览器和应用。</p>
+    <p class="plugin-lead">连接你每天使用的浏览器、应用和模型。</p>
   </section>
   <div class="plugin-grid">
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18"/></svg></span>
-      <p class="plugin-kicker">Browser Control</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z"/></svg></span><span class="plugin-kicker">Browser Control</span></p>
       <h2>浏览器控制</h2>
-      <p>使用保留登录状态的 Chrome。在聊天中阅读页面、填写表单、管理标签页。</p>
-      <p class="plugin-detail">由你选择允许访问的网站，也可以将已打开的标签页交给 Ocean。</p>
+      <p>使用保留登录状态的 Chrome：阅读页面、填写表单、管理标签页。</p>
       <a class="text-link" href="/zh/plugins/browser-control/">连接方法 <span aria-hidden="true">→</span></a>
     </article>
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 7.7 18 2.6-6.7L21 11.7 4 3Z"/></svg></span>
-      <p class="plugin-kicker">Computer Use</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 7.7 18 2.6-6.7L21 11.7 4 3Z"/></svg></span><span class="plugin-kicker">Computer Use</span></p>
       <h2>应用控制</h2>
       <p>在已授权的应用中读取界面、截取窗口、点击、输入文字和滚动。</p>
-      <p class="plugin-detail">在 Ocean 的“插件”中设置访问权限。可用操作因操作系统而异。</p>
       <a class="text-link" href="/zh/plugins/computer-use/">连接方法 <span aria-hidden="true">→</span></a>
     </article>
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="10" cy="18" r="1.6"/></svg></span>
-      <p class="plugin-kicker">Super Agent</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 7.7-7.7M18 5l3 3M15 8l2 2"/></svg></span><span class="plugin-kicker">Codex</span></p>
+      <h2>ChatGPT 账号</h2>
+      <p>将 ChatGPT Plan 作为原生服务商：通过 OAuth 登录，并读取你账号的模型目录。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="10" cy="18" r="1.6"/></svg></span><span class="plugin-kicker">Super Agent</span></p>
       <h2>任务看板</h2>
-      <p>持久化的开发看板：智能体在独立的 git 工作树中领取任务，运行仓库检查并返回结果。</p>
-      <p class="plugin-detail">任务比会话活得更久：看板保留，执行器把任务推进到经过验证的结果。</p>
+      <p>任务比会话更持久：执行器在独立的 git 工作树中领取任务，并推进到经过验证的结果。</p>
     </article>
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></span>
-      <p class="plugin-kicker">Agent Developer Patterns</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></span><span class="plugin-kicker">Agent Developer Patterns</span></p>
       <h2>智能体开发模式</h2>
-      <p>调度型技能：先判断你处于哪个阶段，再给出一份现成的流程——计划、访谈、TDD、假设驱动调试、评审或交接。</p>
-      <p class="plugin-detail">仅靠该捆绑包即可运行，额外的技能集不是必需的。</p>
+      <p>调度型技能：判断你处于哪个阶段，并给出现成的流程——计划、访谈、TDD、调试、评审或交接。</p>
     </article>
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></span>
-      <p class="plugin-kicker">Remotion studio</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="plugin-kicker">Remotion studio</span></p>
       <h2>影片工作室</h2>
       <p>从模板生成 Remotion 项目，在 Studio 中预览，并直接在对话里渲染 MP4。</p>
-      <p class="plugin-detail">渲染在后台任务中进行，长时间的编码不会阻塞对话。</p>
     </article>
     <article class="plugin-card">
-      <span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="16" cy="15" r="2"/></svg></span>
-      <p class="plugin-kicker">Theme picker</p>
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="16" cy="15" r="2"/></svg></span><span class="plugin-kicker">Theme picker</span></p>
       <h2>界面主题</h2>
-      <p>二十七套配色：Abyss、One Dark/Light、Dracula/Alucard、GitHub、Solarized、Nord、Tokyo Night、Catppuccin、Gruvbox、Everforest、Rosé Pine、Kanagawa、Ayu、Night Owl、Material、Flexoki、Modus、Darcula、Mariana、Oxocarbon、PaperColor、Seoul256、Monokai、SynthWave '84、Cobalt2、Horizon 和 Jellybeans。</p>
-      <p class="plugin-detail">一个选择器捆绑包即可在明暗两种方案下重绘界面，并且不取代「外观」设置。</p>
+      <p>二十七套配色——从 Abyss、One Dark 到 Catppuccin、Gruvbox 和 Monokai——两种界面方案均适用。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span><span class="plugin-kicker">Forge</span></p>
+      <h2>变更请求</h2>
+      <p>git 仓库中的会话获得自己的工作树与变更请求面板；GitHub 通过 CLI 操作。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 5 6.2V12c0 4.3 2.9 7.4 7 8.8 4.1-1.4 7-4.5 7-8.8V6.2l-7-2.7Z"/><path d="m9.2 11.8 2 2 3.6-3.6"/></svg></span><span class="plugin-kicker">Auto review</span></p>
+      <h2>自动评审</h2>
+      <p>在 Auto 预设中，每次工具调用都会在循环继续前与你的请求核对。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></span><span class="plugin-kicker">Developer tools</span></p>
+      <h2>开发者工具</h2>
+      <p>会话与 Chat 节点检查器、逐轮的上下文与费用统计，以及需要手动开启的 CDP hub。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span class="plugin-kicker">Voice input</span></p>
+      <h2>语音输入</h2>
+      <p>通过本地 SenseVoice 运行环境听写：音频不离开本机，模型权重在首次使用时下载。</p>
+    </article>
+    <article class="plugin-card">
+      <p class="plugin-head"><span class="plugin-symbol"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></svg></span><span class="plugin-kicker">Session titles</span></p>
+      <h2>会话标题</h2>
+      <p>会话名称跟随每一条消息，而不只是第一条提示。</p>
     </article>
   </div>
   <section class="plugin-team" aria-labelledby="team-title">
