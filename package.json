@@ -1,0 +1,27 @@
+{
+  "name": "oceanharness-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/next/dist/bin/next dev",
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "node scripts/serve-out.mjs",
+    "test": "node --import tsx --test tests/*.test.mjs",
+    "verify": "node node_modules/next/dist/bin/next build && node --import tsx --test tests/*.test.mjs",
+    "update:downloads": "node scripts/update-downloads.mjs",
+    "import:legacy-copy": "node scripts/import-legacy-copy.mjs"
+  },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "jsdom": "^31.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
