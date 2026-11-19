@@ -1,23 +1,41 @@
 {
-  "checkedAt": "2026-11-16T20:36:03.542Z",
+  "checkedAt": "2026-11-19T10:24:52.509Z",
   "downloads": [
     {
       "platform": "mac",
       "arch": "arm64",
-      "format": "ZIP",
-      "size": 491251988,
-      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v0.2.2-rc.2.20261115.1/Ocean-Chat-0.2.2-rc.2.20261115.1-arm64-notarized.zip",
-      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v0.2.2-rc.2.20261115.1",
-      "publishedAt": "2026-11-15T07:41:10Z"
+      "format": "DMG",
+      "size": 342364876,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v1.0.0/ocean-1.0.0-mac-arm64-unsigned.dmg",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v1.0.0",
+      "publishedAt": "2026-11-19T10:14:42Z"
+    },
+    {
+      "platform": "win",
+      "arch": "x64",
+      "format": "EXE",
+      "size": 416548654,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v1.0.0/ocean-1.0.0-win-x64-unsigned.exe",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v1.0.0",
+      "publishedAt": "2026-11-19T10:14:42Z"
+    },
+    {
+      "platform": "linux",
+      "arch": "arm64",
+      "format": "TAR.GZ",
+      "size": 447695178,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v1.0.0/ocean-1.0.0-linux-arm64-unsigned.tar.gz",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v1.0.0",
+      "publishedAt": "2026-11-19T10:14:42Z"
     },
     {
       "platform": "linux",
       "arch": "x64",
       "format": "TAR.GZ",
-      "size": 485030687,
-      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v0.2.2-rc.2.20261115.1/ocean-chat-0.2.2-rc.2.20261115.1-linux-x64-unsigned.tar.gz",
-      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v0.2.2-rc.2.20261115.1",
-      "publishedAt": "2026-11-15T07:41:10Z"
+      "size": 465480724,
+      "url": "https://github.com/Ryltsevmg/Ocean/releases/download/v1.0.0/ocean-1.0.0-linux-x64-unsigned.tar.gz",
+      "releaseUrl": "https://github.com/Ryltsevmg/Ocean/releases/tag/v1.0.0",
+      "publishedAt": "2026-11-19T10:14:42Z"
     }
   ]
 }

@@ -20,9 +20,9 @@ export const PLATFORMS = [
 const TARGETS = new Set(PLATFORMS.flatMap(platform => platform.architectures.map(([arch]) => `${platform.id}-${arch}`)));
 const FORMAT_ORDER = { DMG: 0, EXE: 0, AppImage: 0, MSI: 1, DEB: 1, ZIP: 2, 'TAR.GZ': 2 };
 
-/** Match desktop artifactName (ocean-chat-${version}-${os}-${arch}) and the published legacy notarized Mac ZIP. */
+/** Match the desktop artifactName (ocean-${version}-${os}-${arch}; the legacy ocean-chat- spelling stays accepted) and the published legacy notarized Mac ZIP. */
 export function identifyAsset(name) {
-  if (typeof name !== 'string' || !/^ocean-chat-/i.test(name) || /(?:^|[-.])(debug|symbols|blockmap|sha256|checksums?)(?:[-.]|$)/i.test(name)) return null;
+  if (typeof name !== 'string' || !/^ocean(?:-chat)?-\d+\.\d+\.\d+/i.test(name) || /(?:^|[-.])(debug|symbols|blockmap|sha256|checksums?)(?:[-.]|$)/i.test(name)) return null;
   const lower = name.toLowerCase();
   const archMatch = lower.match(/-(arm64|aarch64|x64|x86_64|amd64)(?=[-.])/);
   if (!archMatch) return null;

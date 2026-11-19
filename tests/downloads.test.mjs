@@ -11,6 +11,9 @@ test('recognizes current macOS and Linux archives and shipped future target nami
   assert.deepEqual(identifyAsset('ocean-chat-1.0.0-mac-x64.dmg'), { platform: 'mac', arch: 'x64', format: 'DMG' });
   assert.deepEqual(identifyAsset('ocean-chat-1.0.0-win-x64.exe'), { platform: 'win', arch: 'x64', format: 'EXE' });
   assert.deepEqual(identifyAsset('ocean-chat-1.0.0-linux-arm64.AppImage'), { platform: 'linux', arch: 'arm64', format: 'AppImage' });
+  assert.deepEqual(identifyAsset('ocean-1.0.0-mac-arm64-unsigned.dmg'), { platform: 'mac', arch: 'arm64', format: 'DMG' });
+  assert.deepEqual(identifyAsset('ocean-1.0.0-win-x64-unsigned.exe'), { platform: 'win', arch: 'x64', format: 'EXE' });
+  assert.deepEqual(identifyAsset('ocean-1.0.0-linux-x64-unsigned.tar.gz'), { platform: 'linux', arch: 'x64', format: 'TAR.GZ' });
 });
 
 test('does not promote metadata, SDKs, debug archives, or unknown architectures to installers', () => {
