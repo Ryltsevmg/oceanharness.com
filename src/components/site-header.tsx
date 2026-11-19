@@ -139,7 +139,7 @@ export function SiteHeader({
           {links.map(link => (
             <a key={`${link.href}${link.label}`} href={link.href} {...(link.current ? { 'aria-current': 'page' as const } : {})}>
               {link.label}
-              {link.external ? <>{' '}<span aria-hidden="true">↗</span></> : null}
+              {link.external ? <span aria-hidden="true">↗</span> : null}
             </a>
           ))}
         </div>

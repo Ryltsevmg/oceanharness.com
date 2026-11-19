@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '../styles/plugins.css';
 import { PluginSymbol } from '../components/icons.tsx';
 import { PageShell } from '../components/page-shell.tsx';
 import { PLUGINS, type Plugin } from '../content/plugins.ts';

@@ -1,21 +1,21 @@
-import { readFile, writeFile } from 'node:fs/promises';
+/**
+ * Refresh the checked download snapshot the build renders from.
+ *
+ * Reads the GitHub Releases API and writes `public/downloads/releases.json`; the page itself is rebuilt from that
+ * file, so nothing here touches HTML. With `GITHUB_TOKEN` set the request is authenticated and the rate limit stops
+ * being the failure mode.
+ *
+ * Usage: node scripts/update-downloads.mjs
+ */
+import { writeFile } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { fetchLatestDownloads, renderDownloadCards, formatDate } from '../downloads/downloads.js';
+import { fetchLatestDownloads, parseSnapshot } from '../src/content/downloads.ts';
 
-const root = new URL('../', import.meta.url);
+const ROOT = resolve(fileURLToPath(import.meta.url), '../..');
 const headers = process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {};
 const downloads = await fetchLatestDownloads(fetch, { headers, signal: AbortSignal.timeout(30_000) });
-const checkedAt = new Date().toISOString();
-const htmlPath = new URL('downloads/index.html', root);
-const html = await readFile(htmlPath, 'utf8');
-const replaceSection = (source, name, content) => {
-  const start = `<!-- ${name}_START -->`;
-  const end = `<!-- ${name}_END -->`;
-  if (source.split(start).length !== 2 || source.split(end).length !== 2) throw new Error(`Missing or duplicate ${name} markers`);
-  return source.replace(new RegExp(`${start}[\\s\\S]*?${end}`), `${start}\n${content}\n${end}`);
-};
-let updated = replaceSection(html, 'DOWNLOAD_CARDS', renderDownloadCards(downloads));
-updated = replaceSection(updated, 'DOWNLOAD_STATUS', `      <p data-download-status data-checked-at="${checkedAt}" role="status" aria-live="polite">Загрузки проверены ${formatDate(checkedAt)}.</p>`);
-await writeFile(new URL('downloads/releases.json', root), `${JSON.stringify({ checkedAt, downloads }, null, 2)}\n`);
-await writeFile(htmlPath, updated);
-console.log(`Updated ${downloads.length} available downloads in ${fileURLToPath(htmlPath)}`);
+const snapshot = parseSnapshot({ checkedAt: new Date().toISOString(), downloads });
+
+await writeFile(join(ROOT, 'public/downloads/releases.json'), `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+console.log(`Saved ${snapshot.downloads.length} of 5 targets to public/downloads/releases.json`);

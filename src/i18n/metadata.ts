@@ -4,8 +4,9 @@ import { SITE_ORIGIN, hreflangAlternates, localizedUrl, type Locale, type PageKe
 /**
  * Metadata of one prerendered page.
  *
- * The published site carries a title, a description, an Open Graph block, a Twitter card, a `theme-color` and a full
- * `hreflang` set with `x-default` pointing at the Russian source. Search engines and link previews read those tags
+ * The published site carries a title, a description, an Open Graph block, a Twitter card and a full `hreflang` set
+ * with `x-default` pointing at the Russian source. `theme-color` is not metadata: it comes from the `viewport`
+ * export of the layouts. Search engines and link previews read those tags
  * from the static HTML, so every field here is part of the public contract.
  *
  * @param page the page key whose locale URLs are emitted.
@@ -41,7 +42,6 @@ export function pageMetadata({
       description,
       images: [{ url: `${SITE_ORIGIN}/assets/ocean-social.jpg`, width: 1200, height: 630, alt: '' }],
     },
-    themeColor: '#0b111c',
     twitter: { card: 'summary_large_image', title, description, images: [`${SITE_ORIGIN}/assets/ocean-social.jpg`] },
   };
 }

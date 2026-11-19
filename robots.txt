@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://oceanharness.com/sitemap.xml

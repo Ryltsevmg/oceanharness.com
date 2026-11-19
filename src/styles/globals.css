@@ -1,4 +1,6 @@
-@import url('/assets/fonts/fonts.css');
+/* The self-hosted Inter, Manrope and JetBrains Mono faces. Bundled here so the page asks for one stylesheet;
+   the woff2 files keep their absolute /assets/fonts/ URLs and are served from public/. */
+@import url('../../public/assets/fonts/fonts.css');
 
 :root {
   color-scheme: dark;

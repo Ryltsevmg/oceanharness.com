@@ -10,18 +10,19 @@ import type { LanguageLink, NavLink } from './site-header.tsx';
  */
 
 /** Which nav entry is active, plus the landing page's own section anchor. */
-export type Current = PageKey | 'features';
+export type Current = PageKey | 'features' | null;
 
 /** The four nav links of the header, already localized. */
 export function navLinks(locale: Locale, ui: Translate, current: Current): readonly NavLink[] {
+  // The landing page links its first entry to the in-page section and marks nothing as the current route.
   const start: NavLink = current === 'features'
-    ? { label: ui('Возможности'), href: '#features', current: true }
+    ? { label: ui('Возможности'), href: '#features' }
     : { label: ui('Главная'), href: localizedPath('home', locale), current: current === 'home' };
   return [
     start,
     { label: ui('Плагины'), href: localizedPath('plugins', locale), current: current === 'plugins' },
     { label: ui('Скачать'), href: localizedPath('downloads', locale), current: current === 'downloads' },
-    { label: ui('GitHub'), href: 'https://github.com/Ryltsevmg/Ocean', current: false, external: true },
+    { label: `${ui('GitHub')} `, href: 'https://github.com/Ryltsevmg/Ocean', current: false, external: true },
   ];
 }
 
@@ -48,6 +49,6 @@ export function footerLinks(locale: Locale, ui: Translate): readonly NavLink[] {
     { label: ui('Плагины'), href: localizedPath('plugins', locale) },
     { label: ui('Поддержка'), href: 'https://t.me/oceanchatsupportbot' },
     { label: ui('Конфиденциальность'), href: localizedPath('privacy', locale) },
-    { label: ui('GitHub'), href: 'https://github.com/Ryltsevmg/Ocean', external: true },
+    { label: `${ui('GitHub')} `, href: 'https://github.com/Ryltsevmg/Ocean', external: true },
   ];
 }

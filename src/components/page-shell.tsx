@@ -47,7 +47,7 @@ export function PageShell({
             {footerLinks(locale, ui).map(link => (
               <a key={link.href} href={link.href}>
                 {link.label}
-                {link.external ? <>{' '}<span aria-hidden="true">↗</span></> : null}
+                {link.external ? <span aria-hidden="true">↗</span> : null}
               </a>
             ))}
           </div>

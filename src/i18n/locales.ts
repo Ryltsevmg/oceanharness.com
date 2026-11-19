@@ -79,7 +79,6 @@ export function page(key: PageKey): (typeof PAGES)[number] {
 export function localizedPath(key: PageKey, locale: Locale): string {
   const { path, privacyLegacy } = page(key);
   if (locale === DEFAULT_LOCALE) return privacyLegacy ? `${path}ru/` : path;
-  if (privacyLegacy) return path;
   return `/${locale}${path}`;
 }
 
