@@ -32,7 +32,9 @@ node --test tests/
 static site. Those catalogs are gone from the tree; the script stays until every page has been reviewed by hand.
 
 `bash scripts/visual-parity.sh` screenshots the export and a reference site (set `BUILT` and `BASE`) at one viewport
-and writes the pairs to `/tmp/parity`; it is how the port was checked against the published pages.
+and writes the pairs to `/tmp/parity`. For a narrow viewport, pixel pairs are not stable — a tall page inside a fixed
+iframe clips and scrolls differently between runs — so `bash scripts/geometry-parity.sh` compares the bounding boxes
+of the layout landmarks at 390px instead. Both need the export on one port and a reference tree on another.
 
 ## Publishing
 
