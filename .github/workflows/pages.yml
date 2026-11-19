@@ -35,7 +35,7 @@ jobs:
         run: node node_modules/next/dist/bin/next build
 
       - name: Check the built site
-        run: node --test tests/*.test.mjs
+        run: node --import tsx --test tests/*.test.mjs
 
       - uses: actions/configure-pages@v5
 
