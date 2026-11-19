@@ -13,9 +13,9 @@ export const RELEASES_URL = `${REPOSITORY}/releases`;
 export const RELEASES_API = 'https://api.github.com/repos/Ryltsevmg/Ocean/releases?per_page=100';
 export const DOWNLOAD_TARGETS = [
   { platform: 'mac', arch: 'arm64', title: 'macOS', label: 'Apple silicon' },
+  { platform: 'win', arch: 'x64', title: 'Windows', label: 'Intel / AMD · x64' },
   { platform: 'linux', arch: 'x64', title: 'Linux', label: 'Intel / AMD · x64' },
   { platform: 'linux', arch: 'arm64', title: 'Linux', label: 'ARM64' },
-  { platform: 'win', arch: 'x64', title: 'Windows', label: 'Intel / AMD · x64' },
   { platform: 'mac', arch: 'x64', title: 'macOS', label: 'Intel' },
 ];
 
