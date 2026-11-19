@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const LOCALES = ['en', 'zh', 'ja', 'es', 'fr', 'de', 'pt', 'ko'];
-const LITERAL = /ui\((['])(.+?)\1\)/gs;
+const LITERAL = /ui\((['"])(.+?)\1\)/gs;
 
 /** The published message id: whitespace collapsed and trimmed, then the first 12 hex digits of SHA-256. */
 function messageId(text) {
