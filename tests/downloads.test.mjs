@@ -72,10 +72,13 @@ test('fetch follows GitHub pagination and stops on errors instead of exposing an
   await assert.rejects(fetchLatestDownloads(async () => new Response('[]', { headers: { link: '<https://other.example/>; rel="next"' } })), /Unexpected release page/);
 });
 
-test('empty targets have a real fallback link and no fabricated download or version labels', () => {
+test('empty targets collapse into one fallback note without fabricated download or version labels', () => {
   const html = renderDownloadCards(selectLatestDownloads([release('2026-11-15T00:00:00Z', [asset('ocean-chat-0.2.2-rc.2-mac-arm64.dmg')])]));
   assert.equal((html.match(/class="button primary download-button"/g) || []).length, 1);
-  assert.equal((html.match(/Пока нет загрузки/g) || []).length, 4);
+  assert.equal((html.match(/class="download-card"/g) || []).length, 1);
+  assert.equal((html.match(/Пока нет загрузки/g) || []).length, 1);
+  assert.match(html, /class="download-missing"/);
+  for (const missing of ['Linux Intel / AMD · x64', 'Linux ARM64', 'Windows Intel / AMD · x64', 'macOS Intel']) assert.ok(html.includes(missing), missing);
   assert.match(html, /aria-label="Скачать Ocean для macOS, Apple silicon"/);
   assert.doesNotMatch(html.replace(/href="[^"]*"/g, ''), /0\.2\.2|rc\.2/i);
 });

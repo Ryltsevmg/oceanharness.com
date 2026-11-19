@@ -33,7 +33,7 @@
   const changed = [{ ...base[0], url: base[0].url.replace('/test/', '/new/'), size: 300_000_000 }];
   const linux = { ...base[0], platform: 'linux', arch: 'x64', format: 'TAR.GZ',
     url: 'https://github.com/Ryltsevmg/Ocean/releases/download/test/ocean-chat-test-linux-x64.tar.gz' };
-  const first = selector => cards.querySelector('[data-platform="mac"] .architecture').querySelector(selector);
+  const first = selector => (cards.querySelector('[data-platform="mac"]') ?? cards).querySelector(selector);
   function assert(value, message) { if (!value) throw new Error(message); }
   function deferred() {
     let resolve;

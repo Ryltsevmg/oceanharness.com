@@ -11,13 +11,15 @@ function text(source, values = {}) {
 const REPOSITORY = 'https://github.com/Ryltsevmg/Ocean';
 export const RELEASES_URL = `${REPOSITORY}/releases`;
 export const RELEASES_API = 'https://api.github.com/repos/Ryltsevmg/Ocean/releases?per_page=100';
-export const PLATFORMS = [
-  { id: 'mac', title: 'macOS', note: 'Для вашего Mac', architectures: [['arm64', 'Apple silicon'], ['x64', 'Intel']] },
-  { id: 'linux', title: 'Linux', note: 'Для вашего дистрибутива', architectures: [['x64', 'Intel / AMD · x64'], ['arm64', 'ARM64']] },
-  { id: 'win', title: 'Windows', note: 'Для вашего ПК', architectures: [['x64', 'Intel / AMD · x64']] },
+export const DOWNLOAD_TARGETS = [
+  { platform: 'mac', arch: 'arm64', title: 'macOS', label: 'Apple silicon' },
+  { platform: 'linux', arch: 'x64', title: 'Linux', label: 'Intel / AMD · x64' },
+  { platform: 'linux', arch: 'arm64', title: 'Linux', label: 'ARM64' },
+  { platform: 'win', arch: 'x64', title: 'Windows', label: 'Intel / AMD · x64' },
+  { platform: 'mac', arch: 'x64', title: 'macOS', label: 'Intel' },
 ];
 
-const TARGETS = new Set(PLATFORMS.flatMap(platform => platform.architectures.map(([arch]) => `${platform.id}-${arch}`)));
+const TARGETS = new Set(DOWNLOAD_TARGETS.map(target => `${target.platform}-${target.arch}`));
 const FORMAT_ORDER = { DMG: 0, EXE: 0, AppImage: 0, MSI: 1, DEB: 1, ZIP: 2, 'TAR.GZ': 2 };
 
 /** Match the desktop artifactName (ocean-${version}-${os}-${arch}; the legacy ocean-chat- spelling stays accepted) and the published legacy notarized Mac ZIP. */
@@ -134,39 +136,55 @@ const platformIcons = {
 
 /** Shared by the static-page generator and the browser to keep both download lists identical. */
 export function renderDownloadCards(downloads) {
-  return PLATFORMS.map(platform => `<article class="download-card" data-platform="${platform.id}" aria-labelledby="title-${platform.id}">
-    <div class="platform-heading"><span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${platformIcons[platform.id]}</svg></span><div><h2 id="title-${platform.id}">${platform.title}</h2><p>${escapeHtml(text(platform.note))}</p></div></div>
-    <div class="architecture-list">${platform.architectures.map(([arch, label]) => {
-      const asset = downloads.find(item => item.platform === platform.id && item.arch === arch);
-      if (!asset) return `<div class="architecture unavailable"><h3>${label}</h3><p class="download-unavailable">${escapeHtml(text('Пока нет загрузки'))}</p><a class="text-link" href="${RELEASES_URL}">${escapeHtml(text('Все релизы'))} <span aria-hidden="true">↗</span></a></div>`;
-      return `<div class="architecture"><h3>${label}</h3><p class="download-meta">${asset.format} <span aria-hidden="true">·</span> ${formatSize(asset.size)}</p><p class="download-date"><time datetime="${escapeHtml(asset.publishedAt)}">${formatDate(asset.publishedAt)}</time></p><a class="button primary download-button" href="${escapeHtml(asset.url)}" aria-label="${escapeHtml(text('Скачать Ocean для {platform}, {arch}', { platform: platform.title, arch: label }))}">${escapeHtml(text('Скачать'))} <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg></a><a class="release-notes" href="${escapeHtml(asset.releaseUrl)}">${escapeHtml(text('Что нового'))} <span aria-hidden="true">↗</span></a></div>`;
-    }).join('')}</div>
-  </article>`).join('\n');
+  const tiles = [];
+  const missing = [];
+  for (const target of DOWNLOAD_TARGETS) {
+    const asset = downloads.find(item => item.platform === target.platform && item.arch === target.arch);
+    if (!asset) {
+      missing.push(`${target.title} ${target.label}`);
+      continue;
+    }
+    const id = `title-${target.platform}-${target.arch}`;
+    tiles.push(`<article class="download-card" data-platform="${target.platform}" data-arch="${target.arch}" aria-labelledby="${id}">
+    <div class="platform-heading"><span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${platformIcons[target.platform]}</svg></span><div><h2 id="${id}">${target.title}</h2><p>${target.label}</p></div></div>
+    <div class="architecture"><p class="download-meta">${asset.format} <span aria-hidden="true">·</span> ${formatSize(asset.size)}</p><p class="download-date"><time datetime="${escapeHtml(asset.publishedAt)}">${formatDate(asset.publishedAt)}</time></p><a class="button primary download-button" href="${escapeHtml(asset.url)}" aria-label="${escapeHtml(text('Скачать Ocean для {platform}, {arch}', { platform: target.title, arch: target.label }))}">${escapeHtml(text('Скачать'))} <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg></a></div>
+    <div class="card-footer"><a class="release-notes" href="${escapeHtml(asset.releaseUrl)}">${escapeHtml(text('Что нового'))} <span aria-hidden="true">↗</span></a></div>
+  </article>`);
+  }
+  if (missing.length > 0) tiles.push(`<div class="download-missing"><p class="download-missing-targets">${escapeHtml(missing.join(' · '))}</p><p class="download-unavailable">${escapeHtml(text('Пока нет загрузки'))}</p><a class="text-link" href="${RELEASES_URL}">${escapeHtml(text('Все релизы'))}</a></div>`);
+  return tiles.join('\n');
 }
 
 /** Preserve unchanged cards and keep keyboard focus on the same architecture and action when release data changes. */
 export function updateDownloadCards(cards, downloads) {
-  const template = cards.ownerDocument.createElement('template');
+  const doc = cards.ownerDocument;
+  const focused = doc.activeElement;
+  const inside = Boolean(focused && cards.contains(focused));
+  const cardOf = node => node && typeof node.closest === 'function' ? node.closest('.download-card') : null;
+  const focusedCard = cardOf(focused);
+  const action = inside && focused.matches ? ['.download-button', '.release-notes', '.text-link'].find(selector => focused.matches(selector)) : undefined;
+  const wasFallback = Boolean(inside && focused.closest('.download-missing'));
+  const template = doc.createElement('template');
   template.innerHTML = renderDownloadCards(downloads);
-  for (const nextCard of [...template.content.children]) {
-    const currentCard = cards.querySelector(`[data-platform="${nextCard.dataset.platform}"]`);
-    if (!currentCard) {
-      cards.append(nextCard);
-      continue;
+  const ordered = [...template.content.children].map(node => {
+    if (!node.classList.contains('download-card')) {
+      const current = cards.querySelector('.download-missing');
+      return current && current.isEqualNode(node) ? current : node;
     }
-    if (currentCard.isEqualNode(nextCard)) continue;
-    const focused = cards.ownerDocument.activeElement;
-    const restoreFocus = currentCard.contains(focused);
-    const architectureIndex = restoreFocus ? [...currentCard.querySelectorAll('.architecture')].findIndex(item => item.contains(focused)) : -1;
-    const action = restoreFocus && ['.download-button', '.release-notes', '.text-link'].find(selector => focused.matches(selector));
-    currentCard.replaceWith(nextCard);
-    if (restoreFocus) {
-      const architecture = nextCard.querySelectorAll('.architecture')[architectureIndex] || nextCard;
-      const replacement = (action && architecture.querySelector(action)) || architecture.querySelector('.text-link')
-        || architecture.querySelector('.release-notes') || architecture.querySelector('.download-button');
-      replacement?.focus({ preventScroll: true });
-    }
-  }
+    const current = cards.querySelector(`[data-platform="${node.dataset.platform}"][data-arch="${node.dataset.arch}"]`);
+    return current && current.isEqualNode(node) ? current : node;
+  });
+  for (const node of ordered) cards.append(node);
+  for (const remaining of [...cards.children]) if (!ordered.includes(remaining)) remaining.remove();
+  if (!inside) return;
+  if (doc.activeElement === focused) return;
+  const sameCard = focusedCard && ordered.find(node => node.classList?.contains('download-card')
+    && node.dataset.platform === focusedCard.dataset.platform && node.dataset.arch === focusedCard.dataset.arch);
+  const replacement = (action && sameCard?.querySelector(action))
+    || sameCard?.querySelector('.release-notes') || sameCard?.querySelector('.download-button')
+    || (wasFallback ? ordered.find(node => node.classList?.contains('download-card'))?.querySelector('.release-notes') : null)
+    || cards.querySelector('.download-missing .text-link');
+  replacement?.focus({ preventScroll: true });
 }
 
 /** Refresh available files without removing a focused retry control while the request is pending. */
