@@ -7,6 +7,8 @@ RUN bun install --frozen-lockfile
 
 FROM node:24-bookworm-slim AS build
 WORKDIR /app
+ARG NEXT_BUILD_ID
+ENV NEXT_BUILD_ID=$NEXT_BUILD_ID
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN node node_modules/next/dist/bin/next build
