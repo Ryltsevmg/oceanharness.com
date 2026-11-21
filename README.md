@@ -42,6 +42,9 @@ A push to `main` runs the `pages` workflow: install, `next build`, the test suit
 `actions/deploy-pages` publishes the export. Pages must be set to **Source: GitHub Actions** in the repository
 settings; the CNAME and the HTTPS certificate are carried by `public/CNAME` and the Pages domain settings.
 
+Railway builds the same export with the root `Dockerfile` (Bun 1.4.4, Node 24, Caddy serving `out/`). The
+container listens on `PORT`. GitHub Pages can stay up until DNS is pointed at the Railway service.
+
 ## Pages and content
 
 `start/` explains installation and the first chat, `plugins/` holds the catalog and the two connection guides,

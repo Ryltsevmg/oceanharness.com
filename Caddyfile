@@ -1,0 +1,16 @@
+{
+	auto_https off
+	admin off
+}
+
+# Railway terminates TLS at the edge and sets PORT.
+# file_server keeps GitHub Pages behavior: directory without a slash -> 301 to the slash;
+# a missing path returns 404.html with status 404; /404.html itself is 200.
+:{$PORT:8080} {
+	root * /srv
+	file_server
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
