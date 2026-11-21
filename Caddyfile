@@ -1,0 +1,22 @@
+{
+	auto_https off
+	admin off
+}
+
+# Railway terminates TLS at the edge and sets PORT.
+# Directory paths without a slash redirect with 301, like GitHub Pages (Caddy's
+# default canonical redirect is 308). A missing path returns 404.html with status
+# 404; /404.html itself is 200.
+:{$PORT:8080} {
+	root * /srv
+	@needsSlash {
+		not path */
+		file {path}/index.html
+	}
+	redir @needsSlash {path}/ 301
+	file_server
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
