@@ -42,13 +42,14 @@ export function headerLabels(ui: Translate) {
   };
 }
 
-/** Footer links: the four internal routes plus support and source. */
+/** Footer links: the internal routes, support, Ocean Pass and source. */
 export function footerLinks(locale: Locale, ui: Translate): readonly NavLink[] {
   return [
     { label: ui('Первый запуск'), href: localizedPath('start', locale) },
     { label: ui('Плагины'), href: localizedPath('plugins', locale) },
     { label: ui('Поддержка'), href: 'https://t.me/oceanchatsupportbot' },
     { label: ui('Конфиденциальность'), href: localizedPath('privacy', locale) },
+    { label: ui('Ocean Pass'), href: 'https://oceanpass.ru', external: true },
     { label: `${ui('GitHub')} `, href: 'https://github.com/Ryltsevmg/Ocean', external: true },
   ];
 }

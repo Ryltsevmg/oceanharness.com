@@ -67,7 +67,7 @@ p { color: var(--muted); }
 .text-link:hover { text-decoration: underline; }
 .hero { position: relative; max-width: 1440px; margin-inline: auto; isolation: isolate; }
 .hero-inner { position: static; padding-block: 56px 44px; }
-.hero h1 { margin-top: 26px; font-size: clamp(70px, 6.67vw, 96px); line-height: 1.02; letter-spacing: -.042em; }
+.hero h1 { margin-top: 26px; max-width: 760px; font-size: clamp(70px, 6.67vw, 96px); line-height: 1.02; letter-spacing: -.042em; }
 .hero .lead { margin-top: 24px; max-width: 620px; font-size: 20px; line-height: 1.5; }
 .hero .actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
 .hero .primary { min-width: 230px; }
@@ -145,6 +145,16 @@ p { color: var(--muted); }
 .faq-answers { display: grid; gap: 26px; }
 .faq h3 { font-size: 18px; font-weight: 400; }
 .faq-answers p { font-size: 15px; margin-top: 10px; }
+.pass { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; border-top: 1px solid var(--line); padding-block: 72px; }
+.pass h2 { font-size: clamp(30px, 2.8vw, 40px); margin-top: 22px; line-height: 1.15; }
+.pass .section-lead { margin-top: 22px; max-width: 520px; }
+.pass .button { margin-top: 28px; }
+.pass-aside { display: grid; gap: 20px; align-content: center; }
+.pass-aside > p { font-size: 16px; line-height: 1.6; }
+.pass-url { margin: 0; padding: 20px 24px; border: 1px solid #304355; border-radius: 16px; background: var(--surface); }
+.pass-url dt code { color: var(--ice); font: 13px/1.5 var(--font-mono); }
+.pass-url dd { margin: 8px 0 0; }
+.pass-url dd code { color: var(--text); font: 15px/1.5 var(--font-mono); overflow-wrap: anywhere; }
 .install { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; padding: 64px 52px; margin-bottom: 48px; }
 .install h2 { margin-top: 20px; }
 .install .section-lead { margin-top: 22px; max-width: 480px; }
@@ -168,7 +178,7 @@ p { color: var(--muted); }
   .app-message { font-size: 14px; }
   .equipment { gap: 40px; padding-inline: 40px; }
   .equipment-list h3 { font-size: 19px; }
-  .control, .faq, .install { gap: 48px; }
+  .control, .faq, .pass, .install { gap: 48px; }
   .faq { grid-template-columns: .85fr 1.15fr; }
   .feature-grid { gap: 24px; }
   .feature-grid h3 { font-size: 20px; }
@@ -213,7 +223,7 @@ p { color: var(--muted); }
   .meeting-plan strong { font-size: 15px; }
   .demo-next { flex-direction: column; align-items: flex-start; gap: 8px; }
   .features { padding-block: 32px 48px; }
-  h2, .features h2, .equipment h2, .control h2, .faq h2 { font-size: 32px; line-height: 1.18; letter-spacing: -.65px; }
+  h2, .features h2, .equipment h2, .control h2, .faq h2, .pass h2 { font-size: 32px; line-height: 1.18; letter-spacing: -.65px; }
   .section-lead { font-size: 16px; }
   .feature-grid { grid-template-columns: 1fr; gap: 0; margin-top: 28px; }
   .feature-grid > li { display: flex; align-items: flex-start; gap: 20px; padding-block: 22px; }
@@ -229,7 +239,8 @@ p { color: var(--muted); }
   .equipment-list p { font-size: 14px; }
   .feature-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
   .feature-icon .icon { width: 22px; height: 22px; }
-  .control, .faq { grid-template-columns: 1fr; gap: 28px; padding-block: 48px; }
+  .control, .faq, .pass { grid-template-columns: 1fr; gap: 28px; padding-block: 48px; }
+  .pass .button { width: 100%; }
   .control-copy h3 { font-size: 17px; }
   .permissions { padding: 16px; }
   .permissions li { gap: 10px; font-size: 14px; }

@@ -6,8 +6,8 @@ import { pageMetadata } from '../i18n/metadata.ts';
 import { PageShell } from '../components/page-shell.tsx';
 
 /**
- * The landing page: hero, a scripted chat demo, three feature steps, the equipment list, permissions, FAQ and the
- * install call.
+ * The landing page: hero, a scripted chat demo, three feature steps, the equipment list, permissions, FAQ,
+ * the Ocean Pass block for users in Russia, and the install call.
  *
  * The demo block is decorative markup, not a widget: every pane is `aria-hidden` because it illustrates a finished
  * exchange rather than offering one. The `js` class and the language picker live in the shared chrome.
@@ -23,6 +23,7 @@ function Mark({ children }: { children: ReactNode }) {
 }
 
 const DOWNLOAD = <><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></>;
+const EXTERNAL = <><path d="M7 17 17 7" /><path d="M7 7h10v10" /></>;
 const GLOBE = <><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></>;
 
 export function homeMetadata(locale: Locale): Metadata {
@@ -30,9 +31,9 @@ export function homeMetadata(locale: Locale): Metadata {
   return pageMetadata({
     page: 'home',
     locale,
-    title: ui('Ocean — баланс и глубина'),
-    description: ui('Настольное приложение для AI-агентов. Подключайте модели, исследуйте сайты и работайте с приложениями в одном чате.'),
-    socialDescription: ui('Ваши модели, сайты и приложения — в одном чате.'),
+    title: ui('Ocean — настольное пространство для AI-агентов'),
+    description: ui('Подключайте любую модель или свой ключ. Управление браузером, приложения и плагины — в одном чате. Код открыт, данные остаются у вас.'),
+    socialDescription: ui('Любая модель, браузер и приложения — в одном чате.'),
   });
 }
 
@@ -45,22 +46,20 @@ export function HomePage({ locale }: { locale: Locale }) {
     <PageShell locale={locale} ui={ui} page="home" current="features" className="landing">
       <section className="hero" aria-labelledby="hero-title">
         <div className="wrap hero-inner">
-          <p className="eyebrow">{ui('Ocean / AI-рабочее пространство')}</p>
-          <h1 id="hero-title">{ui('Баланс')}<br />{ui('и глубина.')}</h1>
+          <p className="eyebrow">{ui('Ocean / открытый код')}</p>
+          <h1 id="hero-title">{ui('Настольное пространство')}<br />{ui('для AI‑агентов.')}</h1>
           <div className="hero-art" aria-hidden="true">
             <picture>
               <source type="image/webp" srcSet="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" sizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px" />
               <img src="/ocean-whale-line.png" alt="" width="1672" height="941" fetchPriority="high" />
             </picture>
           </div>
-          <p className="lead">
-            {ui('Ocean — настольное приложение для AI-агентов.')}<br className="desktop-break" /> {ui('Подключайте модели, исследуйте сайты')}<br className="desktop-break" /> {ui('и работайте с приложениями в одном чате.')}
-          </p>
+          <p className="lead">{ui('Подключайте любую модель или свой ключ. Управление браузером, приложения и плагины — в одном чате. Код открыт, данные остаются у вас.')}</p>
           <div className="actions">
             <a className="button primary" href={downloads}>{ui('Скачать Ocean')} <span><Mark>{DOWNLOAD}</Mark></span></a>
             <a className="button secondary" href="#demo">{ui('Как работает Ocean')} <span><Mark>{DOWNLOAD}</Mark></span></a>
           </div>
-          <p className="hero-note">{ui('Открытый код. Ваши модели. Ваш выбор доступа.')}</p>
+          <p className="hero-note">{ui('macOS, Windows и Linux.')}</p>
         </div>
       </section>
       <section id="demo" className="demo wrap" aria-labelledby="demo-title">
@@ -163,6 +162,21 @@ export function HomePage({ locale }: { locale: Locale }) {
         <div className="faq-answers">
           <div><h3>{ui('Нужна ли подписка на модель?')}</h3><p>{ui('Подключите свой аккаунт или API-ключ. Доступ к моделям и стоимость определяет выбранный провайдер.')}</p></div>
           <div><h3>{ui('С чего начать после установки?')}</h3><p>{ui('Добавьте провайдера в «Настройки → Модели» и создайте первую сессию.')} <a href={start}>{ui('Пройти настройку шаг за шагом')}</a>.</p></div>
+        </div>
+      </section>
+      <section id="ocean-pass" className="pass wrap" aria-labelledby="pass-title">
+        <div>
+          <p className="eyebrow">{ui('Ocean Pass')}</p>
+          <h2 id="pass-title">{ui('GPT, Claude и Gemini')}<br />{ui('в России — через один ключ.')}</h2>
+          <p className="section-lead">{ui('Один API-ключ к ведущим моделям. Оплата в рублях, закрывающие документы для ИП и ООО.')}</p>
+          <a className="button primary" href="https://oceanpass.ru">{ui('Открыть Ocean Pass')} <span><Mark>{EXTERNAL}</Mark></span></a>
+        </div>
+        <div className="pass-aside">
+          <p>{ui('В Ocean, Cursor, Cline и Claude Code меняется только base_url.')}</p>
+          <dl className="pass-url">
+            <dt><code>base_url</code></dt>
+            <dd><code>https://oceanpass.ru/v1</code></dd>
+          </dl>
         </div>
       </section>
       <section id="install" className="install wide-panel" aria-labelledby="install-title">
