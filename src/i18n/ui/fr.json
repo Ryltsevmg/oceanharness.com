@@ -354,10 +354,10 @@
   "Открыть Ocean Pass": "Ouvrir Ocean Pass",
   "В Ocean, Cursor, Cline и Claude Code меняется только base_url.": "Dans Ocean, Cursor, Cline et Claude Code, seul base_url change.",
   "Ocean / открытый код": "Ocean / code ouvert",
-  "Настольное пространство": "Un espace de bureau",
-  "для AI‑агентов.": "pour les agents IA.",
-  "Подключайте любую модель или свой ключ. Управление браузером, приложения и плагины — в одном чате. Код открыт, данные остаются у вас.": "Apportez n’importe quel modèle ou vos propres clés. Le contrôle du navigateur, les applications et les plugins dans un même chat. Code ouvert, et vos données restent les vôtres.",
-  "Ocean — настольное пространство для AI-агентов": "Ocean — un espace de bureau pour les agents IA",
-  "Любая модель, браузер и приложения — в одном чате.": "N’importe quel modèle, le navigateur et vos applications — dans un même chat.",
-  "macOS, Windows и Linux.": "macOS, Windows et Linux."
+  "macOS, Windows и Linux.": "macOS, Windows et Linux.",
+  "Harness для AI-агентов.": "Harness pour agents IA.",
+  "Все плагины уже внутри.": "Plugins intégrés.",
+  "Ocean — открытое настольное приложение. Подключайте любые модели, управляйте браузером, ставьте плагины в один клик и работайте в одном чате.": "Ocean est une application de bureau open source. Apportez n’importe quel modèle, contrôlez le navigateur, installez les plugins en un clic et travaillez dans un seul chat.",
+  "Ocean — harness для AI-агентов": "Ocean — harness pour agents IA",
+  "Harness для AI-агентов. Все плагины уже внутри.": "Harness pour agents IA. Plugins intégrés."
 }

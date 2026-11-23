@@ -67,7 +67,7 @@ p { color: var(--muted); }
 .text-link:hover { text-decoration: underline; }
 .hero { position: relative; max-width: 1440px; margin-inline: auto; isolation: isolate; }
 .hero-inner { position: static; padding-block: 56px 44px; }
-.hero h1 { margin-top: 26px; max-width: 760px; font-size: clamp(70px, 6.67vw, 96px); line-height: 1.02; letter-spacing: -.042em; }
+.hero h1 { margin-top: 26px; max-width: 6em; font-size: clamp(70px, 6.67vw, 96px); line-height: 1.02; letter-spacing: -.042em; white-space: pre-line; }
 .hero .lead { margin-top: 24px; max-width: 620px; font-size: 20px; line-height: 1.5; }
 .hero .actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
 .hero .primary { min-width: 230px; }

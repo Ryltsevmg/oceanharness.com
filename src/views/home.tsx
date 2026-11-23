@@ -31,9 +31,9 @@ export function homeMetadata(locale: Locale): Metadata {
   return pageMetadata({
     page: 'home',
     locale,
-    title: ui('Ocean — настольное пространство для AI-агентов'),
-    description: ui('Подключайте любую модель или свой ключ. Управление браузером, приложения и плагины — в одном чате. Код открыт, данные остаются у вас.'),
-    socialDescription: ui('Любая модель, браузер и приложения — в одном чате.'),
+    title: ui('Ocean — harness для AI-агентов'),
+    description: ui('Ocean — открытое настольное приложение. Подключайте любые модели, управляйте браузером, ставьте плагины в один клик и работайте в одном чате.'),
+    socialDescription: ui('Harness для AI-агентов. Все плагины уже внутри.'),
   });
 }
 
@@ -47,14 +47,14 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="hero" aria-labelledby="hero-title">
         <div className="wrap hero-inner">
           <p className="eyebrow">{ui('Ocean / открытый код')}</p>
-          <h1 id="hero-title">{ui('Настольное пространство')}<br />{ui('для AI‑агентов.')}</h1>
+          <h1 id="hero-title">{ui('Harness для AI-агентов.')}<br />{ui('Все плагины уже внутри.')}</h1>
           <div className="hero-art" aria-hidden="true">
             <picture>
               <source type="image/webp" srcSet="/assets/ocean-whale-640.webp 640w, /assets/ocean-whale-1040.webp 1040w, /assets/ocean-whale-1672.webp 1672w" sizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 48px), (max-width: 1440px) 73vw, 1050px" />
               <img src="/ocean-whale-line.png" alt="" width="1672" height="941" fetchPriority="high" />
             </picture>
           </div>
-          <p className="lead">{ui('Подключайте любую модель или свой ключ. Управление браузером, приложения и плагины — в одном чате. Код открыт, данные остаются у вас.')}</p>
+          <p className="lead">{ui('Ocean — открытое настольное приложение. Подключайте любые модели, управляйте браузером, ставьте плагины в один клик и работайте в одном чате.')}</p>
           <div className="actions">
             <a className="button primary" href={downloads}>{ui('Скачать Ocean')} <span><Mark>{DOWNLOAD}</Mark></span></a>
             <a className="button secondary" href="#demo">{ui('Как работает Ocean')} <span><Mark>{DOWNLOAD}</Mark></span></a>
