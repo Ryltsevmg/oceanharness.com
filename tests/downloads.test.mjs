@@ -14,6 +14,7 @@ import {
   formatSize,
   identifyAsset,
   parseSnapshot,
+  sameDownloads,
   selectLatestDownloads,
 } from '../src/content/downloads.ts';
 
@@ -72,6 +73,26 @@ test('takes the newest release per target and the native format inside one relea
   ]);
   assert.deepEqual(downloads.map(item => `${item.arch}:${item.format}:${item.url.split('/').pop()}`),
     ['arm64:ZIP:ocean-1.1.0-mac-arm64.zip', 'x64:EXE:ocean-1.0.0-win-x64.exe']);
+});
+
+test('recognises a refreshed list that did not move', () => {
+  const downloads = selectLatestDownloads([
+    release('v1.0.0', '2026-11-19T10:00:00Z', [asset('ocean-1.0.0-mac-arm64.dmg'), asset('ocean-1.0.0-win-x64.exe')]),
+  ]);
+  // The same artifacts in the same order keep the saved check time, so a scheduled refresh writes no commit.
+  assert.equal(sameDownloads(downloads, downloads.map(item => ({ ...item }))), true);
+  assert.equal(sameDownloads(downloads, downloads.slice(0, 1)), false);
+  assert.equal(sameDownloads(downloads, [...downloads].reverse()), false);
+  // A release that republished the same name at a new address is a different download.
+  assert.equal(sameDownloads(downloads, downloads.map((item, index) => index === 0
+    ? { ...item, url: item.url.replace('v1.0.0', 'v1.1.0') }
+    : item)), false);
+  assert.equal(sameDownloads(downloads, downloads.map((item, index) => index === 0
+    ? { ...item, publishedAt: '2026-11-25T10:00:00Z' }
+    : item)), false);
+  assert.equal(sameDownloads(downloads, downloads.map((item, index) => index === 0
+    ? { ...item, size: item.size + 1 }
+    : item)), false);
 });
 
 test('refuses unpublished, unuploaded and off-repository artifacts', () => {

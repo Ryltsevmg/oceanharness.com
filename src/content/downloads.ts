@@ -174,6 +174,25 @@ export async function fetchLatestDownloads(
 }
 
 /**
+ * Compare two artifact lists by the fields the page renders.
+ *
+ * A periodic refresh that finds the same installers leaves the saved snapshot byte-identical, so the build
+ * commits nothing and the check time keeps naming the release the list was last confirmed for.
+ *
+ * @param left one artifact list, in page order.
+ * @param right the other artifact list, in page order.
+ * @returns whether both lists carry the same artifacts in the same order.
+ */
+export function sameDownloads(left: readonly Asset[], right: readonly Asset[]): boolean {
+  return left.length === right.length && left.every((asset, index) => {
+    const other = right[index];
+    return other !== undefined && asset.platform === other.platform && asset.arch === other.arch
+      && asset.format === other.format && asset.size === other.size && asset.url === other.url
+      && asset.releaseUrl === other.releaseUrl && asset.publishedAt === other.publishedAt;
+  });
+}
+
+/**
  * Validate the checked snapshot before its URLs are rendered.
  *
  * @param snapshot the parsed `downloads/releases.json`.
