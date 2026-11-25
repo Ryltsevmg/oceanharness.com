@@ -39,8 +39,17 @@ of the layout landmarks at 390px instead. Both need the export on one port and a
 ## Publishing
 
 A push to `main` runs the `pages` workflow: install, `next build`, the test suite over `out/`, then
-`actions/deploy-pages` publishes the export. Pages must be set to **Source: GitHub Actions** in the repository
-settings; the CNAME and the HTTPS certificate are carried by `public/CNAME` and the Pages domain settings.
+`actions/deploy-pages` publishes the export. Every publishing run refreshes `public/downloads/releases.json`
+from the GitHub Releases API first, so the download cards follow the newest Ocean release without a manual
+edit; a refresh that finds the same installers writes nothing and commits nothing. A pull request keeps the
+committed snapshot so a review builds the same bytes as `main`.
+
+The workflow also runs on a six-hour schedule and on a `repository_dispatch` of type `ocean-release`, which
+lets the Ocean repository ask for an immediate refresh once a dispatch token exists. Without that token the
+schedule is what carries a new release to the page, within six hours.
+
+Pages must be set to **Source: GitHub Actions** in the repository settings; the CNAME and the HTTPS
+certificate are carried by `public/CNAME` and the Pages domain settings.
 
 Railway builds the same export with the root `Dockerfile` (Bun 1.4.4, Node 24, Caddy serving `out/`). The
 container listens on `PORT`. GitHub Pages can stay up until DNS is pointed at the Railway service.

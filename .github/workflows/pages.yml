@@ -5,9 +5,17 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # A published Ocean release reaches the cards without a manual commit. The schedule is the trigger that
+  # needs no cross-repository token; the dispatch lets the Ocean repository ask for an immediate run once its
+  # token exists.
+  schedule:
+    - cron: '23 */6 * * *'
+  repository_dispatch:
+    types: [ocean-release]
 
 permissions:
-  contents: read
+  # The refresh step commits the snapshot when a release landed; every other run leaves the tree untouched.
+  contents: write
   pages: write
   id-token: write
 
@@ -31,6 +39,27 @@ jobs:
 
       - name: Install packages
         run: bun install --frozen-lockfile
+
+      # The snapshot is a cache of the Releases API, so every publishing run refreshes it before the build
+      # reads it. A pull request keeps the committed snapshot: a review must build the same bytes as main.
+      - if: github.event_name != 'pull_request'
+        name: Refresh the download snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update-downloads.mjs
+
+      - if: github.event_name != 'pull_request'
+        name: Record a snapshot that moved
+        run: |
+          if git diff --quiet -- public/downloads/releases.json; then
+            echo "The saved snapshot already lists the newest release."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/downloads/releases.json
+          git commit -m 'Refresh the download snapshot from the newest release [skip ci]'
+          git push
 
       - name: Build the static export
         run: node node_modules/next/dist/bin/next build
